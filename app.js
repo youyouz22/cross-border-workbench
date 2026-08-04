@@ -439,20 +439,11 @@
 
 
   /* ---------------- 渲染：产品 / 工具 ---------------- */
-  const compareSel = new Set();
-  let productSelectMode = false;
   function renderProduct() {
     const items = read(LS.product, []);
     const grid = $("#productGrid");
-    const btn = $("#btnSelectProduct");
-    if (btn) {
-      btn.textContent = productSelectMode ? "✓ 完成" : "☑️ 选择";
-      btn.classList.toggle("btn-primary", productSelectMode);
-    }
-    grid.classList.toggle("select-mode", productSelectMode);
     if (!items.length) {
       grid.innerHTML = '<div class="empty"><div class="empty-ico">📦</div>还没有商品，点右上角「＋ 添加商品」粘贴链接</div>';
-      updateCompareBar();
       return;
     }
     grid.innerHTML = items.map((p) => {
@@ -464,8 +455,6 @@
       const cons = (p.cons || []).length ? `<div class="pc-list"><span class="pc-h">注意</span>${p.cons.map((x) => `<span class="pc-con">- ${esc(x)}</span>`).join("")}</div>` : "";
       return `
       <div class="tool-card product-card">
-        <input type="checkbox" class="product-check" data-pid="${p.id}" ${compareSel.has(p.id) ? "checked" : ""} title="加入对比" />
-        <button class="t-del" data-del-product="${p.id}" title="删除">✕</button>
         <div class="product-thumb emoji">📦</div>
         <div class="t-title" style="margin-top:6px">${esc(p.title)}</div>
         <div class="product-meta">
@@ -477,14 +466,6 @@
         ${url ? `<a class="btn btn-sm btn-primary mt-8" href="${esc(url)}" target="_blank" rel="noopener" style="align-self:flex-start">🔗 ${p.url ? "打开商品" : "1688 找货源"}</a>` : ""}
       </div>`;
     }).join("");
-    updateCompareBar();
-  }
-  function updateCompareBar() {
-    const bar = $("#compareBar");
-    if (!bar) return;
-    const n = compareSel.size;
-    $("#compareCount").textContent = n;
-    bar.style.display = n >= 2 ? "flex" : "none";
   }
   function renderTools() {
     const items = read(LS.tools, []);
@@ -693,11 +674,7 @@
       if (confirm("确定删除这个工具吗？")) { write(LS.tools, read(LS.tools, []).filter((t) => t.id !== id)); renderTools(); }
     });
 
-    /* ---- 产品分析：添加 / 删除 / 对比 ---- */
-    $("#btnSelectProduct").addEventListener("click", () => {
-      productSelectMode = !productSelectMode;
-      renderProduct();
-    });
+    /* ---- 产品分析：添加商品 ---- */
     $("#btnNewProduct").addEventListener("click", () => {
       ["pTitle", "pUrl", "pImg", "pPlatform", "pPrice", "pNote"].forEach((id) => ($("#" + id).value = ""));
       $("#productModal").classList.add("show");
@@ -711,40 +688,6 @@
       write(LS.product, products);
       $("#productModal").classList.remove("show");
       renderProduct(); toast("已添加商品");
-    });
-    $("#productGrid").addEventListener("click", (e) => {
-      const del = e.target.dataset.delProduct; if (del) {
-        e.stopPropagation();
-        if (confirm("确定删除这个商品吗？")) {
-          write(LS.product, read(LS.product, []).filter((p) => p.id !== del));
-          compareSel.delete(del); renderProduct();
-        }
-      }
-    });
-    $("#productGrid").addEventListener("change", (e) => {
-      const pid = e.target.dataset.pid; if (!pid) return;
-      if (e.target.checked) compareSel.add(pid); else compareSel.delete(pid);
-      updateCompareBar();
-    });
-    $("#btnClearCompare").addEventListener("click", () => { compareSel.clear(); renderProduct(); });
-    $("#btnDoCompare").addEventListener("click", () => {
-      const all = read(LS.product, []);
-      const sel = all.filter((p) => compareSel.has(p.id));
-      if (sel.length < 2) { toast("至少选择 2 件商品再对比"); return; }
-      const cols = sel.length + 1;
-      const row = (label, fn) => `<div class="c-label">${label}</div>` + sel.map((p) => `<div>${fn(p)}</div>`).join("");
-      $("#compareTable").innerHTML = `<div class="compare-wrap"><div class="compare-grid" style="grid-template-columns:repeat(${cols},minmax(150px,1fr))">
-        <div class="c-head">对比维度</div>${sel.map((p) => `<div class="c-head">${esc(p.title)}</div>`).join("")}
-        ${row("平台 / 来源", (p) => esc(p.platform || "—"))}
-        ${row("类目", (p) => esc(p.category || "—"))}
-        ${row("售价", (p) => esc(p.price || "—"))}
-        ${row("1688采购价", (p) => p.alibabaPrice != null && p.alibabaPrice !== "" ? "$" + esc(p.alibabaPrice) : "—")}
-        ${row("销量增长", (p) => p.salesGrowth != null && p.salesGrowth !== "" ? "+" + esc(p.salesGrowth) + "%" : "—")}
-        ${row("评分", (p) => p.rating != null && p.rating !== "" ? esc(p.rating) + "⭐" : "—")}
-        ${row("链接", (p) => { const u = productUrl(p); return u ? `<a href="${esc(u)}" target="_blank" rel="noopener">🔗 打开</a>` : "—"; })}
-        ${row("备注", (p) => esc(p.note || "—"))}
-      </div></div>`;
-      $("#compareModal").classList.add("show");
     });
 
     /* ---- 新闻：点击打开原文 / 切换中英文 ---- */
