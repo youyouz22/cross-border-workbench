@@ -49,3 +49,7 @@ python -m http.server 8080
 
 > 说明：原站使用 Gitee 云端同步（需 Token）。本静态版改为浏览器本地存储 + 导入/导出，并额外提供 GitHub 云端同步选项，
 > 更适合 GitHub Pages 这类无后端环境，也更保护你的隐私。
+
+---
+
+更新记录：2026-08-04 完成首次部署到 GitHub Pages。
