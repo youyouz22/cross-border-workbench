@@ -12,6 +12,7 @@
     docs: "cbec_docs",
     news: "cbec_news",
     product: "cbec_product",
+    productHidden: "cbec_product_hidden",
     tools: "cbec_tools",
     notify: "cbec_notify",
     settings: "cbec_settings",
@@ -102,9 +103,10 @@
         note: p.note || "",
         url: p.url || "",
       }));
+      const hidden = new Set((read(LS.productHidden, []) || []).map(String));
       const existing = read(LS.product, []);
       const existingTitles = new Set(existing.map((p) => (p.title || "").toLowerCase().trim()));
-      const missing = mapped.filter((p) => !existingTitles.has((p.title || "").toLowerCase().trim()));
+      const missing = mapped.filter((p) => !hidden.has(String(p.id)) && !existingTitles.has((p.title || "").toLowerCase().trim()));
       if (missing.length) write(LS.product, [...missing, ...existing]);
       return true;
     } catch (e) { /* 离线或文件缺失时回退示例 */ }
@@ -459,6 +461,7 @@
       const cons = (p.cons || []).length ? `<div class="pc-list"><span class="pc-h">注意</span>${p.cons.map((x) => `<span class="pc-con">- ${esc(x)}</span>`).join("")}</div>` : "";
       return `
       <div class="tool-card product-card">
+        <button class="t-del" data-del-product="${p.id}" title="删除">✕</button>
         <div class="product-thumb emoji">📦</div>
         <div class="t-title" style="margin-top:6px">${esc(p.title)}</div>
         <div class="product-meta">
@@ -692,6 +695,18 @@
       write(LS.product, products);
       $("#productModal").classList.remove("show");
       renderProduct(); toast("已添加商品");
+    });
+    $("#productGrid").addEventListener("click", (e) => {
+      const del = e.target.dataset.delProduct; if (!del) return;
+      e.stopPropagation();
+      if (confirm("确定删除这个商品吗？")) {
+        write(LS.product, read(LS.product, []).filter((p) => p.id !== del));
+        // 记录被删除的原站商品，避免下次启动自动补回
+        const hidden = new Set((read(LS.productHidden, []) || []).map(String));
+        hidden.add(String(del));
+        write(LS.productHidden, Array.from(hidden));
+        renderProduct();
+      }
     });
 
     /* ---- 新闻：点击打开原文 / 切换中英文 ---- */
