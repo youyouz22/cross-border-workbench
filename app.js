@@ -328,6 +328,7 @@
             <div class="news-head">${impactTag(n.impact)}<span class="news-title">${esc(n.title)}</span></div>
             ${n.body ? `<div class="news-body">${esc(n.body)}</div>` : ""}
             <div class="news-meta"><span>${esc(n.source || "")}</span><span>${esc(n.time || "")}</span>${n.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+            <div class="news-foot"><span class="news-goto">查看原文 ↗</span></div>
           </a>`).join("")}
       </div>`;
     }).join("");
