@@ -54,8 +54,13 @@
       "https://www.theguardian.com/world/eu/rss",
       "http://feeds.bbci.co.uk/news/business/rss.xml",
     ]},
+    { topic: "国内贸易与电商", feeds: [
+      "https://www.36kr.com/feed",
+      "http://rss.news.sohu.com/rss/focus.xml",
+    ]},
   ];
   const RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=";
+  const NEWS_CACHE_VERSION = 2; // 缓存数据结构升级时递增，自动清掉旧本地数据
   function seedProduct() {
     return [
       { icon: "📈", title: "欧洲市场冬季取暖器销售数据", desc: "含英国、德国、法国等市场的销售数据统计", tag: "销售数据" },
@@ -214,7 +219,8 @@
           </div>
         </div>`).join("");
     }
-    const news = read(LS.news, []);
+    const newsRaw = read(LS.news, []);
+    const news = Array.isArray(newsRaw) ? newsRaw : (newsRaw && Array.isArray(newsRaw.items) ? newsRaw.items : []);
     const nb = $("#dashNews");
     if (!news.length) {
       nb.innerHTML = '<div class="empty">暂无新闻</div>';
@@ -310,7 +316,8 @@
 
   /* ---------------- 渲染：新闻 ---------------- */
   function renderNews() {
-    const news = read(LS.news, []);
+    const newsRaw = read(LS.news, []);
+    const news = Array.isArray(newsRaw) ? newsRaw : (newsRaw && Array.isArray(newsRaw.items) ? newsRaw.items : []);
     const topics = NEWS_SOURCES.map((s) => s.topic);
     const box = $("#newsAll");
     if (!news.length) {
@@ -352,17 +359,19 @@
     if (/增长|趋势|trend|growth|launch|发布|上线|expansion|rise|surge|boom/.test(t)) return "中影响";
     return "低影响";
   }
-  async function fetchNews() {
+  async function fetchNews(force = false) {
     const btn = $("#btnRefreshNews");
     if (btn) { btn.disabled = true; btn.textContent = "⏳ 拉取中..."; }
+    const u = $("#newsUpdated");
     const all = [];
+    let lastErr = "";
     for (const group of NEWS_SOURCES) {
       for (const feed of group.feeds) {
         try {
-          const res = await fetch(RSS2JSON + encodeURIComponent(feed));
-          if (!res.ok) continue;
+          const res = await fetch(RSS2JSON + encodeURIComponent(feed), { cache: force ? "no-cache" : "default" });
+          if (!res.ok) { lastErr = "网络错误 " + res.status; continue; }
           const data = await res.json();
-          if (data.status !== "ok" || !data.items) continue;
+          if (data.status !== "ok" || !data.items) { lastErr = data.message || "RSS 解析失败"; continue; }
           data.items.slice(0, 6).forEach((it) => {
             all.push({
               id: uid(),
@@ -377,19 +386,20 @@
               pubDate: it.pubDate,
             });
           });
-        } catch (e) { /* 单个源失败忽略，继续其他源 */ }
+        } catch (e) { lastErr = e.message || "请求失败"; }
       }
     }
     if (all.length) {
       all.sort((a, b) => new Date(b.pubDate || 0) - new Date(a.pubDate || 0));
-      write(LS.news, all);
+      write(LS.news, { version: NEWS_CACHE_VERSION, items: all });
       renderNews();
       renderDashboard();
-      const u = $("#newsUpdated");
       if (u) u.textContent = "更新于 " + new Date().toLocaleTimeString("zh-CN");
       toast("已拉取 " + all.length + " 条真实新闻");
     } else {
-      toast("拉取失败，可能网络受限或 API 限流，已显示缓存");
+      const msg = "拉取失败" + (lastErr ? "：" + lastErr : "，可能网络受限或 API 限流");
+      if (u) u.textContent = msg;
+      toast(msg + "，已显示缓存/示例");
     }
     if (btn) { btn.disabled = false; btn.textContent = "🔄 刷新新闻"; }
   }
@@ -613,6 +623,14 @@
     $("#btnImport").addEventListener("click", () => $("#importFile").click());
     $("#importFile").addEventListener("change", (e) => { if (e.target.files[0]) importData(e.target.files[0]); e.target.value = ""; });
 
+    // 清除本地缓存
+    $("#btnClearCache").addEventListener("click", () => {
+      if (!confirm("确定清除本地缓存？这会重置新闻、任务、设置等本地数据（不影响已推送到云端的数据）。")) return;
+      Object.values(LS).forEach((k) => localStorage.removeItem(k));
+      localStorage.removeItem("cbec_lastview");
+      location.reload();
+    });
+
     // 模态框关闭
     $$("[data-close]").forEach((b) => b.addEventListener("click", () => b.closest(".modal-mask").classList.remove("show")));
     $$(".modal-mask").forEach((m) => m.addEventListener("click", (e) => { if (e.target === m) m.classList.remove("show"); }));
@@ -628,7 +646,10 @@
 
   /* ---------------- 启动 ---------------- */
   async function init() {
-    if (!read(LS.news, null)) write(LS.news, seedNews());
+    // 缓存结构升级时自动清掉旧本地新闻（避免显示过期示例）
+    const newsRaw = read(LS.news, null);
+    const newsVer = newsRaw && !Array.isArray(newsRaw) ? newsRaw.version : 0;
+    if (!newsRaw || newsVer < NEWS_CACHE_VERSION) write(LS.news, seedNews());
     if (!read(LS.product, null)) write(LS.product, seedProduct());
     if (!read(LS.tools, null)) write(LS.tools, seedTools());
     bind();
