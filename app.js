@@ -44,24 +44,23 @@
     ];
   }
 
-  /* 真实新闻源：通过 RSS2JSON 免费 API 拉取（无需后端） */
+  /* 真实新闻源：聚焦跨境物流/清关/关税/运费/出口政策（经 RSS2JSON 免费 API 拉取，无需后端） */
   const NEWS_SOURCES = [
-    { topic: "全球跨境电商", feeds: [
-      "https://www.practicalecommerce.com/feed",
-      "https://www.digitalcommerce360.com/feed/",
-      "https://www.modernretail.co/feed/",
+    { topic: "包裹关税与清关", feeds: [
+      "https://www.postandparcel.info/feed/",
+      "https://www.parcelandpostaltechnologyinternational.com/feed/",
     ]},
-    { topic: "政策与税务", feeds: [
-      "https://www.theguardian.com/world/eu/rss",
-      "http://feeds.bbci.co.uk/news/business/rss.xml",
+    { topic: "运费与跨境物流", feeds: [
+      "https://theloadstar.com/feed/",
+      "https://www.freightwaves.com/news/feed",
+      "https://www.stattimes.com/feed/",
     ]},
-    { topic: "国内贸易与电商", feeds: [
-      "https://www.36kr.com/feed",
-      "http://rss.news.sohu.com/rss/focus.xml",
+    { topic: "出口与贸易政策", feeds: [
+      "https://www.supplychaindive.com/feeds/news/",
     ]},
   ];
   const RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=";
-  const NEWS_CACHE_VERSION = 2; // 缓存数据结构升级时递增，自动清掉旧本地数据
+  const NEWS_CACHE_VERSION = 3; // 缓存数据结构升级时递增，自动清掉旧本地数据
   function seedProduct() {
     return [
       { icon: "📈", title: "欧洲市场冬季取暖器销售数据", desc: "含英国、德国、法国等市场的销售数据统计", tag: "销售数据" },
