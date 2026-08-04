@@ -439,9 +439,16 @@
 
   /* ---------------- 渲染：产品 / 工具 ---------------- */
   const compareSel = new Set();
+  let productSelectMode = false;
   function renderProduct() {
     const items = read(LS.product, []);
     const grid = $("#productGrid");
+    const btn = $("#btnSelectProduct");
+    if (btn) {
+      btn.textContent = productSelectMode ? "✓ 完成" : "☑️ 选择";
+      btn.classList.toggle("btn-primary", productSelectMode);
+    }
+    grid.classList.toggle("select-mode", productSelectMode);
     if (!items.length) {
       grid.innerHTML = '<div class="empty"><div class="empty-ico">📦</div>还没有商品，点右上角「＋ 添加商品」粘贴链接</div>';
       updateCompareBar();
@@ -666,6 +673,10 @@
     });
 
     /* ---- 产品分析：添加 / 删除 / 对比 ---- */
+    $("#btnSelectProduct").addEventListener("click", () => {
+      productSelectMode = !productSelectMode;
+      renderProduct();
+    });
     $("#btnNewProduct").addEventListener("click", () => {
       ["pTitle", "pUrl", "pImg", "pPlatform", "pPrice", "pNote"].forEach((id) => ($("#" + id).value = ""));
       $("#productModal").classList.add("show");
