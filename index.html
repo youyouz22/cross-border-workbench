@@ -43,12 +43,6 @@
       <div class="nav-item" data-view="notify">
         <span class="ico">🔔</span> 通知 <span class="badge" id="navNotifyCount" style="background:var(--amber)">0</span>
       </div>
-      <div class="nav-item" data-view="settings">
-        <span class="ico">⚙️</span> 设置
-      </div>
-      <div class="nav-item" data-view="user">
-        <span class="ico">👤</span> 用户
-      </div>
     </nav>
 
     <div class="sidebar-foot">
@@ -68,7 +62,8 @@
       <button class="icon-btn" id="btnExport" title="导出数据备份">⬇️</button>
       <button class="icon-btn" id="btnImport" title="导入数据备份">⬆️</button>
       <input type="file" id="importFile" accept="application/json" style="display:none" />
-      <div class="avatar" id="topAvatar">U</div>
+      <button class="icon-btn" id="btnTopSettings" title="设置（需密码）">⚙️</button>
+      <div class="avatar" id="topAvatar" title="用户" style="cursor:pointer">U</div>
     </header>
 
     <main class="content">
@@ -203,6 +198,16 @@
       <section class="view" id="view-settings">
         <div class="page-head"><h1>设置</h1><p>个性化你的工作台</p></div>
         <div class="card" style="max-width:680px">
+          <div class="field" id="pwdArea">
+            <label>🔒 设置访问密码</label>
+            <input class="input" id="setPwd" type="password" placeholder="首次设置后，打开设置需输入此密码" />
+            <div class="text-sm muted mt-8">设置后，任何人打开「设置」都需输入密码；忘记密码可清除（仅清除密码保护，不影响其他数据）。建议至少 4 位。</div>
+            <div class="flex items-center gap-12 mt-12">
+              <button class="btn btn-sm" id="btnSetPwd">设置 / 修改密码</button>
+              <button class="btn btn-sm" id="btnPwdOff" style="color:#dc2626;border-color:#dc2626">关闭密码保护</button>
+            </div>
+          </div>
+          <hr class="hr" />
           <div class="field">
             <label>显示名称</label>
             <input class="input" id="setName" placeholder="例如：小王" />
@@ -423,6 +428,27 @@
     <div class="modal-foot">
       <button class="btn" data-close>取消</button>
       <button class="btn btn-primary" id="btnSaveProduct">添加商品</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= 设置密码验证模态框 ================= -->
+<div class="modal-mask" id="pwdModal">
+  <div class="modal modal-sm">
+    <div class="modal-head">
+      <div class="modal-title">🔒 输入设置密码</div>
+      <button class="icon-btn btn-ghost" data-close>✕</button>
+    </div>
+    <div class="field">
+      <input class="input" id="pwdInput" type="password" placeholder="输入访问密码" />
+      <div class="text-sm" id="pwdError" style="color:#dc2626;min-height:18px;margin-top:6px"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" data-close>取消</button>
+      <button class="btn btn-primary" id="btnPwdOk">确认</button>
+    </div>
+    <div class="text-center mt-8">
+      <button class="btn btn-sm btn-ghost" id="btnPwdForget">忘记密码？</button>
     </div>
   </div>
 </div>

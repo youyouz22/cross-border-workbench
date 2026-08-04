@@ -518,6 +518,24 @@
     $("#setPath").value = s.syncPath || "data/workbench.json";
     $("#setToken").value = s.token || "";
   }
+  /* 设置访问密码：轻量防护（不依赖 crypto，本地 file:// 与部署环境结果一致） */
+  function hashPwd(str) {
+    let h = 0x811c9dc5;
+    for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+    return "h" + (h >>> 0).toString(16);
+  }
+  function openSettings() {
+    const s = getSettings();
+    if (!s.pwdHash) {
+      go("settings");
+      setTimeout(() => toast("提示：可在此设置「设置访问密码」，保护设置不被他人打开"), 400);
+      return;
+    }
+    $("#pwdInput").value = "";
+    $("#pwdError").textContent = "";
+    $("#pwdModal").classList.add("show");
+    setTimeout(() => { try { $("#pwdInput").focus(); } catch (e) {} }, 50);
+  }
   function renderUser() {
     const s = getSettings();
     const name = s.name || "朋友";
@@ -756,6 +774,39 @@
       ghPush();
     });
 
+    // 右上角：设置（密码保护）/ 用户
+    $("#btnTopSettings").addEventListener("click", openSettings);
+    $("#topAvatar").addEventListener("click", () => go("user"));
+
+    // 设置访问密码
+    $("#btnSetPwd").addEventListener("click", () => {
+      const v = $("#setPwd").value;
+      if (!v || v.length < 4) { toast("密码至少 4 位"); return; }
+      const s = getSettings();
+      s.pwdHash = hashPwd(v);
+      write(LS.settings, s);
+      $("#setPwd").value = "";
+      toast("访问密码已设置");
+    });
+    $("#btnPwdOff").addEventListener("click", () => {
+      if (!confirm("确定关闭密码保护？之后任何人都能直接打开设置。")) return;
+      const s = getSettings(); delete s.pwdHash; write(LS.settings, s);
+      toast("已关闭密码保护");
+    });
+    $("#btnPwdOk").addEventListener("click", () => {
+      const s = getSettings();
+      const h = hashPwd($("#pwdInput").value);
+      if (h === s.pwdHash) { $("#pwdModal").classList.remove("show"); go("settings"); }
+      else $("#pwdError").textContent = "密码错误，请重试";
+    });
+    $("#pwdInput").addEventListener("keydown", (e) => { if (e.key === "Enter") $("#btnPwdOk").click(); });
+    $("#btnPwdForget").addEventListener("click", () => {
+      if (!confirm("清除密码保护（仅清除密码，不影响其他数据）。确定继续？")) return;
+      const s = getSettings(); delete s.pwdHash; write(LS.settings, s);
+      $("#pwdModal").classList.remove("show");
+      toast("已清除密码保护");
+    });
+
     // 导入导出
     $("#btnExport").addEventListener("click", exportData);
     $("#btnImport").addEventListener("click", () => $("#importFile").click());
@@ -800,7 +851,9 @@
     renderNews();
     renderDashboard();        // 刷新首页「今日新闻」
     const last = read("cbec_lastview", "dashboard");
-    go(["dashboard","tasks","feishu","news","product","tools","notify","settings","user"].includes(last) ? last : "dashboard");
+    const allowed = ["dashboard","tasks","feishu","news","product","tools","notify","settings","user"];
+    if (last === "settings") openSettings();
+    else go(allowed.includes(last) ? last : "dashboard");
   }
   document.addEventListener("DOMContentLoaded", init);
 })();
