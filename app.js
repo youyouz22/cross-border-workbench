@@ -62,6 +62,7 @@
   const RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=";
   const NEWS_CACHE_VERSION = 3; // 缓存数据结构升级时递增，自动清掉旧本地数据
   const ORIGIN_NEWS_URL = "./data/origin-news.json"; // 原站跨境政策快讯快照（同事站点的 news.json）
+  const ORIGIN_RSS_ZH_URL = "./data/cross-border-news-zh.json"; // 预翻译好的中文跨境资讯（左列，无运行时翻译）
   /* 原站产品数据结构（来自同事站点的 products.json），这里做兜底种子 */
   function seedProduct() {
     return [
@@ -355,7 +356,43 @@
   }
 
   /* ---------------- 渲染：新闻 ---------------- */
-  /* 原站跨境政策快讯（参考同事站点 news.json）—— 与我的实时 RSS 资讯并列展示 */
+  function renderNews() {
+    const newsRaw = read(LS.news, []);
+    const news = Array.isArray(newsRaw) ? newsRaw : (newsRaw && Array.isArray(newsRaw.items) ? newsRaw.items : []);
+    const box = $("#newsAll");
+    if (!news.length) {
+      box.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>暂无资讯</div>';
+      return;
+    }
+    box.innerHTML = news.map((n) => renderNewsCard(n)).join("");
+  }
+
+  /* 通用中文新闻卡片（左列静态资讯 / 右列原站快讯共用） */
+  function renderNewsCard(n) {
+    const imp = (n.impact || "").toLowerCase();
+    const impact = (imp === "high" || imp === "高影响") ? '<span class="tag red">高影响</span>' : ((imp === "medium" || imp === "中影响") ? '<span class="tag amber">中影响</span>' : (n.impact ? '<span class="tag">低影响</span>' : ""));
+    const topics = (n.trendingTopics || []).map((t) => `<span class="tag">#${esc(t)}</span>`).join(" ");
+    const loc = n.country || n.category || "";
+    return `
+    <div class="origin-news-item">
+      <div class="on-head">
+        ${loc ? `<span class="tag blue">${esc(loc)}</span>` : ""}
+        ${n.category ? `<span class="tag">${esc(n.category)}</span>` : ""}
+        ${impact}
+        ${n.ecommerceImpact ? '<span class="tag green">电商相关</span>' : ""}
+      </div>
+      <div class="on-title">${esc(n.title)}</div>
+      ${n.summary || n.body ? `<div class="on-summary">${esc(n.summary || n.body)}</div>` : ""}
+      <div class="on-meta">
+        <span>${esc(n.source || "")}</span>
+        <span>${esc(n.publishedAt || n.time || "")}</span>
+        ${topics}
+      </div>
+      ${n.url ? `<div class="on-foot"><a class="news-goto" href="${esc(n.url)}" target="_blank" rel="noopener">查看原文 ↗</a></div>` : ""}
+    </div>`;
+  }
+
+  /* 右列：原站政策快讯（中文快照），与左列共用卡片样式 */
   async function renderOriginNews() {
     const box = $("#newsOrigin");
     if (!box) return;
@@ -366,152 +403,38 @@
       if (!r.ok) throw new Error("HTTP " + r.status);
       const arr = await r.json();
       if (!Array.isArray(arr) || !arr.length) { box.innerHTML = '<div class="empty">暂无原站快讯</div>'; return; }
-      box.innerHTML = arr.map((n) => {
-        const impact = n.impact === "high" ? '<span class="tag red">高影响</span>' : (n.impact === "medium" ? '<span class="tag amber">中影响</span>' : '<span class="tag">低影响</span>');
-        const topics = (n.trendingTopics || []).map((t) => `<span class="tag">#${esc(t)}</span>`).join(" ");
-        return `
-        <div class="origin-news-item">
-          <div class="on-head">
-            <span class="tag blue">${esc(n.country || "—")}</span>
-            <span class="tag">${esc(n.category || "—")}</span>
-            ${impact}
-            ${n.ecommerceImpact ? '<span class="tag green">电商相关</span>' : ""}
-          </div>
-          <div class="on-title">${esc(n.title)}</div>
-          ${n.summary ? `<div class="on-summary">${esc(n.summary)}</div>` : ""}
-          <div class="on-meta">
-            <span>${esc(n.source || "")}</span>
-            <span>${esc(n.publishedAt || "")}</span>
-            ${topics}
-          </div>
-          ${n.url ? `<div class="on-foot"><a class="news-goto" href="${esc(n.url)}" target="_blank" rel="noopener">查看原文 ↗</a></div>` : ""}
-        </div>`;
-      }).join("");
+      box.innerHTML = arr.map((n) => renderNewsCard(n)).join("");
       box.dataset.loaded = "1";
     } catch (e) {
       box.innerHTML = '<div class="empty">原站快讯加载失败，请检查网络</div>';
     }
   }
 
-  function renderNews() {
-    const newsRaw = read(LS.news, []);
-    const news = Array.isArray(newsRaw) ? newsRaw : (newsRaw && Array.isArray(newsRaw.items) ? newsRaw.items : []);
-    const topics = NEWS_SOURCES.map((s) => s.topic);
-    const box = $("#newsAll");
-    if (!news.length) {
-      box.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>暂无新闻，点右上角「刷新新闻」拉取真实头条</div>';
-      return;
-    }
-    box.innerHTML = topics.map((t) => {
-      const list = news.filter((n) => n.topic === t);
-      if (!list.length) return "";
-      return `
-      <div class="card mt-16">
-        <div class="card-head"><div class="card-title">${esc(t)}</div><span class="tag">${list.length} 条</span></div>
-        ${list.map((n) => {
-          const hasZh = !isMostlyChinese(n.title) && n.titleZh && n.titleZh !== n.title;
-          const showOrig = newsOrigView.has(n.id);
-          const title = showOrig ? n.title : (n.titleZh || n.title);
-          const body = showOrig ? (n.body || "") : (n.bodyZh || n.body || "");
-          return `
-          <div class="news-item news-link" ${n.url ? `data-url="${esc(n.url)}"` : ""} style="cursor:${n.url ? "pointer" : "default"}">
-            <div class="news-head">${impactTag(n.impact)}<span class="news-title">${esc(title)}</span>
-              ${hasZh ? `<span class="news-toggle" data-toggle-orig="${n.id}">${showOrig ? "🌐 中文" : "🌐 原文"}</span>` : ""}
-            </div>
-            ${body ? `<div class="news-body">${esc(body)}</div>` : ""}
-            ${showOrig && hasZh ? `<div class="news-lang">— 原文 —</div>` : ""}
-            <div class="news-meta"><span>${esc(n.source || "")}</span><span>${esc(n.time || "")}</span>${n.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
-            <div class="news-foot"><span class="news-goto">查看原文 ↗</span></div>
-          </div>`;
-        }).join("")}
-      </div>`;
-    }).join("");
-  }
-
-  /* ---------------- 真实新闻拉取（RSS2JSON，无后端） ---------------- */
-  function stripHtml(s) { return (s || "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim(); }
-  function relTime(d) {
-    if (!d) return "";
-    const t = new Date(d).getTime();
-    if (isNaN(t)) return "";
-    const diff = (Date.now() - t) / 1000;
-    if (diff < 3600) return Math.max(1, Math.round(diff / 60)) + " 分钟前";
-    if (diff < 86400) return Math.round(diff / 3600) + " 小时前";
-    if (diff < 86400 * 7) return Math.round(diff / 86400) + " 天前";
-    return new Date(t).toLocaleDateString("zh-CN");
-  }
-  function estimateImpact(text) {
-    const t = (text || "").toLowerCase();
-    if (/vat|税|关税|合规|法规|政策|ban|fine|罚款|海关|customs|制裁|监管/.test(t)) return "高影响";
-    if (/增长|趋势|trend|growth|launch|发布|上线|expansion|rise|surge|boom/.test(t)) return "中影响";
-    return "低影响";
-  }
-  /* ---------------- 新闻翻译（免费 MyMemory API，无需密钥） ---------------- */
-  const newsOrigView = new Set();      // 当前选择查看原文的新闻 id
-  const _trCache = new Map();
-  function isMostlyChinese(s) { const m = (s || "").match(/[一-鿿]/g); return m && m.length / Math.max(1, (s || "").length) > 0.4; }
-  async function translateText(text, to = "zh-CN") {
-    text = (text || "").trim();
-    if (!text) return text;
-    if (isMostlyChinese(text)) return text;       // 已经是中文，跳过，省额度
-    if (_trCache.has(text)) return _trCache.get(text);
+  /* 左列静态中文资讯：加载并写入 LS.news 供首页仪表盘复用，无运行时翻译 */
+  async function loadStaticNews() {
+    if (read(LS.news, null)) return;
     try {
-      const url = "https://api.mymemory.translated.net/get?q=" + encodeURIComponent(text) + "&langpair=" + encodeURIComponent("en|" + to);
-      const r = await fetch(url);
-      const d = await r.json();
-      const t = d && d.responseData && d.responseData.translatedText;
-      if (t && !/MYMEMORY WARNING/.test(t)) { _trCache.set(text, t); return t; }
-    } catch (e) { /* 网络错误回退原文 */ }
-    return text;
-  }
-  async function fetchNews(force = false) {
-    const btn = $("#btnRefreshNews");
-    if (btn) { btn.disabled = true; btn.textContent = "⏳ 拉取中..."; }
-    const u = $("#newsUpdated");
-    const all = [];
-    let lastErr = "";
-    for (const group of NEWS_SOURCES) {
-      for (const feed of group.feeds) {
-        try {
-          const res = await fetch(RSS2JSON + encodeURIComponent(feed), { cache: force ? "no-cache" : "default" });
-          if (!res.ok) { lastErr = "网络错误 " + res.status; continue; }
-          const data = await res.json();
-          if (data.status !== "ok" || !data.items) { lastErr = data.message || "RSS 解析失败"; continue; }
-          data.items.slice(0, 6).forEach((it) => {
-            all.push({
-              id: uid(),
-              topic: group.topic,
-              impact: estimateImpact(it.title + " " + (it.description || "")),
-              title: stripHtml(it.title),
-              body: stripHtml(it.description || "").slice(0, 140),
-              tags: [],
-              source: data.feed && data.feed.title ? data.feed.title : group.topic,
-              url: it.link,
-              time: relTime(it.pubDate),
-              pubDate: it.pubDate,
-            });
-          });
-        } catch (e) { lastErr = e.message || "请求失败"; }
+      const r = await fetch(ORIGIN_RSS_ZH_URL);
+      if (!r.ok) return;
+      const arr = await r.json();
+      if (Array.isArray(arr) && arr.length) {
+        const mapped = arr.map((n) => ({
+          id: n.id != null ? String(n.id) : uid(),
+          title: n.title || "",
+          source: n.source || "",
+          impact: n.impact === "high" ? "高影响" : (n.impact === "medium" ? "中影响" : (n.impact || "")),
+          topic: n.category || "新闻",
+          time: n.publishedAt || "",
+          country: n.country || "",
+          category: n.category || "",
+          summary: n.summary || "",
+          url: n.url || "",
+          trendingTopics: n.trendingTopics || [],
+          ecommerceImpact: !!n.ecommerceImpact,
+        }));
+        write(LS.news, mapped);
       }
-    }
-    if (all.length) {
-      all.sort((a, b) => new Date(b.pubDate || 0) - new Date(a.pubDate || 0));
-      if (btn) { btn.disabled = true; btn.textContent = "🔤 翻译中..."; }
-      for (const it of all) {
-        if (!isMostlyChinese(it.title)) { it.titleZh = await translateText(it.title); await wait(100); }
-        if (!isMostlyChinese(it.body)) { it.bodyZh = await translateText(it.body); await wait(100); }
-      }
-      write(LS.news, { version: NEWS_CACHE_VERSION, items: all });
-      renderNews();
-      renderDashboard();
-      if (u) u.textContent = "更新于 " + new Date().toLocaleTimeString("zh-CN");
-      toast("已拉取并翻译 " + all.length + " 条新闻");
-    } else {
-      const msg = "拉取失败" + (lastErr ? "：" + lastErr : "，可能网络受限或 API 限流");
-      if (u) u.textContent = msg;
-      toast(msg + "，已显示缓存/示例");
-    }
-    if (btn) { btn.disabled = false; btn.textContent = "🔄 刷新新闻"; }
+    } catch (e) {}
   }
 
 
@@ -656,7 +579,17 @@
     // 侧边栏折叠
     $("#toggleSidebar").addEventListener("click", () => $("#app").classList.toggle("collapsed"));
     // 新闻刷新
-    const rb = $("#btnRefreshNews"); if (rb) rb.addEventListener("click", fetchNews);
+    const rb = $("#btnRefreshNews");
+    if (rb) rb.addEventListener("click", async () => {
+      const na = $("#newsAll"), no = $("#newsOrigin");
+      if (na) { na.dataset.loaded = ""; na.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>加载中…</div>'; }
+      if (no) { no.dataset.loaded = ""; no.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>加载原站政策快讯…</div>'; }
+      localStorage.removeItem(LS.news);
+      await loadStaticNews();
+      renderNews();
+      renderOriginNews();
+      toast("已刷新资讯");
+    });
 
     // 任务
     $("#btnNewTask").addEventListener("click", () => openTaskModal(null));
@@ -889,10 +822,7 @@
 
   /* ---------------- 启动 ---------------- */
   async function init() {
-    // 缓存结构升级时自动清掉旧本地新闻（避免显示过期示例）
-    const newsRaw = read(LS.news, null);
-    const newsVer = newsRaw && !Array.isArray(newsRaw) ? newsRaw.version : 0;
-    if (!newsRaw || newsVer < NEWS_CACHE_VERSION) write(LS.news, seedNews());
+    // 新闻由下方 loadStaticNews 加载预翻译的中文内容（无运行时翻译）
     if (!read(LS.product, null)) {
       const ok = await loadOriginProducts();
       if (!ok) write(LS.product, seedProduct());
@@ -906,7 +836,9 @@
       catch (e) { setSyncStatus("云端拉取失败：" + e.message, false); }
     }
     renderAll();
-    fetchNews(); // 启动时自动拉取真实新闻（失败则保留离线示例）
+    await loadStaticNews();   // 加载预翻译中文资讯（无运行时翻译，秒开）
+    renderNews();
+    renderDashboard();        // 刷新首页「今日新闻」
     const last = read("cbec_lastview", "dashboard");
     go(["dashboard","tasks","feishu","news","product","tools","notify","settings","user"].includes(last) ? last : "dashboard");
   }
