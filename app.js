@@ -61,15 +61,55 @@
   ];
   const RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=";
   const NEWS_CACHE_VERSION = 3; // 缓存数据结构升级时递增，自动清掉旧本地数据
+  const ORIGIN_NEWS_URL = "./data/origin-news.json"; // 原站跨境政策快讯快照（同事站点的 news.json）
+  /* 原站产品数据结构（来自同事站点的 products.json），这里做兜底种子 */
   function seedProduct() {
     return [
-      { icon: "📈", title: "欧洲市场冬季取暖器销售数据", desc: "含英国、德国、法国等市场的销售数据统计", tag: "销售数据" },
-      { icon: "📝", title: "产品调研报告模板", desc: "产品调研的标准报告模板，可直接复制使用", tag: "调研" },
-      { icon: "📁", title: "竞品分析文件夹", desc: "存放所有竞品分析文档的文件夹", tag: "竞品分析" },
-      { icon: "🧪", title: "选品测试看板", desc: "新选品 AB 测试与转化追踪", tag: "选品" },
-      { icon: "💡", title: "爆款复盘库", desc: "历史爆款的上架节奏与推广打法", tag: "复盘" },
-      { icon: "🌍", title: "多国合规清单", desc: "英德法西意五国合规与认证要求汇总", tag: "合规" },
+      { id: uid(), title: "欧规智能取暖器 恒温节能 远红外", platform: "fastmoss", category: "家居电器",
+        price: "39.99 USD", alibabaPrice: 28, salesGrowth: 320, rating: 4.5, reviewCount: 5200,
+        pros: ["开机即热", "恒温节能省电"], cons: ["功率偏小适用小空间"], trending: true },
+      { id: uid(), title: "USB暖手宝 三档便携充电", platform: "tiktok", category: "电子配件",
+        price: "14.99 USD", alibabaPrice: 9, salesGrowth: 447, rating: 4.4, reviewCount: 12400,
+        pros: ["三档控温", "Type-C快充"], cons: ["续航偏短"], trending: true },
+      { id: uid(), title: "大容量智能空气炸锅", platform: "amazon", category: "厨房电器",
+        price: "79.99 USD", alibabaPrice: 52, salesGrowth: 130, rating: 4.7, reviewCount: 25200,
+        pros: ["无油健康", "大容量"], cons: ["噪音偏大"], trending: true },
     ];
+  }
+  /* 从站点自带的原站数据文件加载真实商品（参考同事站点 products.json） */
+  async function loadOriginProducts() {
+    try {
+      const r = await fetch("./data/origin-products.json");
+      if (!r.ok) return false;
+      const arr = await r.json();
+      if (Array.isArray(arr) && arr.length) {
+        const mapped = arr.map((p) => ({
+          id: p.id != null ? String(p.id) : uid(),
+          title: p.name || p.title || "未命名商品",
+          platform: p.platform || "",
+          category: p.category || "",
+          price: (p.price != null ? p.price : "") + (p.currency ? " " + p.currency : ""),
+          alibabaPrice: p.alibabaPrice != null ? p.alibabaPrice : "",
+          salesGrowth: p.salesGrowth != null ? p.salesGrowth : "",
+          rating: p.rating != null ? p.rating : "",
+          reviewCount: p.reviewCount != null ? p.reviewCount : "",
+          pros: p.pros || [],
+          cons: p.cons || [],
+          trending: !!p.trending,
+          note: p.note || "",
+          url: p.url || "",
+        }));
+        write(LS.product, mapped);
+        return true;
+      }
+    } catch (e) { /* 离线或文件缺失时回退示例 */ }
+    return false;
+  }
+  /* 商品跳转链接：原站未给外链，按名称生成 1688 采购搜索；用户自建商品用其填写的链接 */
+  function productUrl(p) {
+    if (p.url) return p.url;
+    if (p.title) return "https://s.1688.com/selloffer/offer_search.htm?keywords=" + encodeURIComponent(p.title);
+    return "";
   }
   function seedTools() {
     return [
@@ -189,7 +229,7 @@
     if (view === "dashboard") renderDashboard();
     if (view === "tasks") renderTasks();
     if (view === "feishu") renderDocs();
-    if (view === "news") renderNews();
+    if (view === "news") { renderNews(); renderOriginNews(); }
     if (view === "product") renderProduct();
     if (view === "tools") renderTools();
     if (view === "notify") renderNotify();
@@ -315,6 +355,44 @@
   }
 
   /* ---------------- 渲染：新闻 ---------------- */
+  /* 原站跨境政策快讯（参考同事站点 news.json）—— 与我的实时 RSS 资讯并列展示 */
+  async function renderOriginNews() {
+    const box = $("#newsOrigin");
+    if (!box) return;
+    if (box.dataset.loaded) return;
+    box.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>加载原站政策快讯…</div>';
+    try {
+      const r = await fetch(ORIGIN_NEWS_URL);
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const arr = await r.json();
+      if (!Array.isArray(arr) || !arr.length) { box.innerHTML = '<div class="empty">暂无原站快讯</div>'; return; }
+      box.innerHTML = arr.map((n) => {
+        const impact = n.impact === "high" ? '<span class="tag red">高影响</span>' : (n.impact === "medium" ? '<span class="tag amber">中影响</span>' : '<span class="tag">低影响</span>');
+        const topics = (n.trendingTopics || []).map((t) => `<span class="tag">#${esc(t)}</span>`).join(" ");
+        return `
+        <div class="origin-news-item">
+          <div class="on-head">
+            <span class="tag blue">${esc(n.country || "—")}</span>
+            <span class="tag">${esc(n.category || "—")}</span>
+            ${impact}
+            ${n.ecommerceImpact ? '<span class="tag green">电商相关</span>' : ""}
+          </div>
+          <div class="on-title">${esc(n.title)}</div>
+          ${n.summary ? `<div class="on-summary">${esc(n.summary)}</div>` : ""}
+          <div class="on-meta">
+            <span>${esc(n.source || "")}</span>
+            <span>${esc(n.publishedAt || "")}</span>
+            ${topics}
+          </div>
+          ${n.url ? `<div class="on-foot"><a class="news-goto" href="${esc(n.url)}" target="_blank" rel="noopener">查看原文 ↗</a></div>` : ""}
+        </div>`;
+      }).join("");
+      box.dataset.loaded = "1";
+    } catch (e) {
+      box.innerHTML = '<div class="empty">原站快讯加载失败，请检查网络</div>';
+    }
+  }
+
   function renderNews() {
     const newsRaw = read(LS.news, []);
     const news = Array.isArray(newsRaw) ? newsRaw : (newsRaw && Array.isArray(newsRaw.items) ? newsRaw.items : []);
@@ -454,18 +532,28 @@
       updateCompareBar();
       return;
     }
-    grid.innerHTML = items.map((p) => `
+    grid.innerHTML = items.map((p) => {
+      const url = productUrl(p);
+      const growth = (p.salesGrowth != null && p.salesGrowth !== "") ? `<span class="tag green">📈 +${esc(p.salesGrowth)}%</span>` : "";
+      const rating = (p.rating != null && p.rating !== "") ? `<span class="tag amber">⭐ ${esc(p.rating)}</span>` : "";
+      const ali = (p.alibabaPrice != null && p.alibabaPrice !== "") ? `<span class="tag">1688采购 $${esc(p.alibabaPrice)}</span>` : "";
+      const pros = (p.pros || []).length ? `<div class="pc-list"><span class="pc-h">优点</span>${p.pros.map((x) => `<span class="pc-pro">+ ${esc(x)}</span>`).join("")}</div>` : "";
+      const cons = (p.cons || []).length ? `<div class="pc-list"><span class="pc-h">注意</span>${p.cons.map((x) => `<span class="pc-con">- ${esc(x)}</span>`).join("")}</div>` : "";
+      return `
       <div class="tool-card product-card">
         <input type="checkbox" class="product-check" data-pid="${p.id}" ${compareSel.has(p.id) ? "checked" : ""} title="加入对比" />
         <button class="t-del" data-del-product="${p.id}" title="删除">✕</button>
-        ${p.img
-          ? `<img class="product-thumb" src="${esc(p.img)}" alt="${esc(p.title)}" onerror="this.outerHTML='<div class=&quot;product-thumb emoji&quot;>📦</div>'" />`
-          : `<div class="product-thumb emoji">📦</div>`}
+        <div class="product-thumb emoji">📦</div>
         <div class="t-title" style="margin-top:6px">${esc(p.title)}</div>
-        ${p.platform ? `<div class="product-meta"><span class="tag blue">${esc(p.platform)}</span>${p.price ? `<span class="tag">${esc(p.price)}</span>` : ""}</div>` : (p.price ? `<div class="product-meta"><span class="tag">${esc(p.price)}</span></div>` : "")}
-        ${p.note ? `<div class="product-note">${esc(p.note)}</div>` : ""}
-        ${p.url ? `<a class="btn btn-sm btn-primary mt-8" href="${esc(p.url)}" target="_blank" rel="noopener" style="align-self:flex-start">🔗 打开商品</a>` : ""}
-      </div>`).join("");
+        <div class="product-meta">
+          ${p.platform ? `<span class="tag blue">${esc(p.platform)}</span>` : ""}
+          ${p.price ? `<span class="tag">${esc(p.price)}</span>` : ""}
+          ${ali}${growth}${rating}
+        </div>
+        ${pros}${cons}
+        ${url ? `<a class="btn btn-sm btn-primary mt-8" href="${esc(url)}" target="_blank" rel="noopener" style="align-self:flex-start">🔗 ${p.url ? "打开商品" : "1688 找货源"}</a>` : ""}
+      </div>`;
+    }).join("");
     updateCompareBar();
   }
   function updateCompareBar() {
@@ -711,13 +799,16 @@
       const sel = all.filter((p) => compareSel.has(p.id));
       if (sel.length < 2) { toast("至少选择 2 件商品再对比"); return; }
       const cols = sel.length + 1;
-      const labels = ["商品名称", "平台 / 来源", "价格", "链接", "备注"];
       const row = (label, fn) => `<div class="c-label">${label}</div>` + sel.map((p) => `<div>${fn(p)}</div>`).join("");
-      $("#compareTable").innerHTML = `<div class="compare-wrap"><div class="compare-grid" style="grid-template-columns:repeat(${cols},minmax(140px,1fr))">
+      $("#compareTable").innerHTML = `<div class="compare-wrap"><div class="compare-grid" style="grid-template-columns:repeat(${cols},minmax(150px,1fr))">
         <div class="c-head">对比维度</div>${sel.map((p) => `<div class="c-head">${esc(p.title)}</div>`).join("")}
         ${row("平台 / 来源", (p) => esc(p.platform || "—"))}
-        ${row("价格", (p) => esc(p.price || "—"))}
-        ${row("链接", (p) => p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">🔗 打开</a>` : "—")}
+        ${row("类目", (p) => esc(p.category || "—"))}
+        ${row("售价", (p) => esc(p.price || "—"))}
+        ${row("1688采购价", (p) => p.alibabaPrice != null && p.alibabaPrice !== "" ? "$" + esc(p.alibabaPrice) : "—")}
+        ${row("销量增长", (p) => p.salesGrowth != null && p.salesGrowth !== "" ? "+" + esc(p.salesGrowth) + "%" : "—")}
+        ${row("评分", (p) => p.rating != null && p.rating !== "" ? esc(p.rating) + "⭐" : "—")}
+        ${row("链接", (p) => { const u = productUrl(p); return u ? `<a href="${esc(u)}" target="_blank" rel="noopener">🔗 打开</a>` : "—"; })}
         ${row("备注", (p) => esc(p.note || "—"))}
       </div></div>`;
       $("#compareModal").classList.add("show");
@@ -802,7 +893,10 @@
     const newsRaw = read(LS.news, null);
     const newsVer = newsRaw && !Array.isArray(newsRaw) ? newsRaw.version : 0;
     if (!newsRaw || newsVer < NEWS_CACHE_VERSION) write(LS.news, seedNews());
-    if (!read(LS.product, null)) write(LS.product, seedProduct());
+    if (!read(LS.product, null)) {
+      const ok = await loadOriginProducts();
+      if (!ok) write(LS.product, seedProduct());
+    }
     if (!read(LS.tools, null)) write(LS.tools, seedTools());
     bind();
     loadSyncCfg();

@@ -144,14 +144,23 @@
         <div class="page-head flex items-center" style="justify-content:space-between">
           <div>
             <h1>新闻聚合</h1>
-            <p>聚焦跨境物流：包裹关税与清关 · 运费与跨境物流 · 出口与贸易政策（外文自动翻译成中文，可切换原文）</p>
+            <p>左：实时跨境物流资讯（RSS 自动翻译）；右：跨境政策快讯 · 原站同步（关税 / 运费 / 出口政策，参考同事站点）</p>
           </div>
           <div style="display:flex;gap:8px;align-items:center">
             <span class="text-sm muted" id="newsUpdated"></span>
             <button class="btn btn-sm" id="btnRefreshNews">🔄 刷新新闻</button>
           </div>
         </div>
-        <div id="newsAll"></div>
+        <div class="news-cols">
+          <div class="news-col">
+            <div class="col-head"><span>实时跨境资讯</span><span class="text-sm muted">RSS 自动翻译</span></div>
+            <div id="newsAll"></div>
+          </div>
+          <div class="news-col">
+            <div class="col-head"><span>跨境政策快讯 · 原站同步</span><span class="text-sm muted">关税/运费/出口政策</span></div>
+            <div id="newsOrigin"></div>
+          </div>
+        </div>
       </section>
 
       <!-- ===== 产品分析 ===== -->

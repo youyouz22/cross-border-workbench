@@ -1,0 +1,751 @@
+[
+  {
+    "id": 1,
+    "name": "欧规智能取暖器 恒温节能 远红外",
+    "platform": "fastmoss",
+    "category": "家居电器",
+    "price": 39.99,
+    "currency": "USD",
+    "salesGrowth": 320,
+    "rating": 4.5,
+    "reviewCount": 5200,
+    "imageUrl": "",
+    "alibabaPrice": 28,
+    "pros": [
+      "开机即热",
+      "恒温节能省电",
+      "IP24浴室可用",
+      "静音不扰眠"
+    ],
+    "cons": [
+      "功率偏小适用小空间",
+      "出口欧盟需CE/UKCA认证"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 2,
+    "name": "电热毯 双区控温 出口欧洲",
+    "platform": "amazon",
+    "category": "家居电器",
+    "price": 29.99,
+    "currency": "USD",
+    "salesGrowth": 280,
+    "rating": 4.6,
+    "reviewCount": 8100,
+    "imageUrl": "",
+    "alibabaPrice": 16,
+    "pros": [
+      "整夜仅约0.42英镑",
+      "双区独立控温",
+      "可机洗",
+      "过热自动断电"
+    ],
+    "cons": [
+      "需平铺防折叠",
+      "宠物家庭注意防咬线"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 3,
+    "name": "USB暖手宝 三档便携充电",
+    "platform": "tiktok",
+    "category": "电子配件",
+    "price": 14.99,
+    "currency": "USD",
+    "salesGrowth": 447,
+    "rating": 4.4,
+    "reviewCount": 12400,
+    "imageUrl": "",
+    "alibabaPrice": 9,
+    "pros": [
+      "三档控温",
+      "Type-C快充",
+      "随身可握",
+      "送礼佳品"
+    ],
+    "cons": [
+      "续航偏短",
+      "仅手部局部取暖"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 4,
+    "name": "3D仿真火焰壁炉取暖器",
+    "platform": "jimudata",
+    "category": "家居电器",
+    "price": 89.99,
+    "currency": "USD",
+    "salesGrowth": 210,
+    "rating": 4.5,
+    "reviewCount": 1600,
+    "imageUrl": "",
+    "alibabaPrice": 62,
+    "pros": [
+      "壁炉氛围感强",
+      "远红外取暖",
+      "静音",
+      "客厅装饰"
+    ],
+    "cons": [
+      "制热功率有限",
+      "需靠墙摆放"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 5,
+    "name": "地暖级加热地毯 智能控温",
+    "platform": "shein",
+    "category": "家居电器",
+    "price": 49.99,
+    "currency": "USD",
+    "salesGrowth": 260,
+    "rating": 4.3,
+    "reviewCount": 2300,
+    "imageUrl": "",
+    "alibabaPrice": 33,
+    "pros": [
+      "高温断电保护",
+      "智能控温",
+      "可踩踏",
+      "比空调节能"
+    ],
+    "cons": [
+      "需平整地面",
+      "不便机洗"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 6,
+    "name": "冷暖风一体机 壁炉效果",
+    "platform": "fastmoss",
+    "category": "家居电器",
+    "price": 69.99,
+    "currency": "USD",
+    "salesGrowth": 190,
+    "rating": 4.4,
+    "reviewCount": 1850,
+    "imageUrl": "",
+    "alibabaPrice": 48,
+    "pros": [
+      "冬制热夏送凉",
+      "模拟壁炉",
+      "遥控定时",
+      "省空间"
+    ],
+    "cons": [
+      "制热面积有限",
+      "中档噪音"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 7,
+    "name": "迷你节能暖脚宝 USB桌面",
+    "platform": "temu",
+    "category": "家居电器",
+    "price": 19.99,
+    "currency": "USD",
+    "salesGrowth": 230,
+    "rating": 4.3,
+    "reviewCount": 5600,
+    "imageUrl": "",
+    "alibabaPrice": 12,
+    "pros": [
+      "USB供电",
+      "桌面脚下两用",
+      "极低耗电",
+      "便携"
+    ],
+    "cons": [
+      "仅局部取暖",
+      "功率较小"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 8,
+    "name": "门窗防风密封条 自粘节能",
+    "platform": "sellersprite",
+    "category": "家居用品",
+    "price": 9.99,
+    "currency": "USD",
+    "salesGrowth": 150,
+    "rating": 4.5,
+    "reviewCount": 9800,
+    "imageUrl": "",
+    "alibabaPrice": 5,
+    "pros": [
+      "减少暖气流失",
+      "自粘免打孔",
+      "隔音",
+      "透明隐形"
+    ],
+    "cons": [
+      "旧窗需清洁",
+      "长期使用略松"
+    ],
+    "trending": false,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 9,
+    "name": "WiFi智能温控器 节能调度",
+    "platform": "jimudata",
+    "category": "智能家居",
+    "price": 79.99,
+    "currency": "USD",
+    "salesGrowth": 180,
+    "rating": 4.4,
+    "reviewCount": 2100,
+    "imageUrl": "",
+    "alibabaPrice": 52,
+    "pros": [
+      "远程控温",
+      "节能调度",
+      "多房间联动",
+      "APP统计"
+    ],
+    "cons": [
+      "需WiFi",
+      "安装需基础电工知识"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 10,
+    "name": "可折叠硅胶沥水篮 厨房",
+    "platform": "tiktok",
+    "category": "厨房电器",
+    "price": 12.99,
+    "currency": "USD",
+    "salesGrowth": 240,
+    "rating": 4.6,
+    "reviewCount": 15600,
+    "imageUrl": "",
+    "alibabaPrice": 6,
+    "pros": [
+      "可折叠省空间",
+      "沥水快",
+      "食品级",
+      "易清洗"
+    ],
+    "cons": [
+      "大锅不适用",
+      "长期易变色"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 11,
+    "name": "磁吸车载手机支架",
+    "platform": "tiktok",
+    "category": "汽车用品",
+    "price": 16.99,
+    "currency": "USD",
+    "salesGrowth": 200,
+    "rating": 4.3,
+    "reviewCount": 9300,
+    "imageUrl": "",
+    "alibabaPrice": 9,
+    "pros": [
+      "磁吸稳固",
+      "一分钟安装",
+      "兼容广",
+      "不挡视线"
+    ],
+    "cons": [
+      "需贴金属片",
+      "强磁或扰信号"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 12,
+    "name": "静音无叶塔扇 遥控",
+    "platform": "tiktok",
+    "category": "家居电器",
+    "price": 59.99,
+    "currency": "USD",
+    "salesGrowth": 160,
+    "rating": 4.5,
+    "reviewCount": 4200,
+    "imageUrl": "",
+    "alibabaPrice": 40,
+    "pros": [
+      "无叶安全",
+      "静音",
+      "遥控",
+      "节能"
+    ],
+    "cons": [
+      "风感柔和",
+      "价格偏高"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 13,
+    "name": "再生PET收纳盒 环保透明",
+    "platform": "thunt",
+    "category": "收纳",
+    "price": 22.99,
+    "currency": "USD",
+    "salesGrowth": 175,
+    "rating": 4.4,
+    "reviewCount": 3300,
+    "imageUrl": "",
+    "alibabaPrice": 13,
+    "pros": [
+      "再生材质",
+      "透明可视",
+      "可叠放",
+      "碳足迹友好"
+    ],
+    "cons": [
+      "容量有限",
+      "边角略锐"
+    ],
+    "trending": false,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 14,
+    "name": "无涂层铸铁煎锅 终身使用",
+    "platform": "tiktok",
+    "category": "厨房电器",
+    "price": 39.99,
+    "currency": "USD",
+    "salesGrowth": 170,
+    "rating": 4.6,
+    "reviewCount": 2600,
+    "imageUrl": "",
+    "pros": [
+      "无涂层健康",
+      "导热均匀",
+      "适用多炉",
+      "可用一生"
+    ],
+    "cons": [
+      "需开锅养护",
+      "较重"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 15,
+    "name": "基础款莫代尔针织衫 去Logo",
+    "platform": "shein",
+    "category": "女装",
+    "price": 17.99,
+    "currency": "USD",
+    "salesGrowth": 155,
+    "rating": 4.3,
+    "reviewCount": 11200,
+    "imageUrl": "",
+    "alibabaPrice": 11,
+    "pros": [
+      "机洗不缩水",
+      "亲肤",
+      "百搭",
+      "平价"
+    ],
+    "cons": [
+      "需轻柔洗",
+      "易变形"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 16,
+    "name": "胶原多效膏 提亮保湿",
+    "platform": "tiktok",
+    "category": "美妆",
+    "price": 24.99,
+    "currency": "USD",
+    "salesGrowth": 220,
+    "rating": 4.5,
+    "reviewCount": 6800,
+    "imageUrl": "",
+    "alibabaPrice": 14,
+    "pros": [
+      "提亮保湿",
+      "温感好吸收",
+      "口碑高",
+      "礼赠佳"
+    ],
+    "cons": [
+      "敏感肌需试",
+      "单价感知高"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 17,
+    "name": "大容量智能空气炸锅",
+    "platform": "amazon",
+    "category": "厨房电器",
+    "price": 79.99,
+    "currency": "USD",
+    "salesGrowth": 130,
+    "rating": 4.7,
+    "reviewCount": 25200,
+    "imageUrl": "",
+    "alibabaPrice": 52,
+    "pros": [
+      "无油健康",
+      "大容量",
+      "易清洗",
+      "多功能"
+    ],
+    "cons": [
+      "噪音偏大",
+      "涂层需养护"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 18,
+    "name": "玻璃电热水壶 1.8L无缝",
+    "platform": "amazon",
+    "category": "厨房电器",
+    "price": 24.99,
+    "currency": "USD",
+    "salesGrowth": 110,
+    "rating": 4.4,
+    "reviewCount": 18000,
+    "imageUrl": "",
+    "alibabaPrice": 15,
+    "pros": [
+      "1.8L大容量",
+      "360度无线",
+      "防干烧",
+      "快煮"
+    ],
+    "cons": [
+      "玻璃易碎",
+      "电源线偏短"
+    ],
+    "trending": false,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 19,
+    "name": "上加水智能加湿器",
+    "platform": "amazon",
+    "category": "环境电器",
+    "price": 34.99,
+    "currency": "USD",
+    "salesGrowth": 140,
+    "rating": 4.5,
+    "reviewCount": 16000,
+    "imageUrl": "",
+    "alibabaPrice": 22,
+    "pros": [
+      "上加水便捷",
+      "静音",
+      "恒湿",
+      "APP联动"
+    ],
+    "cons": [
+      "需定期换滤芯",
+      "水箱需清洗"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 20,
+    "name": "空气净化器 PM2.5数显",
+    "platform": "amazon",
+    "category": "环境电器",
+    "price": 129.99,
+    "currency": "USD",
+    "salesGrowth": 120,
+    "rating": 4.5,
+    "reviewCount": 9000,
+    "imageUrl": "",
+    "alibabaPrice": 85,
+    "pros": [
+      "HEPA滤网",
+      "数显监测",
+      "静音",
+      "除宠物异味"
+    ],
+    "cons": [
+      "滤芯较贵",
+      "体积偏大"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 21,
+    "name": "WiFi智能插座 定时",
+    "platform": "amazon",
+    "category": "智能家居",
+    "price": 19.99,
+    "currency": "USD",
+    "salesGrowth": 135,
+    "rating": 4.3,
+    "reviewCount": 14000,
+    "imageUrl": "",
+    "alibabaPrice": 11,
+    "pros": [
+      "远程控制",
+      "定时开关",
+      "语音助手",
+      "节能统计"
+    ],
+    "cons": [
+      "需WiFi",
+      "功率有限"
+    ],
+    "trending": false,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 22,
+    "name": "下水槽分层收纳架 抽拉",
+    "platform": "amazon",
+    "category": "收纳",
+    "price": 23.99,
+    "currency": "USD",
+    "salesGrowth": 145,
+    "rating": 4.6,
+    "reviewCount": 12200,
+    "imageUrl": "",
+    "alibabaPrice": 14,
+    "pros": [
+      "分层抽拉",
+      "免打孔",
+      "扩容",
+      "防锈"
+    ],
+    "cons": [
+      "尺寸需量好",
+      "重货慎放"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 23,
+    "name": "自导航无线吸尘器",
+    "platform": "fastmoss",
+    "category": "智能家居",
+    "price": 199.99,
+    "currency": "USD",
+    "salesGrowth": 115,
+    "rating": 4.4,
+    "reviewCount": 5200,
+    "imageUrl": "",
+    "alibabaPrice": 130,
+    "pros": [
+      "自动导航",
+      "大吸力",
+      "APP控制",
+      "自动集尘"
+    ],
+    "cons": [
+      "价格较高",
+      "需充电座"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 24,
+    "name": "自动折叠雨伞 防风",
+    "platform": "temu",
+    "category": "配饰",
+    "price": 13.99,
+    "currency": "USD",
+    "salesGrowth": 160,
+    "rating": 4.4,
+    "reviewCount": 7400,
+    "imageUrl": "",
+    "alibabaPrice": 8,
+    "pros": [
+      "一键开合",
+      "防风骨架",
+      "轻便",
+      "耐摔"
+    ],
+    "cons": [
+      "大风仍可能翻",
+      "手柄一般"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 25,
+    "name": "宠物自动喂食器 APP控制",
+    "platform": "tiktok",
+    "category": "宠物用品",
+    "price": 35.99,
+    "currency": "USD",
+    "salesGrowth": 190,
+    "rating": 4.4,
+    "reviewCount": 6500,
+    "imageUrl": "",
+    "alibabaPrice": 24,
+    "pros": [
+      "远程定时",
+      "大容量",
+      "防卡粮",
+      "断电续供"
+    ],
+    "cons": [
+      "需装电池",
+      "APP偶断连"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 26,
+    "name": "家用健身震动板",
+    "platform": "tiktok",
+    "category": "运动",
+    "price": 119.99,
+    "currency": "USD",
+    "salesGrowth": 170,
+    "rating": 4.3,
+    "reviewCount": 3100,
+    "imageUrl": "",
+    "alibabaPrice": 78,
+    "pros": [
+      "全身震动",
+      "省时高效",
+      "静音",
+      "APP课程"
+    ],
+    "cons": [
+      "需坚持",
+      "体重有限制"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 27,
+    "name": "折叠收纳箱 透明大容量",
+    "platform": "temu",
+    "category": "收纳",
+    "price": 14.99,
+    "currency": "USD",
+    "salesGrowth": 150,
+    "rating": 4.6,
+    "reviewCount": 19000,
+    "imageUrl": "",
+    "alibabaPrice": 9,
+    "pros": [
+      "可折叠",
+      "大容量",
+      "透明可视",
+      "承重强"
+    ],
+    "cons": [
+      "叠起略松",
+      "占空间"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 28,
+    "name": "免烤美甲贴纸套装",
+    "platform": "shein",
+    "category": "美妆",
+    "price": 11.99,
+    "currency": "USD",
+    "salesGrowth": 245,
+    "rating": 4.5,
+    "reviewCount": 21000,
+    "imageUrl": "",
+    "alibabaPrice": 7,
+    "pros": [
+      "免烤即贴",
+      "款式丰富",
+      "持久不掉",
+      "平价"
+    ],
+    "cons": [
+      "尺码偏少",
+      "需自己贴"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 29,
+    "name": "空气炸锅油纸垫 100张",
+    "platform": "amazon",
+    "category": "厨房电器",
+    "price": 9.99,
+    "currency": "USD",
+    "salesGrowth": 130,
+    "rating": 4.5,
+    "reviewCount": 22000,
+    "imageUrl": "",
+    "alibabaPrice": 5,
+    "pros": [
+      "免洗防粘",
+      "食品级",
+      "适配主流",
+      "性价比高"
+    ],
+    "cons": [
+      "一次性",
+      "需压重物"
+    ],
+    "trending": false,
+    "lastUpdated": "2026-08-04"
+  },
+  {
+    "id": 30,
+    "name": "LED氛围灯带 智能调色",
+    "platform": "thunt",
+    "category": "家居照明",
+    "price": 9.99,
+    "currency": "USD",
+    "salesGrowth": 142,
+    "rating": 4.2,
+    "reviewCount": 21000,
+    "imageUrl": "",
+    "alibabaPrice": 6,
+    "pros": [
+      "APP调色",
+      "语音控制",
+      "自粘安装",
+      "氛围感强"
+    ],
+    "cons": [
+      "胶力一般",
+      "需插电"
+    ],
+    "trending": true,
+    "lastUpdated": "2026-08-04"
+  }
+]

@@ -246,6 +246,21 @@ a { color: inherit; text-decoration: none; }
 .news-toggle:hover { background: var(--primary); color: #fff; }
 .news-lang { font-size: 11px; color: var(--muted-foreground); margin-top: 4px; font-style: italic; }
 
+/* 新闻两列布局 */
+.news-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+@media (max-width: 920px) { .news-cols { grid-template-columns: 1fr; } }
+.news-col { min-width: 0; }
+.col-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; font-weight: 650; font-size: 15px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+
+/* 原站政策快讯卡片 */
+.origin-news-item { border-bottom: 1px solid var(--border); padding: 12px 0; }
+.origin-news-item:last-child { border-bottom: none; }
+.on-head { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 6px; }
+.on-title { font-weight: 600; font-size: 14px; line-height: 1.4; }
+.on-summary { font-size: 13px; color: #52525b; margin-top: 5px; }
+.on-meta { font-size: 12px; color: var(--muted-foreground); margin-top: 6px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.on-foot { margin-top: 8px; display: flex; justify-content: flex-end; }
+
 /* 工具网站网格 */
 .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 14px; }
 .tool-card {
@@ -274,6 +289,11 @@ a { color: inherit; text-decoration: none; }
 .product-thumb.emoji { display: grid; place-items: center; font-size: 34px; }
 .product-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
 .product-note { font-size: 12px; color: var(--muted-foreground); margin-top: 6px; white-space: pre-wrap; }
+/* 产品卡片：优缺点列表 */
+.pc-list { margin-top: 8px; font-size: 12px; display: flex; flex-wrap: wrap; gap: 3px 10px; }
+.pc-h { width: 100%; color: var(--muted-foreground); font-weight: 600; font-size: 11px; margin-bottom: 2px; }
+.pc-pro { color: #16a34a; }
+.pc-con { color: #dc2626; }
 /* 对比表 */
 .compare-wrap { overflow-x: auto; }
 .compare-grid { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; min-width: 480px; }

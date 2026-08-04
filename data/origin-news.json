@@ -1,0 +1,411 @@
+[
+  {
+    "id": 1,
+    "title": "英国取消135英镑以下小包关税豁免，2028年10月前落地",
+    "summary": "英国HMRC确认改革低价值进口货品(LVI)关务制度，取消135英镑及以下进口商品关税豁免，最迟2028年10月实施，并增设财政代表连带责任。跨境小包综合运营成本预计上涨20%-30%，海外仓与本土合规运营将成为主流。",
+    "source": "英国税务海关总署(HMRC)",
+    "country": "英国",
+    "category": "政策",
+    "impact": "high",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 09:20",
+    "url": "https://www.163.com/dy/article/L064JIRM0538BNYC.html",
+    "trendingTopics": [
+      "小包免税",
+      "关税豁免",
+      "财政代表",
+      "海外仓"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "英国低价值进口包裹量两年翻倍，年均增速达53%",
+    "summary": "2021至2024年进入英国的低价值进口商品量增长近两倍，总值从38亿英镑跃升至59亿英镑。本土零售商持续施压封堵免税漏洞，预计每年为政府带来约6亿英镑新增关税收入。",
+    "source": "至美通研究院",
+    "country": "英国",
+    "category": "经济",
+    "impact": "high",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 08:50",
+    "url": "https://www.163.com/dy/article/L064JIRM0538BNYC.html",
+    "trendingTopics": [
+      "进口量",
+      "零售竞争",
+      "关税收入"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "英国要求海外卖家指定境内财政代表，合规门槛抬高",
+    "summary": "新规要求没有英国实体业务的海外卖家或平台委任境内 fiscal representative，为关税债务承担连带责任。3C配件、饰品、平价家居等薄利品类承压最重，粗放小包直邮模式将逐步淘汰。",
+    "source": "livinintheuk.com",
+    "country": "英国",
+    "category": "政策",
+    "impact": "medium",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 08:30",
+    "url": "https://livinintheuk.com/",
+    "trendingTopics": [
+      "财政代表",
+      "合规",
+      "薄利品类"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "英国消费者结账价或上涨，不同品类税率差异明显",
+    "summary": "取消的是关税宽免而非VAT免税，135英镑以下货物将按UK Global Tariff分类计税，部分品类税率为零、部分5%-12%。卖家是否把新增成本反映到售价仍取决于各平台安排。",
+    "source": "HMRC咨询文件",
+    "country": "英国",
+    "category": "消费",
+    "impact": "medium",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 08:10",
+    "url": "https://www.trade.gov.tw/",
+    "trendingTopics": [
+      "结账价",
+      "VAT",
+      "关税分类"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "欧盟7月1日起取消150欧元以下小包免税，每件按类征3欧元",
+    "summary": "欧盟正式取消150欧元以下进口包裹免税政策，过渡期内对每个产品类别征收3欧元临时统一关税，并与增值税叠加。对客单价10欧元左右的商品，3欧元关税意味着成本增长约30%。",
+    "source": "DHL",
+    "country": "德国",
+    "category": "政策",
+    "impact": "high",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 09:40",
+    "url": "https://www.dhl.de/en/privatkunden/hilfe-kundenservice/themen/international/zoll/fragen-zu-einfuhrverzollung.html",
+    "trendingTopics": [
+      "小包免税",
+      "3欧元关税",
+      "欧盟新规"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "德国进口增值税19%，低价值包裹成本结构被打破",
+    "summary": "德国对大多数商品征收19%进口增值税(部分7%)，在3欧元关税基础上叠加计算。多品类订单成本显著上升，消费者最终价格提高，部分国外客户已出现退单。",
+    "source": "whatsupgermany.com",
+    "country": "德国",
+    "category": "税务",
+    "impact": "high",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 09:15",
+    "url": "https://www.whatsupgermany.com/non-eu-online-shopping-germany-july-2026/",
+    "trendingTopics": [
+      "进口增值税",
+      "Einfuhrumsatzsteuer",
+      "到手价"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "中国跨境电商转向海外仓，整柜前置备货规避单件关税",
+    "summary": "越来越多商家转向整柜海运前置备货加海外仓一件代发模式，把零散小件整合为大宗货物，由欧洲本地仓完成履约，既规避单件包裹关税，又缩短配送时效、提升体验。",
+    "source": "央视网",
+    "country": "德国",
+    "category": "物流",
+    "impact": "medium",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 08:55",
+    "url": "https://news.cctv.com/2026/08/02/",
+    "trendingTopics": [
+      "海外仓",
+      "一件代发",
+      "物流转型"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "德国HS编码归类错误致清关延误占比32%，卖家需重视",
+    "summary": "2026年德国跨境货物清关延误案例中，因HS编码归类错误导致税金核算偏差的占比达32%。低报货值面临最高5倍货值罚款，建议提前预审资料并选用AEO资质物流商。",
+    "source": "hygjwl.com",
+    "country": "德国",
+    "category": "物流",
+    "impact": "medium",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 08:35",
+    "url": "https://www.hygjwl.com/",
+    "trendingTopics": [
+      "HS编码",
+      "清关",
+      "AEO"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "美国全面取消800美元小包免税，直邮模式终结",
+    "summary": "美国自2025年8月29日起暂停800美元de minimis豁免，2027年7月1日将依法彻底终止。每个包裹都需正式报关、缴纳全额关税，依赖直邮的dropshipping与快时尚平台商业模式被颠覆。",
+    "source": "Global-e",
+    "country": "美国",
+    "category": "政策",
+    "impact": "high",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 10:10",
+    "url": "https://www.global-e.com/the-latest-tariff-updates",
+    "trendingTopics": [
+      "de minimis",
+      "小包免税",
+      "正式报关"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "美国对华实际有效税率约24%，不确定性成最大成本",
+    "summary": "基于301条款的对华关税(7.5%-25%)叠加约10%-15%普遍性附加税，中国商品实际有效税率约24%，某些税号超40%。更关键的是税率随时可能变动，长期定价与备货难度加大。",
+    "source": "amz123.com",
+    "country": "美国",
+    "category": "经济",
+    "impact": "high",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 09:55",
+    "url": "https://www.amz123.com/t/YoELopBR",
+    "trendingTopics": [
+      "对华关税",
+      "有效税率",
+      "不确定性"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "亚马逊因截留关税退款遭集体诉讼，卖家需透明定价",
+    "summary": "美国加州法院受理针对亚马逊的集体诉讼，指控其在关税被裁定违法后截留本应返还消费者的数十亿美元。专家提醒跨境卖家谨慎考虑关税因素、透明标注成本，避免消费纠纷。",
+    "source": "网经社",
+    "country": "美国",
+    "category": "政策",
+    "impact": "medium",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 09:30",
+    "url": "https://www.100ec.cn/detail--6659342.html",
+    "trendingTopics": [
+      "集体诉讼",
+      "关税退款",
+      "透明定价"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "美国CPSC电子申报强制实施，600+税号需事前合规证书",
+    "summary": "7月8日起美国CPSC电子申报强制实施，600多个税号消费品必须提前提交合规证书，从到港抽查转为事前筛查。带电、儿童、纺织等品类合规门槛进一步提升。",
+    "source": "腾讯新闻",
+    "country": "美国",
+    "category": "政策",
+    "impact": "medium",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 09:05",
+    "url": "https://new.qq.com/",
+    "trendingTopics": [
+      "CPSC",
+      "电子申报",
+      "合规证书"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "法国数字服务税维持3%，议会曾提议提至6%",
+    "summary": "法国2019年开征全球首个数字服务税，对大型数字企业法国收入按3%征税。2026年议会曾讨论将税率提升至6%但最终未通过，该税直接间接影响平台费用与跨境卖家利润。",
+    "source": "中国税务报",
+    "country": "法国",
+    "category": "税务",
+    "impact": "high",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 10:30",
+    "url": "https://anhui.chinatax.gov.cn/art/2025/11/25/art_9582_1280908.html",
+    "trendingTopics": [
+      "数字服务税",
+      "DST",
+      "平台费用"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "法国强化电商增值税征管，OSS/IOSS合规成重点",
+    "summary": "2026年法国电商税务围绕OSS/IOSS增值税、企业税与全球最低税展开。OSS年度欧盟B2C销售超1万欧元即须注册，资格判定错误成主要补税风险来源，建议月度和解。",
+    "source": "hayot-expertise.fr",
+    "country": "法国",
+    "category": "税务",
+    "impact": "medium",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 10:05",
+    "url": "https://hayot-expertise.fr/en/blog/ecommerce-tax-regime-france-2026",
+    "trendingTopics": [
+      "OSS",
+      "IOSS",
+      "VAT合规"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "法国快时尚税落地，Shein法国商城曾被勒令暂停",
+    "summary": "法国对快时尚征收专门税费，Shein法国线上商城2025年11月一度被勒令暂停。低价、高周转服饰品类面临额外成本与监管压力，品牌化与可持续转型成出路。",
+    "source": "amz123.com",
+    "country": "法国",
+    "category": "政策",
+    "impact": "medium",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 09:45",
+    "url": "https://www.amz123.com/",
+    "trendingTopics": [
+      "快时尚税",
+      "Shein",
+      "可持续"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "法国消费者保护条例趋严，平台须透明定价与退货",
+    "summary": "法国持续完善电商消费者保护，要求平台提供更透明价格、明确标注成本构成并优化退货政策。违规平台面临高额罚款，卖家需同步更新商品页与售后条款。",
+    "source": "Le Monde",
+    "country": "法国",
+    "category": "政策",
+    "impact": "medium",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 09:25",
+    "url": "https://www.lemonde.fr/",
+    "trendingTopics": [
+      "消费者保护",
+      "透明定价",
+      "退货"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "西班牙前五月接待3680万国际游客，旅游消费502亿欧元创纪录",
+    "summary": "西班牙2026年前五月接待3680万国际游客(+5%)，旅游总消费达502.57亿欧元(+7.8%)，双双破纪录，为全年1亿游客目标奠基。英国、法国、德国为前三大客源国。",
+    "source": "西班牙国家统计局(INE)",
+    "country": "西班牙",
+    "category": "旅游",
+    "impact": "high",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 10:50",
+    "url": "https://www.china.org.cn/world/Off_the_Wire/2026-07/03/content_118580486.shtml",
+    "trendingTopics": [
+      "旅游纪录",
+      "游客消费",
+      "阳光海滩"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "世界杯夺冠引爆西班牙旅游，中国游客前四月增61%",
+    "summary": "西班牙世界杯夺冠掀起旅行热潮，中国赴西游客前四月达32.85万人次(+61%)，过去12个月消费26.71亿欧元(+42%)。自由行占比升至85%，深度体验与纪念品需求旺盛。",
+    "source": "21世纪经济报道",
+    "country": "西班牙",
+    "category": "消费",
+    "impact": "medium",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 10:25",
+    "url": "https://new.qq.com/rain/a/20260720A0A90L00",
+    "trendingTopics": [
+      "世界杯",
+      "中国游客",
+      "旅游消费"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "西班牙电商增速8%-10%，TikTok Shop成最快渠道",
+    "summary": "西班牙电商增速维持8%-10%居西欧前列，服饰时尚、家居、户外、宠物、美妆占据线上交易前五。TikTok Shop成为增速最快渠道，持续分流传统平台流量。",
+    "source": "ingstart.com",
+    "country": "西班牙",
+    "category": "电商",
+    "impact": "high",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 10:00",
+    "url": "https://www.ingstart.com/blog/55056.html",
+    "trendingTopics": [
+      "TikTok Shop",
+      "电商增速",
+      "服饰家居"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "西班牙严打仿品与无认证带电产品，EPR未注册禁售",
+    "summary": "西班牙税局AEAT持续完善OSS申报，无有效IVA税号店铺面临强制下架；未注册EPR的商品禁止线上售卖，平台连带责任强化，仿品与无CE认证带电产品遭严打。",
+    "source": "ingstart.com",
+    "country": "西班牙",
+    "category": "政策",
+    "impact": "medium",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 09:35",
+    "url": "https://www.ingstart.com/blog/55056.html",
+    "trendingTopics": [
+      "EPR",
+      "CE认证",
+      "仿品打击"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "意大利奢侈品电商LuisaViaRoma重组，9月完成收购保留员工",
+    "summary": "佛罗伦萨奢侈品电商LuisaViaRoma重组取得关键进展，由意大利投资人团体设立的新公司LVR Srl接管，将于9月完成正式收购，近200名员工整体转入，延续电商为核心并强化AI个性化体验。",
+    "source": "华丽志",
+    "country": "意大利",
+    "category": "电商",
+    "impact": "high",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 11:05",
+    "url": "https://luxe.co/post/468109",
+    "trendingTopics": [
+      "奢侈品电商",
+      "重组",
+      "AI个性化"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Brunello Cucinelli Q1营收增14%，AI电商驱动增长",
+    "summary": "意大利奢侈品牌Brunello Cucinelli Q1营收3.691亿欧元(+14%)，零售渠道增20.1%。新上线AI电商平台Callimacus提升个性化互动，美洲、亚洲、欧洲需求全面走强。",
+    "source": "Fibre2Fashion",
+    "country": "意大利",
+    "category": "电商",
+    "impact": "medium",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 10:40",
+    "url": "https://www.fibre2fashion.com/",
+    "trendingTopics": [
+      "奢侈品",
+      "AI电商",
+      "零售增长"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "意大利数字服务税3%覆盖广告与数字接口",
+    "summary": "意大利自2020年起对全球年收入超7.5亿欧元的科技企业征收3%数字服务税，覆盖广告、数字接口与用户数据销售。该税间接推高平台费用，影响跨境卖家利润结构。",
+    "source": "ctaxnews.net.cn",
+    "country": "意大利",
+    "category": "税务",
+    "impact": "medium",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 10:15",
+    "url": "https://www.ctaxnews.net.cn/",
+    "trendingTopics": [
+      "数字服务税",
+      "平台费用",
+      "广告"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "意大利时尚品牌加速出海，禁用销毁未售服装推可持续",
+    "summary": "意大利品牌加速国际扩张(如Moorer进军纽约、迈阿密)，并依据欧洲生态设计法规禁止销毁未售出服装，可持续时尚成行业共识，带动环保面料与二手循环经济需求。",
+    "source": "notizie.it",
+    "country": "意大利",
+    "category": "消费",
+    "impact": "medium",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-04 09:50",
+    "url": "https://www.notizie.it/",
+    "trendingTopics": [
+      "可持续时尚",
+      "出海",
+      "环保面料"
+    ]
+  }
+]
