@@ -144,7 +144,7 @@
         <div class="page-head flex items-center" style="justify-content:space-between">
           <div>
             <h1>新闻聚合</h1>
-            <p>实时聚合全球跨境电商与政策税务头条（来自公开 RSS 源）</p>
+            <p>实时聚合全球跨境电商、政策税务与国内贸易电商头条（外文自动翻译成中文，可切换原文）</p>
           </div>
           <div style="display:flex;gap:8px;align-items:center">
             <span class="text-sm muted" id="newsUpdated"></span>
@@ -156,18 +156,32 @@
 
       <!-- ===== 产品分析 ===== -->
       <section class="view" id="view-product">
-        <div class="page-head">
-          <h1>产品分析</h1>
-          <p>销售数据、调研模板与竞品分析资料库</p>
+        <div class="page-head flex items-center" style="justify-content:space-between">
+          <div>
+            <h1>产品分析</h1>
+            <p>粘贴商品链接，集中管理并对比你的选品</p>
+          </div>
+          <button class="btn btn-primary" id="btnNewProduct">＋ 添加商品</button>
         </div>
         <div class="tool-grid" id="productGrid"></div>
+        <!-- 对比浮条 -->
+        <div class="compare-bar" id="compareBar" style="display:none">
+          <span class="text-sm muted">已选 <b id="compareCount">0</b> 件用于对比</span>
+          <div style="display:flex;gap:8px">
+            <button class="btn btn-sm" id="btnClearCompare">取消</button>
+            <button class="btn btn-sm btn-primary" id="btnDoCompare">并排对比</button>
+          </div>
+        </div>
       </section>
 
       <!-- ===== 工具网站 ===== -->
       <section class="view" id="view-tools">
-        <div class="page-head">
-          <h1>工具网站</h1>
-          <p>跨境运营常用工具一键直达</p>
+        <div class="page-head flex items-center" style="justify-content:space-between">
+          <div>
+            <h1>工具网站</h1>
+            <p>跨境运营常用工具一键直达，也可添加你自己的网页</p>
+          </div>
+          <button class="btn btn-primary" id="btnNewTool">＋ 添加工具</button>
         </div>
         <div class="tool-grid" id="toolGrid"></div>
       </section>
@@ -339,6 +353,87 @@
       <button class="btn" data-close>取消</button>
       <button class="btn btn-primary" id="btnSaveDoc">添加文档</button>
     </div>
+  </div>
+</div>
+
+<!-- ================= 工具模态框 ================= -->
+<div class="modal-mask" id="toolModal">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title">添加工具网站</div>
+      <button class="icon-btn btn-ghost" data-close>✕</button>
+    </div>
+    <div class="field">
+      <label>名称</label>
+      <input class="input" id="toolTitle" placeholder="例如：我的选品表" />
+    </div>
+    <div class="field">
+      <label>链接（网址）</label>
+      <input class="input" id="toolUrl" placeholder="https://..." />
+    </div>
+    <div class="field">
+      <label>描述（可选）</label>
+      <input class="input" id="toolDesc" placeholder="一句话说明用途" />
+    </div>
+    <div class="field">
+      <label>图标 emoji（可选）</label>
+      <input class="input" id="toolIcon" placeholder="例如：🔗 或 🛠️（留空用默认）" />
+    </div>
+    <div class="modal-foot">
+      <button class="btn" data-close>取消</button>
+      <button class="btn btn-primary" id="btnSaveTool">添加工具</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= 商品模态框 ================= -->
+<div class="modal-mask" id="productModal">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title">添加商品</div>
+      <button class="icon-btn btn-ghost" data-close>✕</button>
+    </div>
+    <div class="field">
+      <label>商品名称</label>
+      <input class="input" id="pTitle" placeholder="例如：冬季取暖器 Pro" />
+    </div>
+    <div class="field">
+      <label>商品链接</label>
+      <input class="input" id="pUrl" placeholder="粘贴商品页网址（亚马逊/独立站等）" />
+    </div>
+    <div class="field">
+      <label>图片链接（可选）</label>
+      <input class="input" id="pImg" placeholder="商品主图 URL，留空显示默认图标" />
+    </div>
+    <div class="grid-2">
+      <div class="field">
+        <label>平台 / 来源（可选）</label>
+        <input class="input" id="pPlatform" placeholder="例如：Amazon / 独立站" />
+      </div>
+      <div class="field">
+        <label>价格（可选）</label>
+        <input class="input" id="pPrice" placeholder="例如：$29.9" />
+      </div>
+    </div>
+    <div class="field">
+      <label>备注（可选）</label>
+      <textarea class="textarea" id="pNote" placeholder="卖点、定位、对比维度等"></textarea>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" data-close>取消</button>
+      <button class="btn btn-primary" id="btnSaveProduct">添加商品</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= 商品对比模态框 ================= -->
+<div class="modal-mask" id="compareModal">
+  <div class="modal modal-lg">
+    <div class="modal-head">
+      <div class="modal-title">商品对比</div>
+      <button class="icon-btn btn-ghost" data-close>✕</button>
+    </div>
+    <div id="compareTable"></div>
   </div>
 </div>
 

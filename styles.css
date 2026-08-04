@@ -242,18 +242,40 @@ a { color: inherit; text-decoration: none; }
 .news-foot { margin-top: 8px; display: flex; justify-content: flex-end; }
 .news-goto { display: inline-block; font-size: 12px; font-weight: 600; color: var(--primary); background: #f0f0ff; border: 1px solid #e0e0ff; border-radius: 999px; padding: 3px 10px; transition: background .15s; }
 .news-link:hover .news-goto { background: var(--primary); color: #fff; }
-
+.news-toggle { margin-left: auto; font-size: 11px; font-weight: 600; color: var(--primary); background: #f0f0ff; border: 1px solid #e0e0ff; border-radius: 999px; padding: 2px 9px; cursor: pointer; white-space: nowrap; }
+.news-toggle:hover { background: var(--primary); color: #fff; }
+.news-lang { font-size: 11px; color: var(--muted-foreground); margin-top: 4px; font-style: italic; }
 
 /* 工具网站网格 */
 .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 14px; }
 .tool-card {
   border: 1px solid var(--border); border-radius: var(--radius); padding: 16px;
   display: flex; flex-direction: column; gap: 8px; transition: border-color .12s, box-shadow .12s;
+  position: relative; text-decoration: none; color: inherit;
 }
 .tool-card:hover { border-color: #c4c4c8; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
 .tool-card .t-ico { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; font-size: 17px; background: var(--muted); }
 .tool-card .t-title { font-weight: 600; }
 .tool-card .t-desc { font-size: 13px; color: var(--muted-foreground); }
+.t-del { position: absolute; top: 8px; right: 8px; width: 22px; height: 22px; border-radius: 6px; border: none; background: transparent; color: #b0b0b8; cursor: pointer; font-size: 14px; line-height: 1; }
+.t-del:hover { background: #ffe4e4; color: #dc2626; }
+
+/* 产品对比浮条 */
+.compare-bar { position: sticky; bottom: 16px; margin-top: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; box-shadow: 0 6px 20px rgba(0,0,0,.08); }
+/* 商品卡片 */
+.product-card { position: relative; }
+.product-check { position: absolute; top: 10px; left: 10px; width: 18px; height: 18px; cursor: pointer; }
+.product-thumb { width: 100%; height: 120px; object-fit: cover; border-radius: 9px; background: var(--muted); }
+.product-thumb.emoji { display: grid; place-items: center; font-size: 34px; }
+.product-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+.product-note { font-size: 12px; color: var(--muted-foreground); margin-top: 6px; white-space: pre-wrap; }
+/* 对比表 */
+.compare-wrap { overflow-x: auto; }
+.compare-grid { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; min-width: 480px; }
+.compare-grid > div { background: #fff; padding: 12px; font-size: 13px; }
+.compare-grid .c-head { background: #fafafa; font-weight: 600; }
+.compare-grid .c-label { background: #fafafa; font-weight: 600; color: var(--muted-foreground); }
 
 .subtask { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 13px; }
 .subtask input { width: 15px; height: 15px; }

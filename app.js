@@ -18,6 +18,7 @@
   };
 
   const uid = () => Math.random().toString(36).slice(2, 9);
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
@@ -330,13 +331,22 @@
       return `
       <div class="card mt-16">
         <div class="card-head"><div class="card-title">${esc(t)}</div><span class="tag">${list.length} 条</span></div>
-        ${list.map((n) => `
-          <a class="news-item news-link" ${n.url ? `href="${esc(n.url)}" target="_blank" rel="noopener"` : ""}>
-            <div class="news-head">${impactTag(n.impact)}<span class="news-title">${esc(n.title)}</span></div>
-            ${n.body ? `<div class="news-body">${esc(n.body)}</div>` : ""}
+        ${list.map((n) => {
+          const hasZh = !isMostlyChinese(n.title) && n.titleZh && n.titleZh !== n.title;
+          const showOrig = newsOrigView.has(n.id);
+          const title = showOrig ? n.title : (n.titleZh || n.title);
+          const body = showOrig ? (n.body || "") : (n.bodyZh || n.body || "");
+          return `
+          <div class="news-item news-link" ${n.url ? `data-url="${esc(n.url)}"` : ""} style="cursor:${n.url ? "pointer" : "default"}">
+            <div class="news-head">${impactTag(n.impact)}<span class="news-title">${esc(title)}</span>
+              ${hasZh ? `<span class="news-toggle" data-toggle-orig="${n.id}">${showOrig ? "🌐 中文" : "🌐 原文"}</span>` : ""}
+            </div>
+            ${body ? `<div class="news-body">${esc(body)}</div>` : ""}
+            ${showOrig && hasZh ? `<div class="news-lang">— 原文 —</div>` : ""}
             <div class="news-meta"><span>${esc(n.source || "")}</span><span>${esc(n.time || "")}</span>${n.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
             <div class="news-foot"><span class="news-goto">查看原文 ↗</span></div>
-          </a>`).join("")}
+          </div>`;
+        }).join("")}
       </div>`;
     }).join("");
   }
@@ -358,6 +368,24 @@
     if (/vat|税|关税|合规|法规|政策|ban|fine|罚款|海关|customs|制裁|监管/.test(t)) return "高影响";
     if (/增长|趋势|trend|growth|launch|发布|上线|expansion|rise|surge|boom/.test(t)) return "中影响";
     return "低影响";
+  }
+  /* ---------------- 新闻翻译（免费 MyMemory API，无需密钥） ---------------- */
+  const newsOrigView = new Set();      // 当前选择查看原文的新闻 id
+  const _trCache = new Map();
+  function isMostlyChinese(s) { const m = (s || "").match(/[一-鿿]/g); return m && m.length / Math.max(1, (s || "").length) > 0.4; }
+  async function translateText(text, to = "zh-CN") {
+    text = (text || "").trim();
+    if (!text) return text;
+    if (isMostlyChinese(text)) return text;       // 已经是中文，跳过，省额度
+    if (_trCache.has(text)) return _trCache.get(text);
+    try {
+      const url = "https://api.mymemory.translated.net/get?q=" + encodeURIComponent(text) + "&langpair=" + encodeURIComponent("en|" + to);
+      const r = await fetch(url);
+      const d = await r.json();
+      const t = d && d.responseData && d.responseData.translatedText;
+      if (t && !/MYMEMORY WARNING/.test(t)) { _trCache.set(text, t); return t; }
+    } catch (e) { /* 网络错误回退原文 */ }
+    return text;
   }
   async function fetchNews(force = false) {
     const btn = $("#btnRefreshNews");
@@ -391,11 +419,16 @@
     }
     if (all.length) {
       all.sort((a, b) => new Date(b.pubDate || 0) - new Date(a.pubDate || 0));
+      if (btn) { btn.disabled = true; btn.textContent = "🔤 翻译中..."; }
+      for (const it of all) {
+        if (!isMostlyChinese(it.title)) { it.titleZh = await translateText(it.title); await wait(100); }
+        if (!isMostlyChinese(it.body)) { it.bodyZh = await translateText(it.body); await wait(100); }
+      }
       write(LS.news, { version: NEWS_CACHE_VERSION, items: all });
       renderNews();
       renderDashboard();
       if (u) u.textContent = "更新于 " + new Date().toLocaleTimeString("zh-CN");
-      toast("已拉取 " + all.length + " 条真实新闻");
+      toast("已拉取并翻译 " + all.length + " 条新闻");
     } else {
       const msg = "拉取失败" + (lastErr ? "：" + lastErr : "，可能网络受限或 API 限流");
       if (u) u.textContent = msg;
@@ -406,24 +439,52 @@
 
 
   /* ---------------- 渲染：产品 / 工具 ---------------- */
+  const compareSel = new Set();
   function renderProduct() {
     const items = read(LS.product, []);
-    $("#productGrid").innerHTML = items.map((p) => `
-      <div class="tool-card">
-        <div class="t-ico">${p.icon || "📊"}</div>
-        <div class="t-title">${esc(p.title)}</div>
-        <div class="t-desc">${esc(p.desc)}</div>
-        <span class="tag blue" style="align-self:flex-start">${esc(p.tag || "")}</span>
+    const grid = $("#productGrid");
+    if (!items.length) {
+      grid.innerHTML = '<div class="empty"><div class="empty-ico">📦</div>还没有商品，点右上角「＋ 添加商品」粘贴链接</div>';
+      updateCompareBar();
+      return;
+    }
+    grid.innerHTML = items.map((p) => `
+      <div class="tool-card product-card">
+        <input type="checkbox" class="product-check" data-pid="${p.id}" ${compareSel.has(p.id) ? "checked" : ""} title="加入对比" />
+        <button class="t-del" data-del-product="${p.id}" title="删除">✕</button>
+        ${p.img
+          ? `<img class="product-thumb" src="${esc(p.img)}" alt="${esc(p.title)}" onerror="this.outerHTML='<div class=&quot;product-thumb emoji&quot;>📦</div>'" />`
+          : `<div class="product-thumb emoji">📦</div>`}
+        <div class="t-title" style="margin-top:6px">${esc(p.title)}</div>
+        ${p.platform ? `<div class="product-meta"><span class="tag blue">${esc(p.platform)}</span>${p.price ? `<span class="tag">${esc(p.price)}</span>` : ""}</div>` : (p.price ? `<div class="product-meta"><span class="tag">${esc(p.price)}</span></div>` : "")}
+        ${p.note ? `<div class="product-note">${esc(p.note)}</div>` : ""}
+        ${p.url ? `<a class="btn btn-sm btn-primary mt-8" href="${esc(p.url)}" target="_blank" rel="noopener" style="align-self:flex-start">🔗 打开商品</a>` : ""}
       </div>`).join("");
+    updateCompareBar();
+  }
+  function updateCompareBar() {
+    const bar = $("#compareBar");
+    if (!bar) return;
+    const n = compareSel.size;
+    $("#compareCount").textContent = n;
+    bar.style.display = n >= 2 ? "flex" : "none";
   }
   function renderTools() {
     const items = read(LS.tools, []);
-    $("#toolGrid").innerHTML = items.map((t) => `
-      <a class="tool-card" href="${esc(t.url)}" target="_blank" rel="noopener">
-        <div class="t-ico">${t.icon || "🔗"}</div>
-        <div class="t-title">${esc(t.title)}</div>
-        <div class="t-desc">${esc(t.desc)}</div>
-      </a>`).join("");
+    const grid = $("#toolGrid");
+    if (!items.length) {
+      grid.innerHTML = '<div class="empty"><div class="empty-ico">🔗</div>还没有工具，点右上角「＋ 添加工具」添加你的网页</div>';
+      return;
+    }
+    grid.innerHTML = items.map((t) => `
+      <div class="tool-card">
+        <button class="t-del" data-del-tool="${t.id}" title="删除">✕</button>
+        <a href="${esc(t.url)}" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit">
+          <div class="t-ico">${t.icon || "🔗"}</div>
+          <div class="t-title">${esc(t.title)}</div>
+          <div class="t-desc">${esc(t.desc || "")}</div>
+        </a>
+      </div>`).join("");
   }
 
   /* ---------------- 渲染：通知 ---------------- */
@@ -583,6 +644,87 @@
     $("#docList").addEventListener("click", (e) => {
       const id = e.target.dataset.deldoc; if (!id) return;
       if (confirm("确定删除这个文档吗？")) { write(LS.docs, read(LS.docs, []).filter((d) => d.id !== id)); renderDocs(); }
+    });
+
+    /* ---- 工具网站：添加 / 删除 ---- */
+    $("#btnNewTool").addEventListener("click", () => {
+      $("#toolTitle").value = $("#toolUrl").value = $("#toolDesc").value = $("#toolIcon").value = "";
+      $("#toolModal").classList.add("show");
+    });
+    $("#btnSaveTool").addEventListener("click", () => {
+      const title = $("#toolTitle").value.trim(), url = $("#toolUrl").value.trim();
+      if (!title || !url) { toast("请填写名称和链接"); return; }
+      const tools = read(LS.tools, []);
+      tools.push({ id: uid(), title, url, desc: $("#toolDesc").value.trim(), icon: $("#toolIcon").value.trim() || "🔗" });
+      write(LS.tools, tools);
+      $("#toolModal").classList.remove("show");
+      renderTools(); toast("已添加工具");
+    });
+    $("#toolGrid").addEventListener("click", (e) => {
+      const id = e.target.dataset.delTool; if (!id) return;
+      e.stopPropagation();
+      if (confirm("确定删除这个工具吗？")) { write(LS.tools, read(LS.tools, []).filter((t) => t.id !== id)); renderTools(); }
+    });
+
+    /* ---- 产品分析：添加 / 删除 / 对比 ---- */
+    $("#btnNewProduct").addEventListener("click", () => {
+      ["pTitle", "pUrl", "pImg", "pPlatform", "pPrice", "pNote"].forEach((id) => ($("#" + id).value = ""));
+      $("#productModal").classList.add("show");
+    });
+    $("#btnSaveProduct").addEventListener("click", () => {
+      const title = $("#pTitle").value.trim(), url = $("#pUrl").value.trim();
+      if (!title) { toast("请填写商品名称"); return; }
+      const products = read(LS.product, []);
+      products.push({ id: uid(), title, url, img: $("#pImg").value.trim(),
+        platform: $("#pPlatform").value.trim(), price: $("#pPrice").value.trim(), note: $("#pNote").value.trim() });
+      write(LS.product, products);
+      $("#productModal").classList.remove("show");
+      renderProduct(); toast("已添加商品");
+    });
+    $("#productGrid").addEventListener("click", (e) => {
+      const del = e.target.dataset.delProduct; if (del) {
+        e.stopPropagation();
+        if (confirm("确定删除这个商品吗？")) {
+          write(LS.product, read(LS.product, []).filter((p) => p.id !== del));
+          compareSel.delete(del); renderProduct();
+        }
+      }
+    });
+    $("#productGrid").addEventListener("change", (e) => {
+      const pid = e.target.dataset.pid; if (!pid) return;
+      if (e.target.checked) compareSel.add(pid); else compareSel.delete(pid);
+      updateCompareBar();
+    });
+    $("#btnClearCompare").addEventListener("click", () => { compareSel.clear(); renderProduct(); });
+    $("#btnDoCompare").addEventListener("click", () => {
+      const all = read(LS.product, []);
+      const sel = all.filter((p) => compareSel.has(p.id));
+      if (sel.length < 2) { toast("至少选择 2 件商品再对比"); return; }
+      const cols = sel.length + 1;
+      const labels = ["商品名称", "平台 / 来源", "价格", "链接", "备注"];
+      const row = (label, fn) => `<div class="c-label">${label}</div>` + sel.map((p) => `<div>${fn(p)}</div>`).join("");
+      $("#compareTable").innerHTML = `<div class="compare-wrap"><div class="compare-grid" style="grid-template-columns:repeat(${cols},minmax(140px,1fr))">
+        <div class="c-head">对比维度</div>${sel.map((p) => `<div class="c-head">${esc(p.title)}</div>`).join("")}
+        ${row("平台 / 来源", (p) => esc(p.platform || "—"))}
+        ${row("价格", (p) => esc(p.price || "—"))}
+        ${row("链接", (p) => p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">🔗 打开</a>` : "—")}
+        ${row("备注", (p) => esc(p.note || "—"))}
+      </div></div>`;
+      $("#compareModal").classList.add("show");
+    });
+
+    /* ---- 新闻：点击打开原文 / 切换中英文 ---- */
+    $("#newsAll").addEventListener("click", (e) => {
+      const tog = e.target.closest("[data-toggle-orig]");
+      if (tog) {
+        e.preventDefault(); e.stopPropagation();
+        const id = tog.dataset.toggleOrig;
+        if (newsOrigView.has(id)) newsOrigView.delete(id); else newsOrigView.add(id);
+        renderNews();
+        return;
+      }
+      const item = e.target.closest(".news-link[data-url]");
+      if (item && item.dataset.url) { e.preventDefault(); window.open(item.dataset.url, "_blank", "noopener"); }
     });
 
     // 通知
