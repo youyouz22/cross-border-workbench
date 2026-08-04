@@ -31,35 +31,31 @@
     scheduleAutoSync();
   }
 
-  /* ---------------- 种子数据（原创示例内容） ---------------- */
+  /* ---------------- 种子数据（离线兜底 / 原创示例内容） ---------------- */
   function seedNews() {
     return [
-      { id: uid(), country: "英国", impact: "高影响", title: "英国通胀回落至目标区间，零售消费回暖",
-        body: "英国国家统计局数据显示通胀率降至 2%，消费者信心指数回升，预计将带动下半年线上零售增长。",
-        tags: ["经济", "通货膨胀", "消费者信心"], time: "12 分钟前" },
-      { id: uid(), country: "德国", impact: "中影响", title: "德国推出新环保法规，影响电子产品进口",
-        body: "德国政府要求进口电子产品须满足新的能效与回收标准，跨境卖家需提前完成合规改造。",
-        tags: ["环保法规", "电子产品", "进口标准"], time: "1 小时前" },
-      { id: uid(), country: "法国", impact: "中影响", title: "法国修订电商法，加强消费者权益保护",
-        body: "新规要求平台提供更透明的价格与退货政策，违规将面临更高罚款。",
-        tags: ["消费者保护", "价格透明", "退货政策"], time: "2 小时前" },
-      { id: uid(), country: "西班牙", impact: "低影响", title: "西班牙夏季旅游旺季推动零售增长",
-        body: "旅游业强劲复苏带动相关商品与纪念品销售，移动端购物占比持续上升。",
-        tags: ["旅游", "零售增长", "夏季消费"], time: "3 小时前" },
-      { id: uid(), country: "意大利", impact: "高影响", title: "意大利中小企业数字化转型加速",
-        body: "政府补贴计划推动中小企业上云与电商化，对跨境工具与服务需求上升。",
-        tags: ["数字化转型", "中小企业", "政府补贴"], time: "4 小时前" },
-      { id: uid(), country: "英国", impact: "低影响", title: "英国消费者对环保产品需求增长 40%",
-        body: "调查显示消费者愿为可持续产品支付溢价，绿色选品成为新增长点。",
-        tags: ["环保产品", "可持续消费", "绿色电商"], time: "5 小时前" },
-      { id: uid(), country: "德国", impact: "高影响", title: "德国电商市场二季度增长 12%，中国商品受欢迎",
-        body: "电子产品与家居品类中国占比提升，物流成本上升促使平台优化配送策略。",
-        tags: ["电商增长", "中国商品", "跨境贸易"], time: "6 小时前" },
-      { id: uid(), country: "西班牙", impact: "中影响", title: "西班牙户外用品需求激增，烧烤设备销量翻倍",
-        body: "夏季户外活动增多带动户外品类热销，建议提前布局库存。",
-        tags: ["户外用品", "烧烤设备"], time: "7 小时前" },
+      { id: uid(), topic: "全球跨境电商", impact: "中影响", title: "（示例）全球跨境电商持续扩张，新兴市场成增长引擎",
+        body: "这是离线示例数据。联网后点「刷新新闻」会拉取真实 RSS 头条。",
+        tags: ["跨境电商", "示例"], source: "示例", url: "", time: "示例" },
+      { id: uid(), topic: "政策与税务", impact: "高影响", title: "（示例）欧盟电商新规落地，VAT 合规要求升级",
+        body: "这是离线示例数据。联网后点「刷新新闻」会拉取真实 RSS 头条。",
+        tags: ["政策", "VAT", "示例"], source: "示例", url: "", time: "示例" },
     ];
   }
+
+  /* 真实新闻源：通过 RSS2JSON 免费 API 拉取（无需后端） */
+  const NEWS_SOURCES = [
+    { topic: "全球跨境电商", feeds: [
+      "https://www.practicalecommerce.com/feed",
+      "https://www.digitalcommerce360.com/feed/",
+      "https://www.modernretail.co/feed/",
+    ]},
+    { topic: "政策与税务", feeds: [
+      "https://www.theguardian.com/world/eu/rss",
+      "http://feeds.bbci.co.uk/news/business/rss.xml",
+    ]},
+  ];
+  const RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=";
   function seedProduct() {
     return [
       { icon: "📈", title: "欧洲市场冬季取暖器销售数据", desc: "含英国、德国、法国等市场的销售数据统计", tag: "销售数据" },
@@ -225,9 +221,9 @@
     } else {
       nb.innerHTML = news.slice(0, 4).map((n) => `
         <div class="news-item">
-          <div class="news-head">${impactTag(n.impact)}<span class="tag">${esc(n.country)}</span>
+          <div class="news-head">${impactTag(n.impact)}<span class="tag">${esc(n.topic || "新闻")}</span>
             <span class="news-title">${esc(n.title)}</span></div>
-          <div class="news-meta"><span>${esc(n.time || "")}</span></div>
+          <div class="news-meta"><span>${esc(n.source || "")}</span><span>${esc(n.time || "")}</span></div>
         </div>`).join("");
     }
   }
@@ -315,23 +311,88 @@
   /* ---------------- 渲染：新闻 ---------------- */
   function renderNews() {
     const news = read(LS.news, []);
-    const countries = ["英国", "德国", "法国", "西班牙", "意大利"];
+    const topics = NEWS_SOURCES.map((s) => s.topic);
     const box = $("#newsAll");
-    box.innerHTML = countries.map((c) => {
-      const list = news.filter((n) => n.country === c);
+    if (!news.length) {
+      box.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>暂无新闻，点右上角「刷新新闻」拉取真实头条</div>';
+      return;
+    }
+    box.innerHTML = topics.map((t) => {
+      const list = news.filter((n) => n.topic === t);
       if (!list.length) return "";
       return `
       <div class="card mt-16">
-        <div class="card-head"><div class="card-title">${c}</div><span class="tag">${list.length} 条</span></div>
+        <div class="card-head"><div class="card-title">${esc(t)}</div><span class="tag">${list.length} 条</span></div>
         ${list.map((n) => `
-          <div class="news-item">
+          <a class="news-item news-link" ${n.url ? `href="${esc(n.url)}" target="_blank" rel="noopener"` : ""}>
             <div class="news-head">${impactTag(n.impact)}<span class="news-title">${esc(n.title)}</span></div>
-            <div class="news-body">${esc(n.body)}</div>
-            <div class="news-meta"><span>${esc(n.time || "")}</span>${n.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
-          </div>`).join("")}
+            ${n.body ? `<div class="news-body">${esc(n.body)}</div>` : ""}
+            <div class="news-meta"><span>${esc(n.source || "")}</span><span>${esc(n.time || "")}</span>${n.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+          </a>`).join("")}
       </div>`;
     }).join("");
   }
+
+  /* ---------------- 真实新闻拉取（RSS2JSON，无后端） ---------------- */
+  function stripHtml(s) { return (s || "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim(); }
+  function relTime(d) {
+    if (!d) return "";
+    const t = new Date(d).getTime();
+    if (isNaN(t)) return "";
+    const diff = (Date.now() - t) / 1000;
+    if (diff < 3600) return Math.max(1, Math.round(diff / 60)) + " 分钟前";
+    if (diff < 86400) return Math.round(diff / 3600) + " 小时前";
+    if (diff < 86400 * 7) return Math.round(diff / 86400) + " 天前";
+    return new Date(t).toLocaleDateString("zh-CN");
+  }
+  function estimateImpact(text) {
+    const t = (text || "").toLowerCase();
+    if (/vat|税|关税|合规|法规|政策|ban|fine|罚款|海关|customs|制裁|监管/.test(t)) return "高影响";
+    if (/增长|趋势|trend|growth|launch|发布|上线|expansion|rise|surge|boom/.test(t)) return "中影响";
+    return "低影响";
+  }
+  async function fetchNews() {
+    const btn = $("#btnRefreshNews");
+    if (btn) { btn.disabled = true; btn.textContent = "⏳ 拉取中..."; }
+    const all = [];
+    for (const group of NEWS_SOURCES) {
+      for (const feed of group.feeds) {
+        try {
+          const res = await fetch(RSS2JSON + encodeURIComponent(feed));
+          if (!res.ok) continue;
+          const data = await res.json();
+          if (data.status !== "ok" || !data.items) continue;
+          data.items.slice(0, 6).forEach((it) => {
+            all.push({
+              id: uid(),
+              topic: group.topic,
+              impact: estimateImpact(it.title + " " + (it.description || "")),
+              title: stripHtml(it.title),
+              body: stripHtml(it.description || "").slice(0, 140),
+              tags: [],
+              source: data.feed && data.feed.title ? data.feed.title : group.topic,
+              url: it.link,
+              time: relTime(it.pubDate),
+              pubDate: it.pubDate,
+            });
+          });
+        } catch (e) { /* 单个源失败忽略，继续其他源 */ }
+      }
+    }
+    if (all.length) {
+      all.sort((a, b) => new Date(b.pubDate || 0) - new Date(a.pubDate || 0));
+      write(LS.news, all);
+      renderNews();
+      renderDashboard();
+      const u = $("#newsUpdated");
+      if (u) u.textContent = "更新于 " + new Date().toLocaleTimeString("zh-CN");
+      toast("已拉取 " + all.length + " 条真实新闻");
+    } else {
+      toast("拉取失败，可能网络受限或 API 限流，已显示缓存");
+    }
+    if (btn) { btn.disabled = false; btn.textContent = "🔄 刷新新闻"; }
+  }
+
 
   /* ---------------- 渲染：产品 / 工具 ---------------- */
   function renderProduct() {
@@ -428,6 +489,8 @@
     });
     // 侧边栏折叠
     $("#toggleSidebar").addEventListener("click", () => $("#app").classList.toggle("collapsed"));
+    // 新闻刷新
+    const rb = $("#btnRefreshNews"); if (rb) rb.addEventListener("click", fetchNews);
 
     // 任务
     $("#btnNewTask").addEventListener("click", () => openTaskModal(null));
@@ -575,6 +638,7 @@
       catch (e) { setSyncStatus("云端拉取失败：" + e.message, false); }
     }
     renderAll();
+    fetchNews(); // 启动时自动拉取真实新闻（失败则保留离线示例）
     const last = read("cbec_lastview", "dashboard");
     go(["dashboard","tasks","feishu","news","product","tools","notify","settings","user"].includes(last) ? last : "dashboard");
   }

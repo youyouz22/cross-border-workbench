@@ -141,9 +141,15 @@
 
       <!-- ===== 新闻聚合 ===== -->
       <section class="view" id="view-news">
-        <div class="page-head">
-          <h1>新闻聚合</h1>
-          <p>欧洲主要市场（英 / 德 / 法 / 西 / 意）电商与政策资讯</p>
+        <div class="page-head flex items-center" style="justify-content:space-between">
+          <div>
+            <h1>新闻聚合</h1>
+            <p>实时聚合全球跨境电商与政策税务头条（来自公开 RSS 源）</p>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <span class="text-sm muted" id="newsUpdated"></span>
+            <button class="btn btn-sm" id="btnRefreshNews">🔄 刷新新闻</button>
+          </div>
         </div>
         <div id="newsAll"></div>
       </section>
