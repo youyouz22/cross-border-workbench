@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>跨境电商工作台</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231f1f23'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif'>跨</text></svg>" />
+</head>
+<body>
+<div class="app" id="app">
+  <!-- ================= 侧边栏 ================= -->
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-logo">跨</div>
+      <div>
+        <div class="sidebar-title">跨境电商工作台</div>
+        <div class="sidebar-sub">Cross-border Workbench</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav" id="nav">
+      <div class="nav-item active" data-view="dashboard">
+        <span class="ico">🏠</span> 工作台
+      </div>
+      <div class="nav-item" data-view="tasks">
+        <span class="ico">✅</span> 事项安排 <span class="badge" id="navTaskCount">0</span>
+      </div>
+      <div class="nav-item" data-view="feishu">
+        <span class="ico">📄</span> 飞书表格
+      </div>
+      <div class="nav-item" data-view="news">
+        <span class="ico">📰</span> 新闻聚合
+      </div>
+      <div class="nav-item" data-view="product">
+        <span class="ico">📊</span> 产品分析
+      </div>
+      <div class="nav-item" data-view="tools">
+        <span class="ico">🧰</span> 工具网站
+      </div>
+
+      <div class="nav-group-label">系统</div>
+      <div class="nav-item" data-view="notify">
+        <span class="ico">🔔</span> 通知 <span class="badge" id="navNotifyCount" style="background:var(--amber)">0</span>
+      </div>
+      <div class="nav-item" data-view="settings">
+        <span class="ico">⚙️</span> 设置
+      </div>
+      <div class="nav-item" data-view="user">
+        <span class="ico">👤</span> 用户
+      </div>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="sync-chip" id="syncChip" title="数据保存在本机浏览器">
+        <span class="sync-dot off" id="syncDot"></span>
+        <span id="syncText">已存本机（设置里可导出备份）</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= 主区域 ================= -->
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn" id="toggleSidebar" title="折叠/展开侧边栏">☰</button>
+      <div class="topbar-title" id="topTitle">工作台</div>
+      <div class="topbar-spacer"></div>
+      <button class="icon-btn" id="btnExport" title="导出数据备份">⬇️</button>
+      <button class="icon-btn" id="btnImport" title="导入数据备份">⬆️</button>
+      <input type="file" id="importFile" accept="application/json" style="display:none" />
+      <div class="avatar" id="topAvatar">U</div>
+    </header>
+
+    <main class="content">
+
+      <!-- ===== 工作台首页 ===== -->
+      <section class="view active" id="view-dashboard">
+        <div class="page-head">
+          <div class="greeting">欢迎回来，<span id="dashName">朋友</span>！<span class="date" id="dashDate"></span></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-head">
+              <div>
+                <div class="card-title">事项安排</div>
+                <div class="card-desc">今天还有 <b id="dashTaskCount">0</b> 项待办</div>
+              </div>
+              <button class="btn btn-primary btn-sm" data-view="tasks">新建任务</button>
+            </div>
+            <div id="dashTasks"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <div>
+                <div class="card-title">今日新闻</div>
+                <div class="card-desc">欧洲市场动态速览</div>
+              </div>
+              <button class="btn btn-sm" data-view="news">查看全部</button>
+            </div>
+            <div id="dashNews"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 事项安排 ===== -->
+      <section class="view" id="view-tasks">
+        <div class="page-head flex items-center" style="justify-content:space-between">
+          <div>
+            <h1>事项安排</h1>
+            <p>管理你的跨境运营任务，支持进度追踪与子事务拆分</p>
+          </div>
+          <div class="flex gap-8">
+            <button class="btn" id="btnVoice" title="语音快速添加">🎤 语音快速添加</button>
+            <button class="btn btn-primary" id="btnNewTask">＋ 新建任务</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div id="taskList"></div>
+        </div>
+      </section>
+
+      <!-- ===== 飞书表格 ===== -->
+      <section class="view" id="view-feishu">
+        <div class="page-head flex items-center" style="justify-content:space-between">
+          <div>
+            <h1>飞书表格</h1>
+            <p>集中管理你的飞书文档链接，支持搜索与标签</p>
+          </div>
+          <button class="btn btn-primary" id="btnNewDoc">＋ 添加飞书文档</button>
+        </div>
+        <div class="field">
+          <input class="input" id="docSearch" placeholder="🔍 搜索文档标题 / 描述 / 标签" />
+        </div>
+        <div class="card">
+          <div id="docList"></div>
+        </div>
+      </section>
+
+      <!-- ===== 新闻聚合 ===== -->
+      <section class="view" id="view-news">
+        <div class="page-head">
+          <h1>新闻聚合</h1>
+          <p>欧洲主要市场（英 / 德 / 法 / 西 / 意）电商与政策资讯</p>
+        </div>
+        <div id="newsAll"></div>
+      </section>
+
+      <!-- ===== 产品分析 ===== -->
+      <section class="view" id="view-product">
+        <div class="page-head">
+          <h1>产品分析</h1>
+          <p>销售数据、调研模板与竞品分析资料库</p>
+        </div>
+        <div class="tool-grid" id="productGrid"></div>
+      </section>
+
+      <!-- ===== 工具网站 ===== -->
+      <section class="view" id="view-tools">
+        <div class="page-head">
+          <h1>工具网站</h1>
+          <p>跨境运营常用工具一键直达</p>
+        </div>
+        <div class="tool-grid" id="toolGrid"></div>
+      </section>
+
+      <!-- ===== 通知 ===== -->
+      <section class="view" id="view-notify">
+        <div class="page-head flex items-center" style="justify-content:space-between">
+          <div>
+            <h1>通知</h1>
+            <p>系统提醒与同步状态</p>
+          </div>
+          <button class="btn btn-sm" id="btnClearNotify">清空通知</button>
+        </div>
+        <div class="card"><div id="notifyList"></div></div>
+      </section>
+
+      <!-- ===== 设置 ===== -->
+      <section class="view" id="view-settings">
+        <div class="page-head"><h1>设置</h1><p>个性化你的工作台</p></div>
+        <div class="card" style="max-width:680px">
+          <div class="field">
+            <label>显示名称</label>
+            <input class="input" id="setName" placeholder="例如：小王" />
+          </div>
+          <hr class="hr" />
+          <div class="flex items-center" style="justify-content:space-between;gap:16px">
+            <div>
+              <div style="font-weight:600">启用云端同步（GitHub）</div>
+              <div class="text-sm muted mt-8">
+                把数据存到你自己的 GitHub 仓库，多设备实时共享。需要一个权限为 <code>repo</code> 的个人访问令牌（PAT）。
+              </div>
+            </div>
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;white-space:nowrap">
+              <input type="checkbox" id="setSyncOn" style="width:18px;height:18px" /> 开启
+            </label>
+          </div>
+
+          <div class="field mt-16">
+            <label>同步仓库（owner/repo）</label>
+            <input class="input" id="setRepo" placeholder="例如：yourname/cbec-data" />
+            <div class="text-sm muted mt-8">
+              建议用<strong>单独的数据仓库</strong>（不要用部署网站的仓库），这样每次同步不会触发 Pages 重新构建。
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label>分支</label>
+              <input class="input" id="setBranch" placeholder="main" value="main" />
+            </div>
+            <div class="field">
+              <label>数据文件路径</label>
+              <input class="input" id="setPath" placeholder="data/workbench.json" value="data/workbench.json" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>访问令牌 PAT（仅本地保存，不会上传）</label>
+            <input class="input" id="setToken" type="password" placeholder="ghp_... 或 github_pat_..." />
+            <div class="text-sm muted mt-8">
+              ⚠️ PAT 拥有该仓库的读写权，且只存在你本机浏览器里。建议用<strong>细粒度令牌</strong>并仅授权数据仓库，不要分享给不可信的人。
+            </div>
+          </div>
+
+          <div class="flex items-center gap-12">
+            <button class="btn" id="btnSyncNow">立即同步（上传到云端）</button>
+            <span id="syncStatusLine" class="text-sm muted">未启用</span>
+          </div>
+
+          <div class="modal-foot">
+            <button class="btn btn-primary" id="btnSaveSettings">保存设置</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 用户 ===== -->
+      <section class="view" id="view-user">
+        <div class="page-head"><h1>用户</h1><p>你的账户信息</p></div>
+        <div class="card" style="max-width:520px">
+          <div class="flex items-center gap-12">
+            <div class="avatar" style="width:56px;height:56px;font-size:20px" id="userAvatar">U</div>
+            <div>
+              <div style="font-weight:650;font-size:16px" id="userName">朋友</div>
+              <div class="muted text-sm" id="userRepo">未配置同步仓库</div>
+            </div>
+          </div>
+          <hr class="hr" />
+          <div class="flex items-center" style="justify-content:space-between">
+            <span class="text-sm">数据已存本机</span>
+            <span class="tag green">✓ 安全</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ================= 任务模态框 ================= -->
+<div class="modal-mask" id="taskModal">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title" id="taskModalTitle">新建任务</div>
+      <button class="icon-btn btn-ghost" data-close>✕</button>
+    </div>
+    <div class="field">
+      <label>任务标题</label>
+      <input class="input" id="tTitle" placeholder="输入任务标题" />
+    </div>
+    <div class="field">
+      <label>任务描述（可选）</label>
+      <textarea class="textarea" id="tDesc" placeholder="输入任务描述（可选）"></textarea>
+    </div>
+    <div class="field">
+      <label>进度：<b id="tProgLabel">0</b>%</label>
+      <input type="range" id="tProg" min="0" max="100" value="0" style="width:100%" />
+    </div>
+    <div class="field">
+      <label>相关子事务</label>
+      <div id="subtaskBox"></div>
+      <button class="btn btn-sm mt-8" id="btnAddSub">＋ 添加子事务</button>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" data-close>取消</button>
+      <button class="btn btn-primary" id="btnSaveTask">添加任务</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= 文档模态框 ================= -->
+<div class="modal-mask" id="docModal">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title">添加飞书文档</div>
+      <button class="icon-btn btn-ghost" data-close>✕</button>
+    </div>
+    <div class="field">
+      <label>文档标题</label>
+      <input class="input" id="dTitle" placeholder="输入文档标题" />
+    </div>
+    <div class="field">
+      <label>文档链接</label>
+      <input class="input" id="dLink" placeholder="粘贴飞书文档链接" />
+    </div>
+    <div class="field">
+      <label>文档描述</label>
+      <input class="input" id="dDesc" placeholder="简短描述文档内容" />
+    </div>
+    <div class="field">
+      <label>文档类型</label>
+      <select class="select" id="dType">
+        <option>表格</option><option>文档</option><option>文件夹</option><option>其他</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>标签（用逗号分隔）</label>
+      <input class="input" id="dTags" placeholder="例如：销售数据" />
+    </div>
+    <div class="modal-foot">
+      <button class="btn" data-close>取消</button>
+      <button class="btn btn-primary" id="btnSaveDoc">添加文档</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="./app.js"></script>
+</body>
+</html>
