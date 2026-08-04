@@ -77,32 +77,36 @@
         pros: ["无油健康", "大容量"], cons: ["噪音偏大"], trending: true },
     ];
   }
-  /* 从站点自带的原站数据文件加载真实商品（参考同事站点 products.json） */
+  /* 从站点自带的原站数据文件加载真实商品（参考同事站点 products.json）
+     每次启动都同步：把原站 30 个商品 prepend 到列表前面；已存在的（按标题去重）不再重复添加，
+     用户自己添加的商品保留在末尾。 */
   async function loadOriginProducts() {
     try {
       const r = await fetch("./data/origin-products.json");
       if (!r.ok) return false;
       const arr = await r.json();
-      if (Array.isArray(arr) && arr.length) {
-        const mapped = arr.map((p) => ({
-          id: p.id != null ? String(p.id) : uid(),
-          title: p.name || p.title || "未命名商品",
-          platform: p.platform || "",
-          category: p.category || "",
-          price: (p.price != null ? p.price : "") + (p.currency ? " " + p.currency : ""),
-          alibabaPrice: p.alibabaPrice != null ? p.alibabaPrice : "",
-          salesGrowth: p.salesGrowth != null ? p.salesGrowth : "",
-          rating: p.rating != null ? p.rating : "",
-          reviewCount: p.reviewCount != null ? p.reviewCount : "",
-          pros: p.pros || [],
-          cons: p.cons || [],
-          trending: !!p.trending,
-          note: p.note || "",
-          url: p.url || "",
-        }));
-        write(LS.product, mapped);
-        return true;
-      }
+      if (!Array.isArray(arr) || !arr.length) return false;
+      const mapped = arr.map((p) => ({
+        id: p.id != null ? String(p.id) : uid(),
+        title: p.name || p.title || "未命名商品",
+        platform: p.platform || "",
+        category: p.category || "",
+        price: (p.price != null ? p.price : "") + (p.currency ? " " + p.currency : ""),
+        alibabaPrice: p.alibabaPrice != null ? p.alibabaPrice : "",
+        salesGrowth: p.salesGrowth != null ? p.salesGrowth : "",
+        rating: p.rating != null ? p.rating : "",
+        reviewCount: p.reviewCount != null ? p.reviewCount : "",
+        pros: p.pros || [],
+        cons: p.cons || [],
+        trending: !!p.trending,
+        note: p.note || "",
+        url: p.url || "",
+      }));
+      const existing = read(LS.product, []);
+      const existingTitles = new Set(existing.map((p) => (p.title || "").toLowerCase().trim()));
+      const missing = mapped.filter((p) => !existingTitles.has((p.title || "").toLowerCase().trim()));
+      if (missing.length) write(LS.product, [...missing, ...existing]);
+      return true;
     } catch (e) { /* 离线或文件缺失时回退示例 */ }
     return false;
   }
@@ -766,10 +770,8 @@
   /* ---------------- 启动 ---------------- */
   async function init() {
     // 新闻由下方 loadStaticNews 加载预翻译的中文内容（无运行时翻译）
-    if (!read(LS.product, null)) {
-      const ok = await loadOriginProducts();
-      if (!ok) write(LS.product, seedProduct());
-    }
+    const ok = await loadOriginProducts();
+    if (!ok && !read(LS.product, null)) write(LS.product, seedProduct());
     if (!read(LS.tools, null)) write(LS.tools, seedTools());
     bind();
     loadSyncCfg();
