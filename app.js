@@ -161,25 +161,29 @@
     }
   }
 
-  /* ---------------- GitHub 云端同步（git-as-backend） ---------------- */
-  const SYNC = { enabled: false, repo: "", branch: "main", path: "data/workbench.json", token: "", proxy: "", sha: null, busy: false, timer: null };
+  /* ---------------- 云端同步（git-as-backend：GitHub / Gitee） ---------------- */
+  const SYNC = { enabled: false, backend: "github", repo: "", branch: "main", path: "data/workbench.json", token: "", giteeToken: "", proxy: "", sha: null, busy: false, timer: null };
 
   function loadSyncCfg() {
     const s = getSettings();
     SYNC.enabled = !!s.syncEnabled;
+    SYNC.backend = (s.syncBackend || "github").trim().toLowerCase();
+    if (SYNC.backend !== "github" && SYNC.backend !== "gitee") SYNC.backend = "github";
     SYNC.repo = (s.repo || "").trim();
     SYNC.branch = (s.branch || "main").trim();
     SYNC.path = (s.syncPath || "data/workbench.json").trim();
     SYNC.token = s.token || "";
+    SYNC.giteeToken = s.giteeToken || "";
     SYNC.proxy = (s.proxy || "").trim();
   }
+  function activeToken() { return SYNC.backend === "gitee" ? SYNC.giteeToken : SYNC.token; }
   function ghHeaders() {
     const h = { "Accept": "application/vnd.github+json" };
     if (SYNC.token) h["Authorization"] = "Bearer " + SYNC.token;
     return h;
   }
-  // 统一请求：无代理直连 api.github.com；有代理则 POST 到代理(避免跨域预检被公司网拦截)
-  async function ghFetch(method, path, bodyObj) {
+  // GitHub：无代理直连 api.github.com；有代理则 POST 到代理(避免跨域预检被公司网拦截)
+  async function githubFetch(method, path, bodyObj) {
     if (!SYNC.proxy) {
       return fetch("https://api.github.com" + path, {
         method,
@@ -204,27 +208,30 @@
   }
   function b64enc(str) { return btoa(unescape(encodeURIComponent(str))); }
   function b64dec(b64) { return decodeURIComponent(escape(atob(b64.replace(/\s/g, "")))); }
+  function parseRepo() {
+    const parts = SYNC.repo.split("/").map((s) => s.trim()).filter(Boolean);
+    if (parts.length !== 2) throw new Error("仓库格式错误，应为 owner/repo");
+    return parts;
+  }
 
-  async function ghPull() {
+  async function githubPull() {
     if (!SYNC.enabled || !SYNC.repo || !SYNC.token) return false;
     const path = `/repos/${encodeURIComponent(SYNC.repo)}/contents/${encodeURIComponent(SYNC.path)}?ref=${encodeURIComponent(SYNC.branch)}`;
     let res;
     try {
-      res = await ghFetch("GET", path);
+      res = await githubFetch("GET", path);
     } catch (e) {
       throw new Error("无法连接同步服务（网络问题）：" + (e.message || "Failed to fetch"));
     }
     if (res.status === 404) {
-      // 可能是仓库不存在，也可能是数据文件尚未创建 → 验证仓库本身是否存在
       try {
-        const repoRes = await ghFetch("GET", `/repos/${encodeURIComponent(SYNC.repo)}`);
+        const repoRes = await githubFetch("GET", `/repos/${encodeURIComponent(SYNC.repo)}`);
         if (repoRes.status === 404) throw new Error(`仓库 ${SYNC.repo} 不存在，请先在 GitHub 创建该仓库（建议设为 Private）`);
         if (repoRes.status === 401) throw new Error("令牌无效或无权限(401)");
       } catch (e2) {
         if (e2.message.includes("仓库") || e2.message.includes("令牌")) throw e2;
-        // 验证请求本身也网络失败，则按“云端还没有数据文件”静默处理
       }
-      SYNC.sha = null; return true;                              // 云端还没有数据文件，正常
+      SYNC.sha = null; return true;
     }
     if (res.status === 401) throw new Error("令牌无效或无权限(401)");
     if (!res.ok) throw new Error("拉取失败 HTTP " + res.status);
@@ -234,7 +241,7 @@
     Object.values(LS).forEach((k) => { if (payload[k] !== undefined) localStorage.setItem(k, JSON.stringify(payload[k])); });
     return true;
   }
-  async function ghPush() {
+  async function githubPush() {
     if (!SYNC.enabled || !SYNC.repo || !SYNC.token || SYNC.busy) return;
     SYNC.busy = true;
     try {
@@ -242,13 +249,13 @@
       Object.values(LS).forEach((k) => { const v = localStorage.getItem(k); if (v != null) payload[k] = JSON.parse(v); });
       const body = b64enc(JSON.stringify(payload, null, 2));
       if (SYNC.sha == null) {
-        const g = await ghFetch("GET", `/repos/${encodeURIComponent(SYNC.repo)}/contents/${encodeURIComponent(SYNC.path)}?ref=${encodeURIComponent(SYNC.branch)}`);
+        const g = await githubFetch("GET", `/repos/${encodeURIComponent(SYNC.repo)}/contents/${encodeURIComponent(SYNC.path)}?ref=${encodeURIComponent(SYNC.branch)}`);
         if (g.ok) SYNC.sha = (await g.json()).sha;
         else if (g.status !== 404) throw new Error("获取文件失败 HTTP " + g.status);
       }
       const req = { message: "sync: workbench data " + new Date().toISOString(), content: body, branch: SYNC.branch };
       if (SYNC.sha) req.sha = SYNC.sha;
-      const res = await ghFetch("PUT", `/repos/${encodeURIComponent(SYNC.repo)}/contents/${encodeURIComponent(SYNC.path)}`, req);
+      const res = await githubFetch("PUT", `/repos/${encodeURIComponent(SYNC.repo)}/contents/${encodeURIComponent(SYNC.path)}`, req);
       if (!res.ok) throw new Error("推送失败 HTTP " + res.status);
       SYNC.sha = (await res.json()).content.sha;
       setSyncStatus("已同步云端（" + new Date().toLocaleTimeString() + "）", true);
@@ -258,10 +265,81 @@
       setSyncStatus("同步失败：" + msg, false);
     } finally { SYNC.busy = false; }
   }
+
+  // Gitee（码云）：国内可直连，API 支持 CORS，且用 form-urlencoded 可避开预检
+  async function giteePull() {
+    const token = activeToken();
+    if (!SYNC.enabled || !SYNC.repo || !token) return false;
+    const [owner, repo] = parseRepo();
+    const url = `https://gitee.com/api/v5/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/contents/${encodeURIComponent(SYNC.path)}?access_token=${encodeURIComponent(token)}&ref=${encodeURIComponent(SYNC.branch)}`;
+    let res;
+    try {
+      res = await fetch(url);
+    } catch (e) {
+      throw new Error("无法连接同步服务（网络问题）：" + (e.message || "Failed to fetch"));
+    }
+    if (res.status === 404) {
+      try {
+        const repoRes = await fetch(`https://gitee.com/api/v5/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}?access_token=${encodeURIComponent(token)}`);
+        if (repoRes.status === 404) throw new Error(`仓库 ${SYNC.repo} 不存在，请先在 Gitee 创建该仓库`);
+        if (repoRes.status === 401) throw new Error("Gitee 令牌无效或无权限(401)");
+      } catch (e2) {
+        if (e2.message.includes("仓库") || e2.message.includes("令牌")) throw e2;
+      }
+      SYNC.sha = null; return true;
+    }
+    if (res.status === 401) throw new Error("Gitee 令牌无效或无权限(401)");
+    if (!res.ok) throw new Error("拉取失败 HTTP " + res.status);
+    const data = await res.json();
+    SYNC.sha = data.sha;
+    const payload = JSON.parse(b64dec(data.content));
+    Object.values(LS).forEach((k) => { if (payload[k] !== undefined) localStorage.setItem(k, JSON.stringify(payload[k])); });
+    return true;
+  }
+  async function giteePush() {
+    const token = activeToken();
+    if (!SYNC.enabled || !SYNC.repo || !token || SYNC.busy) return;
+    SYNC.busy = true;
+    try {
+      const payload = {};
+      Object.values(LS).forEach((k) => { const v = localStorage.getItem(k); if (v != null) payload[k] = JSON.parse(v); });
+      const body = b64enc(JSON.stringify(payload, null, 2));
+      const [owner, repo] = parseRepo();
+      const baseUrl = `https://gitee.com/api/v5/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/contents/${encodeURIComponent(SYNC.path)}`;
+      if (SYNC.sha == null) {
+        const g = await fetch(`${baseUrl}?access_token=${encodeURIComponent(token)}&ref=${encodeURIComponent(SYNC.branch)}`);
+        if (g.ok) SYNC.sha = (await g.json()).sha;
+        else if (g.status !== 404) throw new Error("获取文件失败 HTTP " + g.status);
+      }
+      const params = new URLSearchParams();
+      params.append("access_token", token);
+      params.append("content", body);
+      params.append("message", "sync: workbench data " + new Date().toISOString());
+      params.append("branch", SYNC.branch);
+      if (SYNC.sha) params.append("sha", SYNC.sha);
+      const method = SYNC.sha ? "PUT" : "POST";
+      const res = await fetch(baseUrl, {
+        method,
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
+      });
+      if (!res.ok) throw new Error("推送失败 HTTP " + res.status);
+      const data = await res.json();
+      SYNC.sha = (data.content && data.content.sha) ? data.content.sha : data.sha;
+      setSyncStatus("已同步云端（" + new Date().toLocaleTimeString() + "）", true);
+    } catch (e) {
+      const msg = (e && e.message && e.message.indexOf("Failed to fetch") >= 0)
+        ? "无法连接同步服务（网络问题），请检查网络后重试" : e.message;
+      setSyncStatus("同步失败：" + msg, false);
+    } finally { SYNC.busy = false; }
+  }
+
+  async function cloudPull() { return SYNC.backend === "gitee" ? giteePull() : githubPull(); }
+  async function cloudPush() { return SYNC.backend === "gitee" ? giteePush() : githubPush(); }
   function scheduleAutoSync() {
     if (!SYNC.enabled) return;
     clearTimeout(SYNC.timer);
-    SYNC.timer = setTimeout(() => ghPush(), 1000);
+    SYNC.timer = setTimeout(() => cloudPush(), 1000);
   }
 
   /* ---------------- 视图路由 ---------------- */
@@ -551,15 +629,24 @@
 
   /* ---------------- 渲染：设置 / 用户 ---------------- */
   function getSettings() { return read(LS.settings, {}); }
+  function syncUiByBackend() {
+    const backend = ($("#setBackend") ? $("#setBackend").value : "github") || "github";
+    const ghOnly = $("#groupGitHubOnly"), giteeOnly = $("#groupGiteeOnly");
+    if (ghOnly) ghOnly.style.display = backend === "github" ? "block" : "none";
+    if (giteeOnly) giteeOnly.style.display = backend === "gitee" ? "block" : "none";
+  }
   function renderSettings() {
     const s = getSettings();
     $("#setName").value = s.name || "";
     $("#setSyncOn").checked = !!s.syncEnabled;
+    $("#setBackend").value = (s.syncBackend || "github").trim().toLowerCase();
     $("#setRepo").value = s.repo || "";
     $("#setBranch").value = s.branch || "main";
     $("#setPath").value = s.syncPath || "data/workbench.json";
     $("#setToken").value = s.token || "";
+    $("#setGiteeToken").value = s.giteeToken || "";
     $("#setProxy").value = s.proxy || "";
+    syncUiByBackend();
   }
   /* 设置访问密码：轻量防护（不依赖 crypto，本地 file:// 与部署环境结果一致） */
   function hashPwd(str) {
@@ -790,21 +877,25 @@
     });
 
     // 设置
+    $("#setBackend").addEventListener("change", syncUiByBackend);
     $("#btnSaveSettings").addEventListener("click", () => {
       const s = getSettings();
       s.name = $("#setName").value.trim();
       s.syncEnabled = $("#setSyncOn").checked;
+      s.syncBackend = ($("#setBackend").value || "github").trim().toLowerCase();
       s.repo = $("#setRepo").value.trim();
       s.branch = $("#setBranch").value.trim() || "main";
       s.syncPath = $("#setPath").value.trim() || "data/workbench.json";
       s.token = $("#setToken").value;
+      s.giteeToken = $("#setGiteeToken").value;
       s.proxy = $("#setProxy").value.trim();
       write(LS.settings, s);
       loadSyncCfg();
-      if (SYNC.enabled && SYNC.repo && SYNC.token) {
+      const tok = activeToken();
+      if (SYNC.enabled && SYNC.repo && tok) {
         setSyncStatus("正在从云端拉取…", false);
-        ghPull().then(() => { setSyncStatus("已从云端同步", true); renderAll(); renderUser(); renderDashboard(); })
-                .catch((e) => setSyncStatus("云端拉取失败：" + e.message, false));
+        cloudPull().then(() => { setSyncStatus("已从云端同步", true); renderAll(); renderUser(); renderDashboard(); })
+                  .catch((e) => setSyncStatus("云端拉取失败：" + e.message, false));
       } else {
         setSyncStatus("未启用", false);
       }
@@ -813,9 +904,9 @@
     });
 
     $("#btnSyncNow").addEventListener("click", () => {
-      if (!SYNC.enabled || !SYNC.repo || !SYNC.token) { toast("请先在上方开启并填写同步信息"); return; }
+      if (!SYNC.enabled || !SYNC.repo || !activeToken()) { toast("请先在上方开启并填写同步信息"); return; }
       setSyncStatus("正在上传到云端…", false);
-      ghPush();
+      cloudPush();
     });
 
     // 右上角：设置（密码保护）/ 用户
@@ -888,9 +979,9 @@
     if (!read(LS.tools, null)) write(LS.tools, seedTools());
     bind();
     loadSyncCfg();
-    if (SYNC.enabled && SYNC.repo && SYNC.token) {
+    if (SYNC.enabled && SYNC.repo && activeToken()) {
       setSyncStatus("正在从云端拉取…", false);
-      try { await ghPull(); setSyncStatus("已从云端同步", true); }
+      try { await cloudPull(); setSyncStatus("已从云端同步", true); }
       catch (e) { setSyncStatus("云端拉取失败：" + e.message, false); }
     }
     renderAll();
