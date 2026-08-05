@@ -183,8 +183,24 @@
   async function ghPull() {
     if (!SYNC.enabled || !SYNC.repo || !SYNC.token) return false;
     const url = `https://api.github.com/repos/${encodeURIComponent(SYNC.repo)}/contents/${encodeURIComponent(SYNC.path)}?ref=${encodeURIComponent(SYNC.branch)}`;
-    const res = await fetch(url, { headers: ghHeaders() });
-    if (res.status === 404) { SYNC.sha = null; return true; }      // 云端还没有数据文件，正常
+    let res;
+    try {
+      res = await fetch(url, { headers: ghHeaders() });
+    } catch (e) {
+      throw new Error("无法连接 GitHub API（网络问题）：" + (e.message || "Failed to fetch"));
+    }
+    if (res.status === 404) {
+      // 可能是仓库不存在，也可能是数据文件尚未创建 → 验证仓库本身是否存在
+      try {
+        const repoRes = await fetch(`https://api.github.com/repos/${encodeURIComponent(SYNC.repo)}`, { headers: ghHeaders() });
+        if (repoRes.status === 404) throw new Error(`仓库 ${SYNC.repo} 不存在，请先在 GitHub 创建该仓库（建议设为 Private）`);
+        if (repoRes.status === 401) throw new Error("令牌无效或无权限(401)");
+      } catch (e2) {
+        if (e2.message.includes("仓库") || e2.message.includes("令牌")) throw e2;
+        // 验证请求本身也网络失败，则按“云端还没有数据文件”静默处理
+      }
+      SYNC.sha = null; return true;                              // 云端还没有数据文件，正常
+    }
     if (res.status === 401) throw new Error("令牌无效或无权限(401)");
     if (!res.ok) throw new Error("拉取失败 HTTP " + res.status);
     const data = await res.json();
@@ -213,7 +229,9 @@
       SYNC.sha = (await res.json()).content.sha;
       setSyncStatus("已同步云端（" + new Date().toLocaleTimeString() + "）", true);
     } catch (e) {
-      setSyncStatus("同步失败：" + e.message, false);
+      const msg = (e && e.message && e.message.indexOf("Failed to fetch") >= 0)
+        ? "无法连接 GitHub API（网络问题），请检查网络或换网络后重试" : e.message;
+      setSyncStatus("同步失败：" + msg, false);
     } finally { SYNC.busy = false; }
   }
   function scheduleAutoSync() {
