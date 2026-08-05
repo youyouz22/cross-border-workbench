@@ -259,6 +259,19 @@
 
           <hr class="hr" />
           <div class="field">
+            <label>本地备份（公司网可用）</label>
+            <div class="text-sm muted" style="margin-bottom:8px">
+              如果 GitHub 同步因网络失败，可把数据导出为 JSON 文件，换电脑或换网络后再导入恢复。
+            </div>
+            <div class="flex items-center gap-12">
+              <button class="btn" id="btnExportBackup">⬇️ 导出备份</button>
+              <button class="btn" id="btnImportBackup">⬆️ 导入备份</button>
+              <input type="file" id="importBackupFile" accept="application/json" style="display:none" />
+            </div>
+          </div>
+
+          <hr class="hr" />
+          <div class="field">
             <label>本地数据缓存</label>
             <div class="text-sm muted" style="margin-bottom:8px">
               如果新闻等模块显示旧内容或刷新异常，可清除本地缓存。清除后页面会恢复默认示例数据，刷新后会重新拉取。

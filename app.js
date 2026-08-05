@@ -829,6 +829,9 @@
     $("#btnExport").addEventListener("click", exportData);
     $("#btnImport").addEventListener("click", () => $("#importFile").click());
     $("#importFile").addEventListener("change", (e) => { if (e.target.files[0]) importData(e.target.files[0]); e.target.value = ""; });
+    $("#btnExportBackup").addEventListener("click", exportData);
+    $("#btnImportBackup").addEventListener("click", () => $("#importBackupFile").click());
+    $("#importBackupFile").addEventListener("change", (e) => { if (e.target.files[0]) importData(e.target.files[0]); e.target.value = ""; });
 
     // 清除本地缓存
     $("#btnClearCache").addEventListener("click", () => {
