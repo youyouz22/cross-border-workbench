@@ -252,6 +252,14 @@
             </div>
           </div>
 
+          <div class="field">
+            <label>同步代理地址（可选 · 公司网通不了 GitHub 时用）</label>
+            <input class="input" id="setProxy" placeholder="https://你的worker.workers.dev" />
+            <div class="text-sm muted mt-8">
+              如果勾选同步后提示「无法连接同步服务（网络问题）」，多半是公司网拦截了浏览器对 api.github.com 的跨域预检。可部署一个 Cloudflare Worker 代理（详见仓库 <code>ghsync-worker.js</code>），把它的地址填这里，前端经代理中转访问 GitHub，即可在公司网同步。留空则直连 GitHub。
+            </div>
+          </div>
+
           <div class="flex items-center gap-12">
             <button class="btn" id="btnSyncNow">立即同步（上传到云端）</button>
             <span id="syncStatusLine" class="text-sm muted">未启用</span>

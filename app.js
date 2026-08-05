@@ -162,7 +162,7 @@
   }
 
   /* ---------------- GitHub 云端同步（git-as-backend） ---------------- */
-  const SYNC = { enabled: false, repo: "", branch: "main", path: "data/workbench.json", token: "", sha: null, busy: false, timer: null };
+  const SYNC = { enabled: false, repo: "", branch: "main", path: "data/workbench.json", token: "", proxy: "", sha: null, busy: false, timer: null };
 
   function loadSyncCfg() {
     const s = getSettings();
@@ -171,28 +171,53 @@
     SYNC.branch = (s.branch || "main").trim();
     SYNC.path = (s.syncPath || "data/workbench.json").trim();
     SYNC.token = s.token || "";
+    SYNC.proxy = (s.proxy || "").trim();
   }
   function ghHeaders() {
     const h = { "Accept": "application/vnd.github+json" };
     if (SYNC.token) h["Authorization"] = "Bearer " + SYNC.token;
     return h;
   }
+  // 统一请求：无代理直连 api.github.com；有代理则 POST 到代理(避免跨域预检被公司网拦截)
+  async function ghFetch(method, path, bodyObj) {
+    if (!SYNC.proxy) {
+      return fetch("https://api.github.com" + path, {
+        method,
+        headers: ghHeaders(),
+        body: bodyObj ? JSON.stringify(bodyObj) : undefined,
+      });
+    }
+    const r = await fetch(SYNC.proxy, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ method, path, token: SYNC.token, body: bodyObj || null }),
+    });
+    const data = await r.json().catch(() => null);
+    const status = data && typeof data.status === "number" ? data.status : r.status;
+    const body = data ? data.body : null;
+    return {
+      status,
+      ok: status >= 200 && status < 300,
+      async json() { return body; },
+      async text() { return typeof body === "string" ? body : JSON.stringify(body); },
+    };
+  }
   function b64enc(str) { return btoa(unescape(encodeURIComponent(str))); }
   function b64dec(b64) { return decodeURIComponent(escape(atob(b64.replace(/\s/g, "")))); }
 
   async function ghPull() {
     if (!SYNC.enabled || !SYNC.repo || !SYNC.token) return false;
-    const url = `https://api.github.com/repos/${encodeURIComponent(SYNC.repo)}/contents/${encodeURIComponent(SYNC.path)}?ref=${encodeURIComponent(SYNC.branch)}`;
+    const path = `/repos/${encodeURIComponent(SYNC.repo)}/contents/${encodeURIComponent(SYNC.path)}?ref=${encodeURIComponent(SYNC.branch)}`;
     let res;
     try {
-      res = await fetch(url, { headers: ghHeaders() });
+      res = await ghFetch("GET", path);
     } catch (e) {
-      throw new Error("无法连接 GitHub API（网络问题）：" + (e.message || "Failed to fetch"));
+      throw new Error("无法连接同步服务（网络问题）：" + (e.message || "Failed to fetch"));
     }
     if (res.status === 404) {
       // 可能是仓库不存在，也可能是数据文件尚未创建 → 验证仓库本身是否存在
       try {
-        const repoRes = await fetch(`https://api.github.com/repos/${encodeURIComponent(SYNC.repo)}`, { headers: ghHeaders() });
+        const repoRes = await ghFetch("GET", `/repos/${encodeURIComponent(SYNC.repo)}`);
         if (repoRes.status === 404) throw new Error(`仓库 ${SYNC.repo} 不存在，请先在 GitHub 创建该仓库（建议设为 Private）`);
         if (repoRes.status === 401) throw new Error("令牌无效或无权限(401)");
       } catch (e2) {
@@ -217,20 +242,19 @@
       Object.values(LS).forEach((k) => { const v = localStorage.getItem(k); if (v != null) payload[k] = JSON.parse(v); });
       const body = b64enc(JSON.stringify(payload, null, 2));
       if (SYNC.sha == null) {
-        const g = await fetch(`https://api.github.com/repos/${encodeURIComponent(SYNC.repo)}/contents/${encodeURIComponent(SYNC.path)}?ref=${encodeURIComponent(SYNC.branch)}`, { headers: ghHeaders() });
+        const g = await ghFetch("GET", `/repos/${encodeURIComponent(SYNC.repo)}/contents/${encodeURIComponent(SYNC.path)}?ref=${encodeURIComponent(SYNC.branch)}`);
         if (g.ok) SYNC.sha = (await g.json()).sha;
         else if (g.status !== 404) throw new Error("获取文件失败 HTTP " + g.status);
       }
-      const url = `https://api.github.com/repos/${encodeURIComponent(SYNC.repo)}/contents/${encodeURIComponent(SYNC.path)}`;
       const req = { message: "sync: workbench data " + new Date().toISOString(), content: body, branch: SYNC.branch };
       if (SYNC.sha) req.sha = SYNC.sha;
-      const res = await fetch(url, { method: "PUT", headers: ghHeaders(), body: JSON.stringify(req) });
+      const res = await ghFetch("PUT", `/repos/${encodeURIComponent(SYNC.repo)}/contents/${encodeURIComponent(SYNC.path)}`, req);
       if (!res.ok) throw new Error("推送失败 HTTP " + res.status);
       SYNC.sha = (await res.json()).content.sha;
       setSyncStatus("已同步云端（" + new Date().toLocaleTimeString() + "）", true);
     } catch (e) {
       const msg = (e && e.message && e.message.indexOf("Failed to fetch") >= 0)
-        ? "无法连接 GitHub API（网络问题），请检查网络或换网络后重试" : e.message;
+        ? "无法连接同步服务（网络问题），请检查网络/代理或换网络后重试" : e.message;
       setSyncStatus("同步失败：" + msg, false);
     } finally { SYNC.busy = false; }
   }
@@ -535,6 +559,7 @@
     $("#setBranch").value = s.branch || "main";
     $("#setPath").value = s.syncPath || "data/workbench.json";
     $("#setToken").value = s.token || "";
+    $("#setProxy").value = s.proxy || "";
   }
   /* 设置访问密码：轻量防护（不依赖 crypto，本地 file:// 与部署环境结果一致） */
   function hashPwd(str) {
@@ -773,6 +798,7 @@
       s.branch = $("#setBranch").value.trim() || "main";
       s.syncPath = $("#setPath").value.trim() || "data/workbench.json";
       s.token = $("#setToken").value;
+      s.proxy = $("#setProxy").value.trim();
       write(LS.settings, s);
       loadSyncCfg();
       if (SYNC.enabled && SYNC.repo && SYNC.token) {
