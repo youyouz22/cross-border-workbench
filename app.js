@@ -65,6 +65,8 @@
   const NEWS_CACHE_VERSION = 3; // 缓存数据结构升级时递增，自动清掉旧本地数据
   const ORIGIN_NEWS_URL = "./data/origin-news.json"; // 原站跨境政策快讯快照（同事站点的 news.json）
   const ORIGIN_RSS_ZH_URL = "./data/cross-border-news-zh.json"; // 预翻译好的中文跨境资讯（左列，无运行时翻译）
+  // 实时拉取源：每次打开都从 GitHub 仓库拉最新新闻 JSON 并覆盖本地缓存（参考站做法）
+  const GITHUB_RAW_BASE = "https://raw.githubusercontent.com/youyouz22/cross-border-workbench/main";
   /* 原站产品数据结构（来自同事站点的 products.json），这里做兜底种子 */
   function seedProduct() {
     return [
@@ -564,6 +566,50 @@
     } catch (e) {}
   }
 
+  /* 实时拉取 GitHub 上最新的新闻 JSON 并覆盖本地缓存（参考站做法：每次打开都拉，保证"推了就变"）
+     左列 cross-border-news-zh.json + 右列 origin-news.json 一起更新；失败静默回退本地。 */
+  async function pullLiveNews() {
+    try {
+      const cb = "?t=" + Date.now();
+      const [zhR, orR] = await Promise.all([
+        fetch(GITHUB_RAW_BASE + "/data/cross-border-news-zh.json" + cb),
+        fetch(GITHUB_RAW_BASE + "/data/origin-news.json" + cb),
+      ]);
+      if (zhR.ok) {
+        const arr = await zhR.json();
+        if (Array.isArray(arr) && arr.length) {
+          const mapped = arr.map((n) => ({
+            id: n.id != null ? String(n.id) : uid(),
+            title: n.title || "",
+            source: n.source || "",
+            impact: n.impact === "high" ? "高影响" : (n.impact === "medium" ? "中影响" : (n.impact || "")),
+            topic: n.category || "新闻",
+            time: n.publishedAt || "",
+            country: n.country || "",
+            category: n.category || "",
+            summary: n.summary || "",
+            url: n.url || "",
+            trendingTopics: n.trendingTopics || [],
+            ecommerceImpact: !!n.ecommerceImpact,
+          }));
+          write(LS.news, mapped);
+        }
+      }
+      if (orR.ok) {
+        const arr2 = await orR.json();
+        if (Array.isArray(arr2) && arr2.length) {
+          const box = $("#newsOrigin");
+          if (box) {
+            box.dataset.loaded = "";
+            box.innerHTML = arr2.map((n) => renderNewsCard(n)).join("");
+            box.dataset.loaded = "1";
+          }
+        }
+      }
+      renderNews();
+    } catch (e) { /* 离线/跨域失败则保持本地已有内容 */ }
+  }
+
 
   /* 真实 RSS 拉取：用已配置的 NEWS_SOURCES + RSS2JSON，把各源头条归一化为新闻卡片
      任一 feed 失败都跳过，整体失败回退本地静态资讯（见 refreshNewsLive） */
@@ -1050,6 +1096,7 @@
     await loadStaticNews();   // 加载预翻译中文资讯（无运行时翻译，秒开）
     renderNews();
     renderDashboard();        // 刷新首页「今日新闻」
+    pullLiveNews();           // 后台实时拉取 GitHub 最新新闻并覆盖缓存（推了就变，不阻塞首屏）
     const last = read("cbec_lastview", "dashboard");
     const allowed = ["dashboard","tasks","feishu","news","product","tools","notify","settings","user"];
     if (last === "settings") openSettings();
