@@ -7,6 +7,7 @@
 
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const newsOrigView = new Set(); // 新闻中英文切换视图集合（修复未声明引用导致的 ReferenceError）
   const LS = {
     tasks: "cbec_tasks",
     docs: "cbec_docs",
@@ -564,6 +565,62 @@
   }
 
 
+  /* 真实 RSS 拉取：用已配置的 NEWS_SOURCES + RSS2JSON，把各源头条归一化为新闻卡片
+     任一 feed 失败都跳过，整体失败回退本地静态资讯（见 refreshNewsLive） */
+  async function fetchLiveNews() {
+    const out = [];
+    const seen = new Set();
+    for (const grp of NEWS_SOURCES) {
+      for (const feed of grp.feeds) {
+        try {
+          const res = await fetch(RSS2JSON + encodeURIComponent(feed));
+          if (!res.ok) continue;
+          const data = await res.json();
+          if (!data || data.status !== "ok" || !Array.isArray(data.items)) continue;
+          for (const it of data.items.slice(0, 6)) {
+            const key = (it.title || "").toLowerCase().trim();
+            if (!key || seen.has(key)) continue;
+            seen.add(key);
+            let host = grp.topic;
+            try { host = new URL(it.link).hostname.replace(/^www\./, ""); } catch (e) {}
+            out.push({
+              id: uid(),
+              title: (it.title || "(无标题)").trim(),
+              source: host,
+              impact: "中影响",
+              topic: grp.topic,
+              summary: (it.description || it.content || "").replace(/<[^>]+>/g, "").slice(0, 160),
+              url: it.link || "",
+              time: it.pubDate || "",
+              publishedAt: it.pubDate || "",
+              trendingTopics: [],
+              ecommerceImpact: true,
+            });
+          }
+        } catch (e) { /* 单个 feed 失败忽略，继续下一个 */ }
+      }
+    }
+    return out;
+  }
+  async function refreshNewsLive() {
+    const na = $("#newsAll");
+    if (na) na.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>正在拉取真实 RSS 头条…</div>';
+    const live = await fetchLiveNews();
+    if (live.length) {
+      write(LS.news, live); // 供首页仪表盘「今日新闻」复用
+      if (na) na.innerHTML = live.map((n) => renderNewsCard(n)).join("");
+      const upd = $("#newsUpdated"); if (upd) upd.textContent = "更新于 " + new Date().toLocaleString();
+      toast("已刷新真实 RSS 头条（" + live.length + " 条）");
+    } else {
+      // 实时拉取失败，回退本地静态资讯
+      localStorage.removeItem(LS.news);
+      await loadStaticNews();
+      if (na) renderNews();
+      const upd = $("#newsUpdated"); if (upd) upd.textContent = "实时拉取失败，已显示本地示例";
+      toast("实时 RSS 拉取失败，已显示本地示例资讯");
+    }
+  }
+
   /* ---------------- 渲染：产品 / 工具 ---------------- */
   function renderProduct() {
     const items = read(LS.product, []);
@@ -717,14 +774,10 @@
     // 新闻刷新
     const rb = $("#btnRefreshNews");
     if (rb) rb.addEventListener("click", async () => {
-      const na = $("#newsAll"), no = $("#newsOrigin");
-      if (na) { na.dataset.loaded = ""; na.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>加载中…</div>'; }
+      const no = $("#newsOrigin");
       if (no) { no.dataset.loaded = ""; no.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>加载原站政策快讯…</div>'; }
-      localStorage.removeItem(LS.news);
-      await loadStaticNews();
-      renderNews();
+      await refreshNewsLive();
       renderOriginNews();
-      toast("已刷新资讯");
     });
 
     // 任务
@@ -831,15 +884,24 @@
 
     /* ---- 产品分析：添加商品 ---- */
     $("#btnNewProduct").addEventListener("click", () => {
-      ["pTitle", "pUrl", "pImg", "pPlatform", "pPrice", "pNote"].forEach((id) => ($("#" + id).value = ""));
+      ["pTitle", "pUrl", "pImg", "pPlatform", "pPrice", "pNote", "pAli", "pGrowth", "pRating", "pTrend", "pPros", "pCons"].forEach((id) => ($("#" + id).value = ""));
       $("#productModal").classList.add("show");
     });
     $("#btnSaveProduct").addEventListener("click", () => {
       const title = $("#pTitle").value.trim(), url = $("#pUrl").value.trim();
       if (!title) { toast("请填写商品名称"); return; }
       const products = read(LS.product, []);
-      products.push({ id: uid(), title, url, img: $("#pImg").value.trim(),
-        platform: $("#pPlatform").value.trim(), price: $("#pPrice").value.trim(), note: $("#pNote").value.trim() });
+      const trendRaw = $("#pTrend").value.trim().toLowerCase();
+      products.push({
+        id: uid(), title, url, img: $("#pImg").value.trim(),
+        platform: $("#pPlatform").value.trim(), price: $("#pPrice").value.trim(), note: $("#pNote").value.trim(),
+        alibabaPrice: $("#pAli").value.trim(),
+        salesGrowth: $("#pGrowth").value.trim(),
+        rating: $("#pRating").value.trim(),
+        trending: trendRaw === "1" || trendRaw === "yes" || trendRaw === "y" || trendRaw === "是",
+        pros: $("#pPros").value.split(",").map((x) => x.trim()).filter(Boolean),
+        cons: $("#pCons").value.split(",").map((x) => x.trim()).filter(Boolean),
+      });
       write(LS.product, products);
       $("#productModal").classList.remove("show");
       renderProduct(); toast("已添加商品");

@@ -465,6 +465,34 @@
       <label>备注（可选）</label>
       <textarea class="textarea" id="pNote" placeholder="卖点、定位、对比维度等"></textarea>
     </div>
+    <div class="grid-2">
+      <div class="field">
+        <label>1688 采购价（可选，USD）</label>
+        <input class="input" id="pAli" placeholder="例如：28" />
+      </div>
+      <div class="field">
+        <label>销量增长 %（可选）</label>
+        <input class="input" id="pGrowth" placeholder="例如：320" />
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="field">
+        <label>评分（可选，0-5）</label>
+        <input class="input" id="pRating" placeholder="例如：4.5" />
+      </div>
+      <div class="field">
+        <label>是否热卖 trending（可选）</label>
+        <input class="input" id="pTrend" placeholder="填 1 / yes / 是 表示热卖" />
+      </div>
+    </div>
+    <div class="field">
+      <label>优点（可选，逗号分隔）</label>
+      <input class="input" id="pPros" placeholder="例如：开机即热,恒温节能" />
+    </div>
+    <div class="field">
+      <label>缺点（可选，逗号分隔）</label>
+      <input class="input" id="pCons" placeholder="例如：功率偏小" />
+    </div>
     <div class="modal-foot">
       <button class="btn" data-close>取消</button>
       <button class="btn btn-primary" id="btnSaveProduct">添加商品</button>
