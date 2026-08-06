@@ -46,22 +46,6 @@
     ];
   }
 
-  /* 真实新闻源：聚焦跨境物流/清关/关税/运费/出口政策（经 RSS2JSON 免费 API 拉取，无需后端） */
-  const NEWS_SOURCES = [
-    { topic: "包裹关税与清关", feeds: [
-      "https://www.postandparcel.info/feed/",
-      "https://www.parcelandpostaltechnologyinternational.com/feed/",
-    ]},
-    { topic: "运费与跨境物流", feeds: [
-      "https://theloadstar.com/feed/",
-      "https://www.freightwaves.com/news/feed",
-      "https://www.stattimes.com/feed/",
-    ]},
-    { topic: "出口与贸易政策", feeds: [
-      "https://www.supplychaindive.com/feeds/news/",
-    ]},
-  ];
-  const RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=";
   const NEWS_CACHE_VERSION = 3; // 缓存数据结构升级时递增，自动清掉旧本地数据
   const ORIGIN_NEWS_URL = "./data/origin-news.json"; // 原站跨境政策快讯快照（同事站点的 news.json）
   const ORIGIN_RSS_ZH_URL = "./data/cross-border-news-zh.json"; // 预翻译好的中文跨境资讯（左列，无运行时翻译）
@@ -624,62 +608,6 @@
     }
   }
 
-
-  /* 真实 RSS 拉取：用已配置的 NEWS_SOURCES + RSS2JSON，把各源头条归一化为新闻卡片
-     任一 feed 失败都跳过，整体失败回退本地静态资讯（见 refreshNewsLive） */
-  async function fetchLiveNews() {
-    const out = [];
-    const seen = new Set();
-    for (const grp of NEWS_SOURCES) {
-      for (const feed of grp.feeds) {
-        try {
-          const res = await fetch(RSS2JSON + encodeURIComponent(feed));
-          if (!res.ok) continue;
-          const data = await res.json();
-          if (!data || data.status !== "ok" || !Array.isArray(data.items)) continue;
-          for (const it of data.items.slice(0, 6)) {
-            const key = (it.title || "").toLowerCase().trim();
-            if (!key || seen.has(key)) continue;
-            seen.add(key);
-            let host = grp.topic;
-            try { host = new URL(it.link).hostname.replace(/^www\./, ""); } catch (e) {}
-            out.push({
-              id: uid(),
-              title: (it.title || "(无标题)").trim(),
-              source: host,
-              impact: "中影响",
-              topic: grp.topic,
-              summary: (it.description || it.content || "").replace(/<[^>]+>/g, "").slice(0, 160),
-              url: it.link || "",
-              time: it.pubDate || "",
-              publishedAt: it.pubDate || "",
-              trendingTopics: [],
-              ecommerceImpact: true,
-            });
-          }
-        } catch (e) { /* 单个 feed 失败忽略，继续下一个 */ }
-      }
-    }
-    return out;
-  }
-  async function refreshNewsLive() {
-    const na = $("#newsAll");
-    if (na) na.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>正在拉取真实 RSS 头条…</div>';
-    const live = await fetchLiveNews();
-    if (live.length) {
-      write(LS.news, live); // 供首页仪表盘「今日新闻」复用
-      if (na) na.innerHTML = live.map((n) => renderNewsCard(n)).join("");
-      const upd = $("#newsUpdated"); if (upd) upd.textContent = "更新于 " + new Date().toLocaleString();
-      toast("已刷新真实 RSS 头条（" + live.length + " 条）");
-    } else {
-      // 实时拉取失败，回退本地静态资讯
-      localStorage.removeItem(LS.news);
-      await loadStaticNews();
-      if (na) renderNews();
-      const upd = $("#newsUpdated"); if (upd) upd.textContent = "实时拉取失败，已显示本地示例";
-      toast("实时 RSS 拉取失败，已显示本地示例资讯");
-    }
-  }
 
   /* ---------------- 渲染：产品 / 工具 ---------------- */
   function renderProduct() {
