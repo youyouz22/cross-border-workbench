@@ -568,13 +568,22 @@
 
   /* 实时拉取 GitHub 上最新的新闻 JSON 并覆盖本地缓存（参考站做法：每次打开都拉，保证"推了就变"）
      左列 cross-border-news-zh.json + 右列 origin-news.json 一起更新；失败静默回退本地。 */
-  async function pullLiveNews() {
+  /* 实时拉取 GitHub 上最新的新闻 JSON 并覆盖本地缓存（与每日 8 点自动任务产出同源）
+     opts.loading=true 时显示加载动画（用于「刷新新闻」按钮）；opts.toast=true 时弹提示 */
+  async function pullLiveNews(opts = {}) {
+    const { loading = false, toast: doToast = false } = opts;
+    const na = $("#newsAll"), no = $("#newsOrigin");
+    if (loading) {
+      if (na) na.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>正在拉取最新资讯…</div>';
+      if (no) { no.dataset.loaded = ""; no.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>正在拉取原站政策快讯…</div>'; }
+    }
     try {
       const cb = "?t=" + Date.now();
       const [zhR, orR] = await Promise.all([
         fetch(GITHUB_RAW_BASE + "/data/cross-border-news-zh.json" + cb),
         fetch(GITHUB_RAW_BASE + "/data/origin-news.json" + cb),
       ]);
+      let count = 0;
       if (zhR.ok) {
         const arr = await zhR.json();
         if (Array.isArray(arr) && arr.length) {
@@ -593,21 +602,26 @@
             ecommerceImpact: !!n.ecommerceImpact,
           }));
           write(LS.news, mapped);
+          count = mapped.length;
         }
       }
       if (orR.ok) {
         const arr2 = await orR.json();
         if (Array.isArray(arr2) && arr2.length) {
-          const box = $("#newsOrigin");
-          if (box) {
-            box.dataset.loaded = "";
-            box.innerHTML = arr2.map((n) => renderNewsCard(n)).join("");
-            box.dataset.loaded = "1";
+          if (no) {
+            no.dataset.loaded = "";
+            no.innerHTML = arr2.map((n) => renderNewsCard(n)).join("");
+            no.dataset.loaded = "1";
           }
         }
       }
       renderNews();
-    } catch (e) { /* 离线/跨域失败则保持本地已有内容 */ }
+      const upd = $("#newsUpdated"); if (upd) upd.textContent = "更新于 " + new Date().toLocaleString();
+      if (doToast) toast(count ? ("已拉取最新资讯（" + count + " 条）") : "已是最新资讯");
+    } catch (e) {
+      if (loading && na) na.innerHTML = '<div class="empty">拉取失败，请检查网络后重试</div>';
+      if (doToast) toast("拉取最新资讯失败，请检查网络");
+    }
   }
 
 
@@ -817,13 +831,10 @@
     });
     // 侧边栏折叠
     $("#toggleSidebar").addEventListener("click", () => $("#app").classList.toggle("collapsed"));
-    // 新闻刷新
+    // 新闻刷新：点击即强制从 GitHub 拉取最新新闻（与每日 8 点自动任务同源），覆盖本地缓存
     const rb = $("#btnRefreshNews");
     if (rb) rb.addEventListener("click", async () => {
-      const no = $("#newsOrigin");
-      if (no) { no.dataset.loaded = ""; no.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>加载原站政策快讯…</div>'; }
-      await refreshNewsLive();
-      renderOriginNews();
+      await pullLiveNews({ loading: true, toast: true });
     });
 
     // 任务
