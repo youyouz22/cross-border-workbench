@@ -7,11 +7,12 @@
 
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
-  const newsOrigView = new Set(); // 新闻中英文切换视图集合（修复未声明引用导致的 ReferenceError）
+  const newsOrigView = new Set(); // 保留兼容（已不再使用）
   const LS = {
     tasks: "cbec_tasks",
     docs: "cbec_docs",
     news: "cbec_news",
+    origin: "cbec_origin",
     product: "cbec_product",
     productHidden: "cbec_product_hidden",
     tools: "cbec_tools",
@@ -343,7 +344,7 @@
     if (view === "dashboard") renderDashboard();
     if (view === "tasks") renderTasks();
     if (view === "feishu") renderDocs();
-    if (view === "news") { renderNews(); renderOriginNews(); }
+    if (view === "news") { renderNews(); }
     if (view === "product") renderProduct();
     if (view === "tools") renderTools();
     if (view === "notify") renderNotify();
@@ -469,85 +470,173 @@
   }
 
   /* ---------------- 渲染：新闻 ---------------- */
-  function renderNews() {
-    const newsRaw = read(LS.news, []);
-    const news = Array.isArray(newsRaw) ? newsRaw : (newsRaw && Array.isArray(newsRaw.items) ? newsRaw.items : []);
-    const box = $("#newsAll");
-    if (!news.length) {
-      box.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>暂无资讯</div>';
-      return;
-    }
-    box.innerHTML = news.map((n) => renderNewsCard(n)).join("");
+  const COUNTRY_FLAG = { "美国":"🇺🇸","英国":"🇬🇧","西班牙":"🇪🇸","意大利":"🇮🇹","法国":"🇫🇷","德国":"🇩🇪" };
+  const flagOf = (c) => COUNTRY_FLAG[c] || "🌍";
+  /* 电商影响分析字典：按新闻类别给出可操作建议（参考同类成熟设计，便于选品/运营决策） */
+  const EFFECT_ADVICE = {
+    "政策": "直接影响选品合规与进口成本。建议提前核查目标国认证（如 CE/UKCA/能效/环保标准），避免因不合规被下架或罚款，必要时调整供应链与申报方式。",
+    "经济": "宏观消费力与汇率波动会影响客单价和利润。建议动态调整定价与促销节奏，关注汇率对冲，避免成本上升侵蚀毛利。",
+    "电商": "平台流量与促销变化是选品风向标。建议快速跟进热销品类、优化 Listing 关键词与广告投放，抢占流量红利。",
+    "消费": "消费偏好变化指明需求方向。建议围绕该趋势补充相关 SKU，并在详情页强化对应卖点（如环保、智能、可持续）。",
+    "物流": "物流成本/时效波动影响履约体验与利润。建议多渠道分散仓配、设置合理运费模板，并提前告知时效避免差评。",
+    "支付": "本地化支付覆盖能显著提升转化。建议开通该市场主流支付方式（如分期、本地钱包），降低弃单率。",
+    "税务": "税费变动直接吞噬利润。建议重新核算到手价、优化定价与供应链，必要时调整选品结构。",
+    "科技": "新技术品类需求上升。建议评估供应链稳定性与上架节奏，抢占早期流量与口碑。",
+    "旅游": "旅游旺季带动周边消费。建议提前备货旅游/户外/纪念品类，配合节点营销。",
+    "商业": "中小企业数字化带来 B 端机会。可考虑面向卖家工具/服务类商品，拓展新客群。",
+    "运动": "运动健康需求上升。建议补充相关装备，并强调功能卖点（如便携、耐用、轻量）。",
+    "关税": "关税上调直接抬升到岸成本与售价。建议重新核算利润、优化申报方式，并评估转口或本地仓以降低税负。",
+    "运费": "运费波动影响履约成本与时效。建议多渠道比价、设置动态运费模板，并在大促前锁定运力。",
+  };
+  const adviceFor = (n) => EFFECT_ADVICE[n.category] || EFFECT_ADVICE[n.topic] || "该新闻与你的选品/运营相关，建议结合所在品类评估潜在影响，并持续关注后续进展。";
+
+  let newsCountry = "all";
+  let newsExpanded = null;
+
+  function impactBadge(imp) {
+    const v = (imp || "").toLowerCase();
+    if (v === "high" || v === "高影响") return '<span class="tag red">高影响</span>';
+    if (v === "medium" || v === "中影响") return '<span class="tag amber">中影响</span>';
+    if (imp) return '<span class="tag">低影响</span>';
+    return "";
   }
 
-  /* 通用中文新闻卡片（左列静态资讯 / 右列原站快讯共用） */
+  /* 合并左列资讯(LS.news) + 右列原站快讯(LS.origin)，按标题去重 */
+  function allNews() {
+    const a = read(LS.news, []) || [];
+    const b = read(LS.origin, []) || [];
+    const seen = new Set();
+    return a.concat(b).filter((n) => {
+      const k = (n.title || "").trim().toLowerCase();
+      if (!k || seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
+  }
+
+  function renderCountryFilter(all) {
+    const box = $("#newsCountryFilter");
+    if (!box) return;
+    const countries = ["all"].concat(Array.from(new Set(all.map((n) => n.country).filter(Boolean))));
+    box.innerHTML = countries.map((c) => {
+      const label = c === "all" ? "全部国家" : flagOf(c) + " " + c;
+      return `<button class="chip ${newsCountry === c ? "active" : ""}" data-country="${esc(c)}">${label}</button>`;
+    }).join("");
+  }
+
+  function renderNewsSidebar(all) {
+    const high = all.filter((n) => {
+      const v = (n.impact || "").toLowerCase();
+      return v === "high" || v === "高影响" || n.ecommerceImpact;
+    }).slice(0, 6);
+    const hi = $("#newsHighImpact");
+    if (hi) hi.innerHTML = high.length ? high.map((n) => `<li>${esc(n.title)}</li>`).join("") : '<li class="muted">暂无高影响新闻</li>';
+    const kw = {};
+    all.forEach((n) => (n.trendingTopics || []).forEach((t) => { kw[t] = (kw[t] || 0) + 1; }));
+    const top = Object.entries(kw).sort((a, b) => b[1] - a[1]).slice(0, 10);
+    const kwBox = $("#newsKeywords");
+    if (kwBox) kwBox.innerHTML = top.length
+      ? top.map(([t, c]) => `<span class="tag">#${esc(t)} <b>${c}</b></span>`).join(" ")
+      : '<span class="muted">暂无关键词</span>';
+  }
+
+  /* 统一新闻卡片：可点击展开看「对电商的具体影响」+ 相关关键词 */
   function renderNewsCard(n) {
-    const imp = (n.impact || "").toLowerCase();
-    const impact = (imp === "high" || imp === "高影响") ? '<span class="tag red">高影响</span>' : ((imp === "medium" || imp === "中影响") ? '<span class="tag amber">中影响</span>' : (n.impact ? '<span class="tag">低影响</span>' : ""));
+    const id = n.id || n.title;
+    const loc = n.country || "";
+    const expanded = newsExpanded === id;
     const topics = (n.trendingTopics || []).map((t) => `<span class="tag">#${esc(t)}</span>`).join(" ");
-    const loc = n.country || n.category || "";
+    const searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(n.title || "");
     return `
-    <div class="origin-news-item">
-      <div class="on-head">
-        ${loc ? `<span class="tag blue">${esc(loc)}</span>` : ""}
+    <div class="news-card ${expanded ? "open" : ""}" data-news-id="${esc(id)}">
+      <div class="nc-head">
+        ${loc ? `<span class="flag">${flagOf(loc)}</span><span class="tag blue">${esc(loc)}</span>` : ""}
         ${n.category ? `<span class="tag">${esc(n.category)}</span>` : ""}
-        ${impact}
-        ${n.ecommerceImpact ? '<span class="tag green">电商相关</span>' : ""}
+        ${impactBadge(n.impact)}
+        ${n.ecommerceImpact ? '<span class="tag green">电商影响</span>' : ""}
       </div>
-      <div class="on-title">${esc(n.title)}</div>
-      ${n.summary || n.body ? `<div class="on-summary">${esc(n.summary || n.body)}</div>` : ""}
-      <div class="on-meta">
+      <div class="nc-title">${esc(n.title)}</div>
+      ${n.summary ? `<div class="nc-summary">${esc(n.summary)}</div>` : ""}
+      <div class="nc-meta">
         <span>${esc(n.source || "")}</span>
         <span>${esc(n.publishedAt || n.time || "")}</span>
-        ${topics}
+        <span class="nc-toggle">${expanded ? "收起 ↑" : "点击展开详情 ↓"}</span>
       </div>
-      ${n.url ? `<div class="on-foot"><a class="news-goto" href="${esc(n.url)}" target="_blank" rel="noopener">查看原文 ↗</a></div>` : ""}
+      ${expanded ? `
+      <div class="nc-detail">
+        <div class="nc-advice">
+          <div class="nc-advice-h">📌 对电商的具体影响</div>
+          <div class="nc-advice-b">${esc(adviceFor(n))}</div>
+        </div>
+        ${topics ? `<div class="nc-keywords"><div class="nc-advice-h">🔍 相关关键词</div><div class="nc-kw-list">${topics}</div></div>` : ""}
+        <a class="nc-link" href="${esc(n.url || searchUrl)}" target="_blank" rel="noopener">${n.url ? "查看原文 ↗" : "搜索更多报道 ↗"}</a>
+      </div>` : ""}
     </div>`;
   }
 
-  /* 右列：原站政策快讯（中文快照），与左列共用卡片样式 */
-  async function renderOriginNews() {
-    const box = $("#newsOrigin");
+  function renderNews() {
+    const all = allNews();
+    const list = newsCountry === "all" ? all : all.filter((n) => (n.country || "") === newsCountry);
+    const box = $("#newsAll");
     if (!box) return;
-    if (box.dataset.loaded) return;
-    box.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>加载原站政策快讯…</div>';
+    if (!list.length) {
+      box.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>该国家暂无资讯</div>';
+    } else {
+      box.innerHTML = list.map((n) => renderNewsCard(n)).join("");
+    }
+    const cnt = $("#newsCount"); if (cnt) cnt.textContent = list.length;
+    renderCountryFilter(all);
+    renderNewsSidebar(all);
+  }
+
+  /* 右列原站政策快讯：加载进 LS.origin（与左列合并为统一流）；已加载则直接渲染 */
+  async function renderOriginNews() {
+    if (read(LS.origin, null)) { renderNews(); return; }
     try {
       const r = await fetch(ORIGIN_NEWS_URL);
       if (!r.ok) throw new Error("HTTP " + r.status);
       const arr = await r.json();
-      if (!Array.isArray(arr) || !arr.length) { box.innerHTML = '<div class="empty">暂无原站快讯</div>'; return; }
-      box.innerHTML = arr.map((n) => renderNewsCard(n)).join("");
-      box.dataset.loaded = "1";
-    } catch (e) {
-      box.innerHTML = '<div class="empty">原站快讯加载失败，请检查网络</div>';
-    }
+      if (Array.isArray(arr) && arr.length) write(LS.origin, arr);
+    } catch (e) {}
+    renderNews();
   }
 
-  /* 左列静态中文资讯：加载并写入 LS.news 供首页仪表盘复用，无运行时翻译 */
+  /* 左列静态中文资讯：写入 LS.news；同时预载右列到 LS.origin（供统一流合并），无运行时翻译、秒开 */
   async function loadStaticNews() {
-    if (read(LS.news, null)) return;
-    try {
-      const r = await fetch(ORIGIN_RSS_ZH_URL);
-      if (!r.ok) return;
-      const arr = await r.json();
-      if (Array.isArray(arr) && arr.length) {
-        const mapped = arr.map((n) => ({
-          id: n.id != null ? String(n.id) : uid(),
-          title: n.title || "",
-          source: n.source || "",
-          impact: n.impact === "high" ? "高影响" : (n.impact === "medium" ? "中影响" : (n.impact || "")),
-          topic: n.category || "新闻",
-          time: n.publishedAt || "",
-          country: n.country || "",
-          category: n.category || "",
-          summary: n.summary || "",
-          url: n.url || "",
-          trendingTopics: n.trendingTopics || [],
-          ecommerceImpact: !!n.ecommerceImpact,
-        }));
-        write(LS.news, mapped);
-      }
-    } catch (e) {}
+    if (!read(LS.news, null)) {
+      try {
+        const r = await fetch(ORIGIN_RSS_ZH_URL);
+        if (r.ok) {
+          const arr = await r.json();
+          if (Array.isArray(arr) && arr.length) {
+            const mapped = arr.map((n) => ({
+              id: n.id != null ? String(n.id) : uid(),
+              title: n.title || "",
+              source: n.source || "",
+              impact: n.impact === "high" ? "高影响" : (n.impact === "medium" ? "中影响" : (n.impact || "")),
+              topic: n.category || "新闻",
+              time: n.publishedAt || "",
+              country: n.country || "",
+              category: n.category || "",
+              summary: n.summary || "",
+              url: n.url || "",
+              trendingTopics: n.trendingTopics || [],
+              ecommerceImpact: !!n.ecommerceImpact,
+            }));
+            write(LS.news, mapped);
+          }
+        }
+      } catch (e) {}
+    }
+    if (!read(LS.origin, null)) {
+      try {
+        const r = await fetch(ORIGIN_NEWS_URL);
+        if (r.ok) {
+          const arr = await r.json();
+          if (Array.isArray(arr) && arr.length) write(LS.origin, arr);
+        }
+      } catch (e) {}
+    }
   }
 
   /* 实时拉取 GitHub 上最新的新闻 JSON 并覆盖本地缓存（参考站做法：每次打开都拉，保证"推了就变"）
@@ -556,11 +645,8 @@
      opts.loading=true 时显示加载动画（用于「刷新新闻」按钮）；opts.toast=true 时弹提示 */
   async function pullLiveNews(opts = {}) {
     const { loading = false, toast: doToast = false } = opts;
-    const na = $("#newsAll"), no = $("#newsOrigin");
-    if (loading) {
-      if (na) na.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>正在拉取最新资讯…</div>';
-      if (no) { no.dataset.loaded = ""; no.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>正在拉取原站政策快讯…</div>'; }
-    }
+    const na = $("#newsAll");
+    if (loading && na) na.innerHTML = '<div class="empty"><div class="empty-ico">📰</div>正在拉取最新资讯…</div>';
     try {
       const cb = "?t=" + Date.now();
       const [zhR, orR] = await Promise.all([
@@ -591,13 +677,7 @@
       }
       if (orR.ok) {
         const arr2 = await orR.json();
-        if (Array.isArray(arr2) && arr2.length) {
-          if (no) {
-            no.dataset.loaded = "";
-            no.innerHTML = arr2.map((n) => renderNewsCard(n)).join("");
-            no.dataset.loaded = "1";
-          }
-        }
+        if (Array.isArray(arr2) && arr2.length) write(LS.origin, arr2);
       }
       renderNews();
       const upd = $("#newsUpdated"); if (upd) upd.textContent = "更新于 " + new Date().toLocaleString();
@@ -904,18 +984,22 @@
       }
     });
 
-    /* ---- 新闻：点击打开原文 / 切换中英文 ---- */
+    /* ---- 新闻：展开/收起卡片、国家筛选、打开原文 ---- */
     $("#newsAll").addEventListener("click", (e) => {
-      const tog = e.target.closest("[data-toggle-orig]");
-      if (tog) {
-        e.preventDefault(); e.stopPropagation();
-        const id = tog.dataset.toggleOrig;
-        if (newsOrigView.has(id)) newsOrigView.delete(id); else newsOrigView.add(id);
-        renderNews();
-        return;
-      }
-      const item = e.target.closest(".news-link[data-url]");
-      if (item && item.dataset.url) { e.preventDefault(); window.open(item.dataset.url, "_blank", "noopener"); }
+      const card = e.target.closest(".news-card");
+      if (!card) return;
+      if (e.target.closest(".nc-link")) return; // 链接自行跳转，不触发展开
+      const id = card.dataset.newsId;
+      newsExpanded = (newsExpanded === id) ? null : id;
+      renderNews();
+    });
+    const ncf = $("#newsCountryFilter");
+    if (ncf) ncf.addEventListener("click", (e) => {
+      const chip = e.target.closest("[data-country]");
+      if (!chip) return;
+      newsCountry = chip.dataset.country;
+      newsExpanded = null;
+      renderNews();
     });
 
     // 通知

@@ -139,22 +139,29 @@
         <div class="page-head flex items-center" style="justify-content:space-between">
           <div>
             <h1>新闻聚合</h1>
-            <p>左：预翻译中文跨境资讯（关税 / 运费 / 物流，秒开无需等待）；右：跨境政策快讯 · 原站同步</p>
+            <p>汇总各国新闻及对电商的影响分析</p>
           </div>
           <div style="display:flex;gap:8px;align-items:center">
             <span class="text-sm muted" id="newsUpdated"></span>
             <button class="btn btn-sm" id="btnRefreshNews">🔄 刷新新闻</button>
           </div>
         </div>
-        <div class="news-cols">
-          <div class="news-col">
-            <div class="col-head"><span>实时跨境资讯</span><span class="text-sm muted">预翻译中文·秒开</span></div>
+        <div class="news-filter" id="newsCountryFilter"></div>
+        <div class="news-layout">
+          <div class="news-main">
+            <div class="col-head"><span>今日新闻 (<b id="newsCount">0</b>)</span><span class="text-sm muted">点击卡片展开「对电商的影响」</span></div>
             <div id="newsAll"></div>
           </div>
-          <div class="news-col">
-            <div class="col-head"><span>跨境政策快讯 · 原站同步</span><span class="text-sm muted">关税/运费/出口政策</span></div>
-            <div id="newsOrigin"></div>
-          </div>
+          <aside class="news-side">
+            <div class="side-card">
+              <div class="side-h">⚡ 高影响精选</div>
+              <ul class="side-list" id="newsHighImpact"></ul>
+            </div>
+            <div class="side-card">
+              <div class="side-h">🔥 热门关键词</div>
+              <div class="side-kw" id="newsKeywords"></div>
+            </div>
+          </aside>
         </div>
       </section>
 

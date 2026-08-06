@@ -255,6 +255,55 @@ a { color: inherit; text-decoration: none; }
 .news-col { min-width: 0; }
 .col-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; font-weight: 650; font-size: 15px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
 
+/* 新闻聚合：国家筛选 chips */
+.news-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 16px; }
+.chip {
+  font-size: 13px; padding: 5px 13px; border-radius: 999px;
+  background: var(--card); border: 1px solid var(--border); color: var(--muted-foreground);
+  cursor: pointer; transition: all .15s; white-space: nowrap;
+}
+.chip:hover { border-color: #c4c4cc; color: var(--foreground); }
+.chip.active { background: var(--primary); color: var(--primary-foreground); border-color: var(--primary); }
+
+/* 新闻聚合：主区 + 侧栏 布局 */
+.news-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 22px; align-items: start; }
+@media (max-width: 920px) { .news-layout { grid-template-columns: 1fr; } }
+.news-main { min-width: 0; }
+.news-side { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 16px; }
+@media (max-width: 920px) { .news-side { position: static; } }
+
+/* 侧栏卡片 */
+.side-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+.side-h { font-weight: 650; font-size: 14px; margin-bottom: 10px; }
+.side-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.side-list li { font-size: 13px; color: #3f3f46; line-height: 1.45; padding-left: 14px; position: relative; }
+.side-list li::before { content: "•"; position: absolute; left: 0; color: var(--blue); }
+.side-list li.muted { padding-left: 0; color: var(--muted-foreground); }
+.side-list li.muted::before { content: ""; }
+.side-kw { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* 可展开新闻卡片 */
+.news-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px 16px; margin-bottom: 12px; cursor: pointer; transition: border-color .15s, box-shadow .15s;
+}
+.news-card:hover { border-color: #c4c4cc; box-shadow: 0 2px 10px rgba(0,0,0,.04); }
+.news-card.open { border-color: var(--primary); }
+.nc-head { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 7px; }
+.nc-head .flag { font-size: 15px; }
+.nc-title { font-weight: 600; font-size: 15px; line-height: 1.45; color: var(--foreground); }
+.nc-summary { font-size: 13px; color: #52525b; margin-top: 6px; line-height: 1.55; }
+.nc-meta { font-size: 12px; color: var(--muted-foreground); margin-top: 8px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.nc-toggle { margin-left: auto; font-weight: 600; color: var(--primary); background: #f0f0ff; border: 1px solid #e0e0ff; border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+.news-card.open .nc-toggle { background: var(--primary); color: #fff; border-color: var(--primary); }
+.nc-detail { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border); display: flex; flex-direction: column; gap: 10px; }
+.nc-advice { background: #eff6ff; border: 1px solid #dbeafe; border-radius: 10px; padding: 10px 12px; }
+.nc-advice-h { font-size: 13px; font-weight: 650; color: #1d4ed8; margin-bottom: 5px; }
+.nc-advice-b { font-size: 13px; color: #1e3a8a; line-height: 1.6; }
+.nc-keywords .nc-kw-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.nc-link { display: inline-block; align-self: flex-start; font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; margin-top: 2px; }
+.nc-link:hover { text-decoration: underline; }
+
 /* 原站政策快讯卡片 */
 .origin-news-item { border-bottom: 1px solid var(--border); padding: 12px 0; }
 .origin-news-item:last-child { border-bottom: none; }
