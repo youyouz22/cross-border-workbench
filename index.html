@@ -293,6 +293,23 @@
 
           <hr class="hr" />
           <div class="field">
+            <label style="font-weight:600">共享给所有人（发布到网站）</label>
+            <div class="text-sm muted" style="margin-bottom:8px">
+              把你加的「工具网址 / 任务 / 文档 / 通知」发布到网站。任何人打开链接都会<strong>自动看到</strong>你发布的内容（只读，朋友不会改到你这边）。
+            </div>
+            <label>共享发布令牌 PAT（仅本地保存，不会上传）</label>
+            <input class="input" id="setShareToken" type="password" placeholder="ghp_... 或 github_pat_..." />
+            <div class="text-sm muted mt-8">
+              ⚠️ 用你<strong>部署网站的同一个 GitHub 仓库</strong>（youyouz22/cross-border-workbench）的令牌，需有该仓库的<strong>读写(content)</strong>权限。令牌只存在你本机浏览器里。
+            </div>
+            <div class="flex items-center gap-12 mt-12">
+              <button class="btn" id="btnPublishShare">📢 发布当前网址/任务到网站</button>
+              <span id="shareStatusLine" class="text-sm muted">未发布</span>
+            </div>
+          </div>
+
+          <hr class="hr" />
+          <div class="field">
             <label>本地备份（公司网可用）</label>
             <div class="text-sm muted" style="margin-bottom:8px">
               如果 GitHub 同步因网络失败，可把数据导出为 JSON 文件，换电脑或换网络后再导入恢复。

@@ -164,6 +164,9 @@
     SYNC.giteeToken = s.giteeToken || "";
     SYNC.proxy = (s.proxy || "").trim();
   }
+  const SHARE = { repo: "youyouz22/cross-border-workbench", branch: "main", path: "data/shared.json", token: "" };
+  const SHARED_KEYS = ["tasks", "tools", "docs", "notify"];
+  function loadShareCfg() { const s = getSettings(); SHARE.token = s.shareToken || ""; }
   function activeToken() { return SYNC.backend === "gitee" ? SYNC.giteeToken : SYNC.token; }
   function ghHeaders() {
     const h = { "Accept": "application/vnd.github+json" };
@@ -328,6 +331,41 @@
     if (!SYNC.enabled) return;
     clearTimeout(SYNC.timer);
     SYNC.timer = setTimeout(() => cloudPush(), 1000);
+  }
+
+  /* ---------------- 共享发布（让任何人打开链接都看到你发布的内容） ---------------- */
+  async function publishShared() {
+    if (!SHARE.token) { toast("请先在下方填写「共享发布令牌」并点保存"); return false; }
+    const payload = {};
+    SHARED_KEYS.forEach((k) => { const v = localStorage.getItem(k); if (v != null) payload[k] = JSON.parse(v); });
+    const body = b64enc(JSON.stringify(payload, null, 2));
+    let sha = null;
+    try {
+      const g = await fetch("https://api.github.com/repos/" + SHARE.repo + "/contents/" + SHARE.path + "?ref=" + SHARE.branch, {
+        headers: { "Accept": "application/vnd.github+json", "Authorization": "Bearer " + SHARE.token },
+      });
+      if (g.ok) sha = (await g.json()).sha;
+      else if (g.status !== 404) { const e = await g.json().catch(() => ({})); throw new Error("读取失败 HTTP " + g.status + " " + (e.message || "")); }
+    } catch (e) { if (!e.message || !e.message.includes("HTTP")) throw new Error("无法连接 GitHub（网络问题）"); }
+    const req = { message: "publish shared workbench " + new Date().toISOString(), content: body, branch: SHARE.branch };
+    if (sha) req.sha = sha;
+    const res = await fetch("https://api.github.com/repos/" + SHARE.repo + "/contents/" + SHARE.path, {
+      method: "PUT",
+      headers: { "Accept": "application/vnd.github+json", "Authorization": "Bearer " + SHARE.token, "Content-Type": "application/json" },
+      body: JSON.stringify(req),
+    });
+    if (!res.ok) { const e = await res.json().catch(() => ({})); throw new Error("发布失败 HTTP " + res.status + " " + (e.message || "")); }
+    return true;
+  }
+  async function loadShared() {
+    try {
+      const res = await fetch(GITHUB_RAW_BASE + "/data/shared.json?t=" + Date.now());
+      if (!res.ok) return;
+      const data = await res.json();
+      let changed = false;
+      SHARED_KEYS.forEach((k) => { if (data[k] !== undefined) { localStorage.setItem(k, JSON.stringify(data[k])); changed = true; } });
+      if (changed) { renderTasks(); renderDocs(); renderTools(); renderNotify(); renderDashboard(); }
+    } catch (e) { /* 离线或文件不存在，忽略 */ }
   }
 
   /* ---------------- 视图路由 ---------------- */
@@ -769,6 +807,7 @@
     $("#setBranch").value = s.branch || "main";
     $("#setPath").value = s.syncPath || "data/workbench.json";
     $("#setToken").value = s.token || "";
+    $("#setShareToken").value = s.shareToken || "";
     $("#setGiteeToken").value = s.giteeToken || "";
     $("#setProxy").value = s.proxy || "";
     syncUiByBackend();
@@ -1020,8 +1059,10 @@
       s.token = $("#setToken").value;
       s.giteeToken = $("#setGiteeToken").value;
       s.proxy = $("#setProxy").value.trim();
+      s.shareToken = $("#setShareToken").value;
       write(LS.settings, s);
       loadSyncCfg();
+      loadShareCfg();
       const tok = activeToken();
       if (SYNC.enabled && SYNC.repo && tok) {
         setSyncStatus("正在从云端拉取…", false);
@@ -1038,6 +1079,15 @@
       if (!SYNC.enabled || !SYNC.repo || !activeToken()) { toast("请先在上方开启并填写同步信息"); return; }
       setSyncStatus("正在上传到云端…", false);
       cloudPush();
+    });
+
+    $("#btnPublishShare").addEventListener("click", async () => {
+      const line = $("#shareStatusLine"); if (!line) return;
+      line.textContent = "正在发布…";
+      try {
+        const ok = await publishShared();
+        if (ok) { line.textContent = "已发布（" + new Date().toLocaleTimeString() + "）朋友打开链接即可看到"; toast("发布成功！朋友打开链接就能看到你加的网址/任务"); }
+      } catch (e) { line.textContent = "发布失败：" + e.message; toast("发布失败：" + e.message); }
     });
 
     // 右上角：设置（密码保护）/ 用户
@@ -1110,6 +1160,7 @@
     if (!read(LS.tools, null)) write(LS.tools, seedTools());
     bind();
     loadSyncCfg();
+    loadShareCfg();
     if (SYNC.enabled && SYNC.repo && activeToken()) {
       setSyncStatus("正在从云端拉取…", false);
       try { await cloudPull(); setSyncStatus("已从云端同步", true); }
@@ -1120,6 +1171,7 @@
     renderNews();
     renderDashboard();        // 刷新首页「今日新闻」
     pullLiveNews();           // 后台实时拉取 GitHub 最新新闻并覆盖缓存（推了就变，不阻塞首屏）
+    loadShared();             // 自动加载已发布的共享内容（任何人打开链接即可看到）
     const last = read("cbec_lastview", "dashboard");
     const allowed = ["dashboard","tasks","feishu","news","product","tools","notify","settings","user"];
     if (last === "settings") openSettings();
