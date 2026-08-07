@@ -1,210 +1,277 @@
 [
   {
     "id": 1,
-    "title": "美国301关税加码，中国商品被加征12.5%额外关税",
-    "summary": "美国新301关税于8月初正式生效，中国输美商品被加征12.5%额外关税，直接吞噬卖家净利润。同期亚马逊产品标题字符限制缩至75字符、TikTok Shop欧盟英国站收紧商品资质，关税与合规双重夹击。",
-    "source": "联宇物流/行业观察",
+    "title": "美国8月19日起对加拿大数百类商品加征50%关税",
+    "summary": "美方宣布自2026年8月19日起，对汽车零部件、建材、酒类、化工品等数百类加拿大商品加征50%专项关税，即便符合USMCA原产地规则也无法豁免，仅能源、钾肥、关键矿产、渔业等品类获豁免。加拿大已明确将出台对等反制，北美区域产业链与跨境物流成本面临上涨。",
+    "source": "雨果跨境",
     "country": "美国",
     "category": "政策",
     "impact": "high",
     "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 09:10",
-    "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_1296a72ac5d55552",
-    "trendingTopics": ["301关税", "12.5%", "合规", "关税"]
+    "publishedAt": "2026-08-05 16:40",
+    "url": "https://www.cifnews.com/article/187881",
+    "trendingTopics": [
+      "50%关税",
+      "USMCA",
+      "加拿大反制"
+    ]
   },
   {
     "id": 2,
-    "title": "欧盟小包免税满月，混装成本最高涨60%，11月再叠加清关费",
-    "summary": "自7月1日欧盟取消150欧元以下包裹免税已满月，3欧元/件按HS税目叠加计征，混装小百货综合成本涨幅最高达60%。2026年11月起还将新增约2欧元/件清关处理费，2028年改为0/5/8/12/17%五档税率；平台被定性为'视为进口商'承担全责。",
-    "source": "央视网/网易",
-    "country": "欧盟",
+    "title": "美国新版全球附加关税启动，中国大陆及中国香港税率12.5%",
+    "summary": "美国正式推出新版全球附加关税，政策独立于现有税种并支持叠加征收：墨西哥、加拿大征收10%通用附加关税，中国大陆、中国香港等地区税率为12.5%。多种关税叠加下出口企业税负进一步增加，利润空间持续压缩，卖家需重新核对商品是否落入征税范围并协商关税分摊。",
+    "source": "雨果跨境",
+    "country": "美国",
     "category": "政策",
     "impact": "high",
     "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 08:40",
-    "url": "https://www.163.com/dy/article/L3D74NI5055612K8.html",
-    "trendingTopics": ["欧盟免税满月", "3欧元", "混装税", "视为进口商"]
+    "publishedAt": "2026-08-05 16:40",
+    "url": "https://www.cifnews.com/article/187881",
+    "trendingTopics": [
+      "全球附加关税",
+      "12.5%",
+      "关税叠加"
+    ]
   },
   {
     "id": 3,
-    "title": "美国全面终止800美元de minimis，直邮模式终结",
-    "summary": "美国自2025年8月29日起暂停800美元de minimis豁免，并计划依法彻底终止。每个包裹都需正式报关、缴纳全额关税，依赖直邮的dropshipping与快时尚平台商业模式被颠覆，海外仓与本土履约成为必选项。",
-    "source": "Global-e",
+    "title": "亚马逊美站自发货BHDR须≥90%，9月30日起执行",
+    "summary": "亚马逊美国站宣布自2026年9月30日起，卖家自配送(MFN)发往Amazon Business企业购客户的订单须维持营业时间配送率(BHDR)≥90%，按滚动14天统计。9月30日未达标将收警告，若至10月30日仍低于90%，相关自发货商品在企业购频道将被停用，FBA与普通零售不受影响。",
+    "source": "亚马逊卖家平台",
     "country": "美国",
-    "category": "政策",
-    "impact": "high",
+    "category": "平台",
+    "impact": "medium",
     "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 10:10",
-    "url": "https://www.global-e.com/the-latest-tariff-updates",
-    "trendingTopics": ["de minimis", "小包免税", "正式报关"]
+    "publishedAt": "2026-08-04 10:15",
+    "url": "http://www.cbeeexpo.com/index.php?s=/Home/Article/detail/id/2703.html",
+    "trendingTopics": [
+      "BHDR",
+      "企业购",
+      "自发货"
+    ]
   },
   {
     "id": 4,
-    "title": "美国对华实际有效税率约24%，不确定性成最大成本",
-    "summary": "基于301条款的对华关税(7.5%-25%)叠加约10%-15%普遍性附加税，中国商品实际有效税率约24%，某些税号超40%。更关键的是税率随时可能变动，长期定价与备货难度加大。",
-    "source": "amz123",
-    "country": "美国",
-    "category": "经济",
-    "impact": "high",
-    "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 09:55",
-    "url": "https://www.amz123.com/t/YoELopBR",
-    "trendingTopics": ["对华关税", "有效税率", "不确定性"]
-  },
-  {
-    "id": 5,
-    "title": "亚马逊获6亿美元关税退款并加码德国物流，市值破3万亿",
-    "summary": "亚马逊市值首次突破3万亿美元；因关税波动获约6亿美元退款并将部分回馈消费者。公司投资超3亿欧元扩建德国物流中心（2029年底完成，员工翻倍至2000+），并上线'标杆新卖家孵化计划'提供最高75万美元激励。",
-    "source": "跨境电商每日简报",
+    "title": "TikTok Shop美区内测Plus付费会员，CBT揽派扩至迈阿密",
+    "summary": "TikTok正面向部分美国用户灰度测试「TikTok Shop Plus」电商会员服务，月费分6、10、15美元三档，享免运费、商品折扣与专属优惠券，仅聚焦电商权益不捆绑视频音乐。同时官方揽派服务CBT正式进驻佛罗里达迈阿密地区，为符合条件商家提供免费上门揽收与更优物流费率。",
+    "source": "跨境电商周报",
     "country": "美国",
     "category": "平台",
     "impact": "high",
     "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 10:30",
-    "url": "https://www.52by.com/article/229598",
-    "trendingTopics": ["亚马逊", "3万亿美元", "关税退款", "德国物流"]
+    "publishedAt": "2026-08-06 09:40",
+    "url": "https://new.qq.com/rain/a/20260802A097U000",
+    "trendingTopics": [
+      "Shop Plus",
+      "会员制",
+      "CBT揽派"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "欧盟PPWR包装法规8月12日27国统一强制实施",
+    "summary": "《包装与包装废弃物法规》(EU 2025/40)于2026年8月12日在27个成员国统一强制实施，覆盖EPR注册、包装设计、有害物质管控与可回收性评估全链条。无论公司注册地在境内外、FBA或自发货均受管辖；欧盟海关取消各物流渠道监管豁免，大货、小包、直邮全部纳入常态化抽检。",
+    "source": "52by/中检",
+    "country": "欧盟",
+    "category": "合规",
+    "impact": "high",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-05 09:30",
+    "url": "https://www.52by.com/article/229543",
+    "trendingTopics": [
+      "PPWR",
+      "EPR注册",
+      "DoC声明"
+    ]
   },
   {
     "id": 6,
-    "title": "美国CPSC电子申报强制实施，600+税号需事前合规证书",
-    "summary": "美国CPSC电子申报已强制实施，600多个税号消费品必须提前提交合规证书，从到港抽查转为事前筛查。带电、儿童、纺织等品类合规门槛进一步提升，卖家须前置准备认证资料。",
-    "source": "腾讯新闻",
-    "country": "美国",
+    "title": "欧盟低值包裹3欧元关税满月，11月起再加约2欧元处理费",
+    "summary": "欧盟自7月1日废止150欧元以下B2C直邮包裹关税豁免，过渡期2026年7月1日至2028年6月30日按HS编码每品类计征3欧元。2024年入欧低值小包达46亿件、91%来自中国。以Temu法国约15欧元客单价计，利润率将由约12%压缩至5%；欧盟计划最迟2026年11月起再加约2欧元/件处理费。",
+    "source": "新浪财经/欧盟委员会",
+    "country": "欧盟",
     "category": "政策",
-    "impact": "medium",
+    "impact": "high",
     "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 09:05",
-    "url": "https://new.qq.com/",
-    "trendingTopics": ["CPSC", "电子申报", "合规证书"]
+    "publishedAt": "2026-08-04 08:50",
+    "url": "https://cj.sina.com.cn/article/norm_detail?url=https%3A%2F%2Ffinance.sina.com.cn%2Fjjxw%2F2026-08-01%2Fdoc-iniktqkz1096431.shtml",
+    "trendingTopics": [
+      "3欧元关税",
+      "利润压缩",
+      "处理费"
+    ]
   },
   {
     "id": 7,
-    "title": "英国取消135英镑以下小包关税豁免，2028年前落地",
-    "summary": "英国HMRC确认改革低价值进口货品(LVI)关务制度，取消135英镑及以下进口商品关税豁免，最迟2028年10月实施，并增设财政代表连带责任。跨境小包综合运营成本预计上涨20%-30%，海外仓与本土合规运营将成为主流。",
-    "source": "英国税务海关总署(HMRC)",
-    "country": "英国",
-    "category": "政策",
+    "title": "欧盟DSA罚单加码：速卖通5.5亿、Temu 2亿欧元，8月28日整改到期",
+    "summary": "欧盟委员会7月20日依DSA对全球速卖通处以5.5亿欧元罚款，创该法案生效以来最高纪录；Temu此前被罚2亿欧元，须在2026年8月28日前提交整改行动计划。8月1日欧盟又指控Temu在突击检查中阻碍调查，可能面临最高年营业额1%的追加罚款，其欧洲总部亦因《外国补贴条例》遭突搜。",
+    "source": "欧盟委员会/搜狐",
+    "country": "欧盟",
+    "category": "合规",
     "impact": "high",
     "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 09:20",
-    "url": "https://www.163.com/dy/article/L064JIRM0538BNYC.html",
-    "trendingTopics": ["小包免税", "关税豁免", "财政代表", "海外仓"]
+    "publishedAt": "2026-08-05 14:10",
+    "url": "https://www.sohu.com/a/1058653739_122966639",
+    "trendingTopics": [
+      "DSA",
+      "5.5亿欧元",
+      "整改计划",
+      "FSR突搜"
+    ]
   },
   {
     "id": 8,
-    "title": "英国低价值包裹量两年翻倍，财政代表连带责任抬高门槛",
-    "summary": "2021至2024年进入英国的低价值进口商品量增长近两倍，总值从38亿英镑跃升至59亿英镑。本土零售商持续施压封堵免税漏洞，预计每年为政府带来约6亿英镑新增关税收入，财政代表制度抬高合规门槛。",
-    "source": "至美通研究院",
+    "title": "英国二季度线上零售额同比+11.7%，渗透率升至29.4%",
+    "summary": "英国国家统计局数据显示，2026年二季度线上零售额同比增长11.7%，6月单月飙升14.4%，线上渗透率达29.4%，为2021年4月以来最高。高温天气推升户外用品、运动商品、电风扇及空调需求，非食品线上渗透率升至39%。亚马逊以432亿美元英国本地收入、超170亿欧元年度投资稳居龙头。",
+    "source": "英国国家统计局(ONS)",
     "country": "英国",
-    "category": "经济",
+    "category": "电商",
     "impact": "high",
     "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 08:50",
-    "url": "https://www.163.com/dy/article/L064JIRM0538BNYC.html",
-    "trendingTopics": ["进口量", "零售竞争", "关税收入"]
+    "publishedAt": "2026-08-04 11:00",
+    "url": "https://new.qq.com/rain/a/20260802A097U000",
+    "trendingTopics": [
+      "线上渗透率",
+      "英国零售",
+      "季节性需求"
+    ]
   },
   {
     "id": 9,
-    "title": "德国进口增值税19%叠加3欧元关税，低值包裹到手价上升",
-    "summary": "德国对多数商品征收19%进口增值税(部分7%)，在3欧元关税基础上叠加计算。多品类订单成本显著上升，消费者最终价格提高，部分国外客户已出现退单，卖家需重新测算含税到手价。",
-    "source": "whatsupgermany",
-    "country": "德国",
-    "category": "税务",
+    "title": "TikTok Shop成英国第四大美妆零售商，品类年增60%",
+    "summary": "据Public First报告，TikTok Shop已成为英国第四大美妆零售商，去年美妆品类销售额增长60%。约30%英国年轻人视TikTok为时尚美容建议主要来源；2025年英国区美妆主题直播购物节目增长90%，活跃Shop创作者超72%。韩妆热度显著，相关搜索飙升125%，客单价高出护肤均值近35%。",
+    "source": "Public First",
+    "country": "英国",
+    "category": "电商",
     "impact": "high",
     "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 09:15",
-    "url": "https://www.whatsupgermany.com/non-eu-online-shopping-germany-july-2026/",
-    "trendingTopics": ["进口增值税", "到手价", "Einfuhrumsatzsteuer"]
+    "publishedAt": "2026-08-04 11:20",
+    "url": "http://www.cbeeexpo.com/index.php?s=/Home/Article/detail/id/2711.html",
+    "trendingTopics": [
+      "TikTok Shop",
+      "美妆",
+      "韩妆",
+      "直播购物"
+    ]
   },
   {
     "id": 10,
-    "title": "德国HS编码归类错误致清关延误占32%，卖家需重视",
-    "summary": "德国跨境货物清关延误案例中，因HS编码归类错误导致税金核算偏差的占比达32%。低报货值面临最高5倍货值罚款，建议提前预审资料并选用AEO资质物流商，降低查验与滞留风险。",
-    "source": "hygjwl",
+    "title": "德国包装EPR注册仅需1-2工作日，8月12日前未注册将禁售",
+    "summary": "PPWR框架下德国包装法(LUCID)注册通常只需1-2个工作日，而法国包装法注册周期长达20个工作日。Temu欧洲站已对未上传EPR资质卖家采取行动，有卖家因缺少荷兰EPR注册号被冻结500元保证金、缺少德国DE_LUCID注册号被冻结三千余元。8月12日前未完成上传，对应站点将直接禁售。",
+    "source": "52by",
+    "country": "德国",
+    "category": "合规",
+    "impact": "high",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-05 09:35",
+    "url": "https://www.52by.com/article/229543",
+    "trendingTopics": [
+      "LUCID",
+      "包装法",
+      "保证金冻结"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "亚马逊追加3亿欧元扩建德国仓，菜鸟德国新增散仓提货",
+    "summary": "亚马逊宣布对德国普福尔茨海姆物流中心追加3亿欧元扩建投资，强化欧洲本土履约能力。菜鸟依托欧洲本地分拨网络，已实现全欧发往波兰、匈牙利、捷克、罗马尼亚、保加利亚等东欧市场4至6个自然日送达；德国方向新增散仓提货模式，进单量达50单即可安排提货，不再要求整柜起运。",
+    "source": "跨境电商周报",
     "country": "德国",
     "category": "物流",
     "impact": "medium",
     "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 08:35",
-    "url": "https://www.hygjwl.com/",
-    "trendingTopics": ["HS编码", "清关", "AEO"]
-  },
-  {
-    "id": 11,
-    "title": "法国数字服务税维持3%，OSS/IOSS合规成重点",
-    "summary": "法国数字服务税维持3%税率，覆盖广告与数字接口收入；2026年围绕OSS/IOSS增值税、企业税与全球最低税展开。OSS年度欧盟B2C销售超1万欧元即须注册，资格判定错误成主要补税风险来源。",
-    "source": "中国税务报/hayot-expertise",
-    "country": "法国",
-    "category": "税务",
-    "impact": "medium",
-    "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 10:05",
-    "url": "https://hayot-expertise.fr/en/blog/ecommerce-tax-regime-france-2026",
-    "trendingTopics": ["数字服务税", "DST", "OSS/IOSS"]
+    "publishedAt": "2026-08-05 10:45",
+    "url": "https://new.qq.com/rain/a/20260802A097U000",
+    "trendingTopics": [
+      "普福尔茨海姆",
+      "散仓提货",
+      "东欧时效"
+    ]
   },
   {
     "id": 12,
-    "title": "法国快时尚税落地，Shein法国商城曾被勒令暂停",
-    "summary": "法国对快时尚征收专门税费，Shein法国线上商城2025年11月一度被勒令暂停。低价、高周转服饰品类面临额外成本与监管压力，品牌化与可持续转型成出路。",
-    "source": "amz123",
+    "title": "法国《反超快时尚法》生态罚款：单件0.25-6欧元，2030年最高20欧元",
+    "summary": "法国参议院6月29日通过《反超快时尚法》，超快时尚企业今年面临每件商品0.25至6欧元罚款，国民议会修正案将2030年单件最高罚款上调至20欧元，同时要求罚款总额不超过产品不含税价格的50%。法国政府官员明确表态立法首要管控对象直指Shein、Temu、速卖通等中国跨境电商平台。",
+    "source": "法国《世界报》",
     "country": "法国",
     "category": "政策",
-    "impact": "medium",
+    "impact": "high",
     "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 09:45",
-    "url": "https://www.amz123.com/",
-    "trendingTopics": ["快时尚税", "Shein", "可持续"]
+    "publishedAt": "2026-08-06 12:30",
+    "url": "https://segg.sh.gov.cn/zxfw/xwzx/20260804/1d20551c9c374881a2e611fab0ec4855.html",
+    "trendingTopics": [
+      "反超快时尚",
+      "生态罚款",
+      "Shein"
+    ]
   },
   {
     "id": 13,
-    "title": "西班牙电商+TikTok Shop增速最快，直播销售额+55%",
-    "summary": "西班牙电商增速维持8%-10%居西欧前列，TikTok Shop成为增长最快渠道，英国站直播销售额同比+55%、30万+商家入驻。中国卖家可借内容电商切入，但需注意本地退货与消费者保护合规。",
-    "source": "ingstart",
-    "country": "西班牙",
-    "category": "电商",
-    "impact": "high",
-    "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 10:00",
-    "url": "https://www.ingstart.com/blog/55056.html",
-    "trendingTopics": ["TikTok Shop", "电商增速", "内容电商"]
-  },
-  {
-    "id": 14,
-    "title": "西班牙严打仿品与无认证带电产品，EPR未注册禁售",
-    "summary": "西班牙税局AEAT持续完善OSS申报，无有效IVA税号店铺面临强制下架；未注册EPR的商品禁止线上售卖，平台连带责任强化，仿品与无CE认证带电产品遭严打。",
-    "source": "ingstart",
-    "country": "西班牙",
-    "category": "政策",
-    "impact": "medium",
-    "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 09:35",
-    "url": "https://www.ingstart.com/blog/55056.html",
-    "trendingTopics": ["EPR", "CE认证", "仿品打击"]
-  },
-  {
-    "id": 15,
-    "title": "意大利奢侈品电商加速AI化，LuisaViaRoma重组完成收购",
-    "summary": "佛罗伦萨奢侈品电商LuisaViaRoma重组完成，由意大利投资人团体设立的新公司LVR Srl接管并于9月完成正式收购，近200名员工整体转入，延续电商为核心并强化AI个性化体验；Brunello Cucinelli等品牌Q1营收双位数增长。",
-    "source": "华丽志",
-    "country": "意大利",
-    "category": "电商",
-    "impact": "high",
-    "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 11:05",
-    "url": "https://luxe.co/post/468109",
-    "trendingTopics": ["奢侈品电商", "AI个性化", "重组"]
-  },
-  {
-    "id": 16,
-    "title": "欧盟AI透明度新规落地，全国新开103条国际航空货运航线",
-    "summary": "欧盟AI透明度新规已生效，AI生成内容须数字水印/元数据标记，违规最高罚1500万欧或3%全球年营业额；同期2026年全国新开103条国际航空货运航线（7月增11条），下半年旺季航空运力紧张有望缓解。",
-    "source": "跨境电商每日简报",
-    "country": "欧盟",
+    "title": "法国DGCCRF重罚Shein 2250万欧元，包装法注册需20工作日",
+    "summary": "2026年6月初，法国竞争、消费和反欺诈总局(DGCCRF)对Shein在法国的两家关联实体开出总额2250万欧元罚单，理由是违反消费者保护和环境信息披露要求，距其因「虚假折扣」被罚4000万欧元不足一年。合规层面，法国包装法注册周期长达20个工作日，卖家须预留充足时间避免断档。",
+    "source": "DGCCRF/网易财经",
+    "country": "法国",
     "category": "合规",
     "impact": "medium",
     "ecommerceImpact": true,
-    "publishedAt": "2026-08-05 14:00",
-    "url": "https://www.52by.com/article/229598",
-    "trendingTopics": ["AI透明", "数字水印", "航空货运", "103条航线"]
+    "publishedAt": "2026-08-05 15:20",
+    "url": "https://www.163.com/dy/article/L3M58SGJ0514BE2Q.html",
+    "trendingTopics": [
+      "DGCCRF",
+      "消费者保护",
+      "包装法周期"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "西班牙包装法强制绑定本地VAT税号，灰色注册通道被封堵",
+    "summary": "依据西班牙皇家法令1055/2022，包装资质登记强制要求提供本地VAT(NIF)税号，注册号格式为ENV/年份/九位数字并与税号一一绑定。8月初发布的西班牙EPR指南显示，平台核验将自动比对注册号背后税号信息，一旦缺失或不匹配审核直接驳回，以往无税号登记的灰色操作通道已被封堵。",
+    "source": "西班牙环境部/雨果跨境",
+    "country": "西班牙",
+    "category": "合规",
+    "impact": "high",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-05 14:40",
+    "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_4846a731be103452",
+    "trendingTopics": [
+      "NIF税号",
+      "ENV注册号",
+      "系统直连核验"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "意大利电池资质缺失成隐性雷区，欧盟联网核验批量检出漏洞",
+    "summary": "多位布局欧洲多国站点的带电产品卖家反馈，店铺后台常年显示合规正常，逐一复盘后才发现意大利电池资质缺失、西班牙WEEE注册主体与店铺错配、法国包装申报数据停滞两年未更新等隐患。储能、小家电进入欧洲须同步完成包装、电池、WEEE三类注册，随欧盟全线系统联网核验开启，历史遗留问题将被批量检出。",
+    "source": "雨果跨境",
+    "country": "意大利",
+    "category": "合规",
+    "impact": "medium",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-06 18:17",
+    "url": "https://www.cifnews.com/article/187959",
+    "trendingTopics": [
+      "电池法",
+      "WEEE",
+      "代理链条",
+      "联网核验"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "商务部第34号公告：无人机两用物项对美出口逐案从严审核",
+    "summary": "商务部于2026年8月5日发布第34号公告，宣布自当日起正式实施加强无人机相关两用物项对美国出口管制措施。列入管制清单的无人机整机、关键零部件及相关技术对美出口全部调整为逐案从严审核，原有许可便利措施不再适用，公告自发布之日起生效且不设过渡期，涉无人机供应链跨境企业需提前完成合规审查。",
+    "source": "中华人民共和国商务部",
+    "country": "中国",
+    "category": "政策",
+    "impact": "high",
+    "ecommerceImpact": true,
+    "publishedAt": "2026-08-06 09:10",
+    "url": "https://m.ebrun.com/692573.html",
+    "trendingTopics": [
+      "出口管制",
+      "无人机",
+      "两用物项"
+    ]
   }
 ]
