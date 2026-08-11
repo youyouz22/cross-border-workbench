@@ -4,6 +4,8 @@ on:
   schedule:
     # 每天 UTC 00:00 运行 = 北京时间 08:00
     - cron: "0 0 * * *"
+    # 冗余触发：UTC 01:30 = 北京时间 09:30，降低 GitHub 定时偶发漏跑的概率
+    - cron: "30 1 * * *"
   workflow_dispatch: {}   # 允许在 GitHub 网页上手动点 “Run workflow” 触发
 
 permissions:
