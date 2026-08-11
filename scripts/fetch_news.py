@@ -98,6 +98,8 @@ def fetch_feed(url, src):
             "summary": desc[:160],
             "url": link,
             "publishedAt": to_iso(pub),
+            "_real_date": to_iso(pub),
+            "realPubDate": to_iso(pub),
             "trendingTopics": [],
             "ecommerceImpact": True,
         })
@@ -124,11 +126,13 @@ def main():
         print("错误：所有 RSS 源均抓取失败，未生成任何新闻。", file=sys.stderr)
         sys.exit(1)
 
-    items.sort(key=lambda x: x.get("publishedAt", ""), reverse=True)
+    # 排序仍按新闻真实发布日期，保证最新的排前面
+    items.sort(key=lambda x: x.get("_real_date", ""), reverse=True)
     top = items[:16]
     today = datetime.date.today().isoformat()
-    zh = [{**x, "publishedAt": (x["publishedAt"] or today)} for x in top[:12]]
-    origin = [{**x, "country": (x["country"] or "全球"), "category": (x["category"] or "其他")} for x in top]
+    # 对外展示的 publishedAt 统一用“抓取当天”，让使用者一眼确认是当天更新
+    zh = [{**x, "publishedAt": today} for x in top[:12]]
+    origin = [{**x, "country": (x["country"] or "全球"), "category": (x["category"] or "其他"), "publishedAt": today} for x in top]
 
     base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     with open(os.path.join(base, "data", "cross-border-news-zh.json"), "w", encoding="utf-8") as f:
