@@ -1,6 +1,6 @@
 [
  {
-  "id": 755369626,
+  "id": 65220980,
   "title": "Trump Media reports $238m loss as crypto falls",
   "source": "BBC Business",
   "impact": "中影响",
@@ -15,7 +15,37 @@
   "ecommerceImpact": true
  },
  {
-  "id": 317792781,
+  "id": 235588687,
+  "title": "School uniform rules must go further, charity says",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "A Coventry charity opens a uniform bank as the government sets limits on logoed items for pupils.",
+  "url": "https://www.bbc.co.uk/news/articles/c2lqwn4q24xo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-08-11",
+  "_real_date": "2026-08-11",
+  "realPubDate": "2026-08-11",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 312551461,
+  "title": "Families under pressure to find food in summer",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "Parents are struggling to feed children in the school holidays, with more families using food banks.",
+  "url": "https://www.bbc.co.uk/news/articles/c0m7p7p1yk8o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-08-11",
+  "_real_date": "2026-08-11",
+  "realPubDate": "2026-08-11",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 221334118,
   "title": "At least 132 killed in Colombia's largest  earthquake in years",
   "source": "BBC World",
   "impact": "中影响",
@@ -30,7 +60,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 158592605,
+  "id": 856231637,
   "title": "Trump signs order to limit childhood vaccines and split MMR shots",
   "source": "BBC World",
   "impact": "中影响",
@@ -45,7 +75,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 972408894,
+  "id": 386835907,
   "title": "Young girl finds whale stranded on Australian beach",
   "source": "BBC World",
   "impact": "中影响",
@@ -60,7 +90,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 208742952,
+  "id": 289842560,
   "title": "又融了1亿美金的AI公司，说AlphaFold不是生物世界天花板",
   "source": "36氪",
   "impact": "中影响",
@@ -75,7 +105,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 907046756,
+  "id": 604129406,
   "title": "静态鉴赏小米澎程新车：大尺寸SUV的空间新玩法｜最前线",
   "source": "36氪",
   "impact": "中影响",
@@ -90,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 842173794,
+  "id": 534526572,
   "title": "36氪首发 | 布局“视触觉+压阻”组合方案，机器人触觉传感企业完成数千万元融资",
   "source": "36氪",
   "impact": "中影响",
@@ -105,7 +135,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 554507138,
+  "id": 935722253,
   "title": "团结2.0发布会：中国游戏人最好的时代来了？",
   "source": "36氪",
   "impact": "中影响",
@@ -120,7 +150,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 349219333,
+  "id": 15156089,
   "title": "获高瓴等基金数亿元投资，LatentVerse：不想被叫世界模型公司，要做具身原生大脑｜智能涌现首发",
   "source": "36氪",
   "impact": "中影响",
@@ -135,7 +165,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 366129424,
+  "id": 48571132,
   "title": "千亿IPO：山顶上的宇树 ｜ 深氪",
   "source": "36氪",
   "impact": "中影响",
@@ -150,7 +180,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 698575896,
+  "id": 282664006,
   "title": "8点1氪丨宇树科技最终中签率公布：0.01809759%；费大厨撤下“全国小炒肉大王”称号；官方回应“豆包上线酒店订单抽佣机制”",
   "source": "36氪",
   "impact": "中影响",
@@ -165,7 +195,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 574965055,
+  "id": 353104907,
   "title": "近40亿元融资背后：资本为何看好帕西尼",
   "source": "36氪",
   "impact": "中影响",
@@ -180,7 +210,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 956172577,
+  "id": 640764432,
   "title": "WISE2026 商业之王系列年度名册调研重磅启动",
   "source": "36氪",
   "impact": "中影响",
@@ -195,7 +225,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 874285223,
+  "id": 227675991,
   "title": "氪星晚报 ｜搜狐：2026年Q2总收入1.36亿美元，同比增长7%；千问开放平台上线；高盛：全球AI投资今年将突破10000亿美元，美国投资接近6000亿美元",
   "source": "36氪",
   "impact": "中影响",
@@ -203,36 +233,6 @@
   "category": "关税/政策",
   "summary": "\n \n \n  大公司：\n  美的、光峰科技等成立创业投资合伙企业，出资额9286万36氪获悉，天眼查App显示，近日，宁波美和南旅创业投资合伙企业（有限合伙）成立，执行事务合伙人为美的创业投资管理有限公司，出资额9286万人民币，经营范围为创业投资，由江西南旅投资集团有限公司、深圳光峰科技股份有限公司等共同出资。\n  ",
   "url": "https://36kr.com/p/3933544245771395?f=rss",
-  "publishedAt": "2026-08-11",
-  "_real_date": "2026-08-11",
-  "realPubDate": "2026-08-11",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 828446586,
-  "title": "禾望电气等在新疆成立新公司，含电气设备销售业务",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "36氪获悉，企查查App显示，近日，禾望电气（新疆）有限公司成立，法定代表人为杨湘，注册资本为2000万元，经营范围包含电气设备销售；电器辅件销售；机械电气设备销售；风电场相关装备销售；风电场相关系统研发等。企查查股权穿透显示，该公司由禾望电气全资子公司深圳市禾望科技有限公司等共同持股。",
-  "url": "https://36kr.com/newsflashes/3934632954903937?f=rss",
-  "publishedAt": "2026-08-11",
-  "_real_date": "2026-08-11",
-  "realPubDate": "2026-08-11",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 677126215,
-  "title": "澳洲联储将现金利率目标维持在4.35%不变",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "8月11日，澳洲联储将现金利率目标维持在4.35%不变，符合预期。（界面）",
-  "url": "https://36kr.com/newsflashes/3934632430435463?f=rss",
   "publishedAt": "2026-08-11",
   "_real_date": "2026-08-11",
   "realPubDate": "2026-08-11",
