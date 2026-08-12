@@ -1,6 +1,6 @@
 [
  {
-  "id": 869168359,
+  "id": 52483085,
   "title": "PM admits cost of living help is not enough and hints at further support",
   "source": "BBC Business",
   "impact": "中影响",
@@ -15,8 +15,8 @@
   "ecommerceImpact": true
  },
  {
-  "id": 384285411,
-  "title": "First 'pounds for pylons' energy bill discount sites revealed",
+  "id": 497492685,
+  "title": "Homes near pylons to get £250 a year off energy bills – first sites revealed",
   "source": "BBC Business",
   "impact": "中影响",
   "country": "全球",
@@ -30,7 +30,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 555701737,
+  "id": 72637262,
+  "title": "How affordable are Edinburgh's festivals?",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "The city is no stranger to complaints about soaring prices during August - but are costs on the rise?",
+  "url": "https://www.bbc.co.uk/news/articles/czdmn1re7zgo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-08-12",
+  "_real_date": "2026-08-12",
+  "realPubDate": "2026-08-12",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 751248242,
   "title": "Young islanders concerned about their future",
   "source": "BBC Business",
   "impact": "中影响",
@@ -45,13 +60,13 @@
   "ecommerceImpact": true
  },
  {
-  "id": 451287397,
-  "title": "Trump says he switched planes after Nato summit because of possible threat",
+  "id": 216333893,
+  "title": "Trump confirms he switched planes after Nato summit because of possible threat",
   "source": "BBC World",
   "impact": "中影响",
   "country": "美国",
   "category": "关税/政策",
-  "summary": "But the president says the jet he boarded instead was at \"greater risk\" than the decoy Air Force One.",
+  "summary": "Journalists and White House staff who were on board the jet were unaware the president had left.",
   "url": "https://www.bbc.co.uk/news/articles/c980r4wpl9lo?at_medium=RSS&at_campaign=rss",
   "publishedAt": "2026-08-12",
   "_real_date": "2026-08-12",
@@ -60,7 +75,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 196869417,
+  "id": 491227670,
   "title": "Trump's dramatic plane swap hints at personal stakes of Iran war",
   "source": "BBC World",
   "impact": "中影响",
@@ -75,7 +90,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 860432559,
+  "id": 328091368,
   "title": "Baby Shark Boy set to make K-pop debut",
   "source": "BBC World",
   "impact": "中影响",
@@ -90,7 +105,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 258474195,
+  "id": 188597386,
   "title": "Cristiano Ronaldo marries long-time partner Georgina Rodríguez",
   "source": "BBC World",
   "impact": "中影响",
@@ -105,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 201646573,
+  "id": 629599571,
   "title": "Bondi Beach shooting hero's assault charges dropped by police",
   "source": "BBC World",
   "impact": "中影响",
@@ -120,7 +135,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 56162695,
+  "id": 434103086,
   "title": "New Zealand PM survives second leadership challenge ahead of election",
   "source": "BBC World",
   "impact": "中影响",
@@ -135,7 +150,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 820365391,
+  "id": 115507075,
   "title": "David Ellison Floats Hollywood Exit as States Threaten His Warner Bros. Deal",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -150,7 +165,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 746187756,
+  "id": 581556643,
   "title": "A Maine Town, Once Dependent on a Paper Mill, Tries to Move On",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -165,7 +180,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 543503069,
+  "id": 36924425,
   "title": "36氪首发 | 腾讯、百度背景团队做具身数据基础设施，再获顺为等数亿元融资",
   "source": "36氪",
   "impact": "中影响",
@@ -180,7 +195,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 88957369,
+  "id": 299270566,
   "title": "36氪首发 | 航天老兵做太空轨道转移飞行器，完成近亿元A轮融资",
   "source": "36氪",
   "impact": "中影响",
@@ -195,7 +210,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 303417421,
+  "id": 624661446,
   "title": "Champion签约BTS成员金泰亨，百丽与Authentic重做中国生意｜最前线",
   "source": "36氪",
   "impact": "中影响",
@@ -210,7 +225,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 45771835,
+  "id": 517992348,
   "title": "“工厂游”暑期爆火，青岛借啤酒IP成城市文旅新样本",
   "source": "36氪",
   "impact": "中影响",
@@ -218,21 +233,6 @@
   "category": "其他",
   "summary": "\n \n \n  2026暑期，国内旅游市场迎来又一结构性趋势：同程旅行数据显示，工厂类旅行产品预订热度同比大涨36%，其中68%订单来自亲子研学，入境游客“进厂”订单更是同比增长9倍。从观光山水到探访生产线，知识型工业旅游成为文旅行业又一成长型赛道。\n  在多地纷纷挖掘工业观光资源的当下，青岛依托青岛啤酒IP打造文旅体系",
   "url": "https://36kr.com/p/3935874109570433?f=rss",
-  "publishedAt": "2026-08-12",
-  "_real_date": "2026-08-12",
-  "realPubDate": "2026-08-12",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 571965078,
-  "title": "西湖大学教授创业做具身通用大脑，半年完成4轮共5亿元融资｜硬氪首发",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "物流",
-  "summary": "\n \n \n  作者｜黄楠\n  编辑｜袁斯来\n  硬氪获悉，具身智能通用大脑公司「西湖机器人」近日完成A轮融资，6个月募资5亿元，至此投资方阵容已涵盖赛富、小苗朗程、河南投资集团汇融基金、海愿基金等多家知名机构；资金将重点投向人形机器人全身统一大模型的研发，并着力打造具身智能人才高地，加速实现具身智能GPT时刻，以原创技",
-  "url": "https://36kr.com/p/3924908647577732?f=rss",
   "publishedAt": "2026-08-12",
   "_real_date": "2026-08-12",
   "realPubDate": "2026-08-12",
