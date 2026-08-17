@@ -1,6 +1,6 @@
 [
  {
-  "id": 95064999,
+  "id": 593377307,
   "title": "Ferrari's first ever electric car sold for record $40m at auction",
   "source": "BBC Business",
   "impact": "中影响",
@@ -15,7 +15,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 483378250,
+  "id": 349451037,
   "title": "Trump says US to scale back South Korea military drills after it stayed out of Iran war",
   "source": "BBC World",
   "impact": "中影响",
@@ -30,7 +30,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 327620524,
+  "id": 650695978,
+  "title": "Actress Hayden Panettiere dies aged 36, US media report",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "A representative for the actress confirmed the news to US outlet ABC News, but did not provide further details of her death.",
+  "url": "https://www.bbc.co.uk/news/articles/cq5665zgg1po?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-08-17",
+  "_real_date": "2026-08-17",
+  "realPubDate": "2026-08-17",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 114940084,
   "title": "About 100 homes swept away after Hurricane Lala lashes Hawaii",
   "source": "BBC World",
   "impact": "中影响",
@@ -45,7 +60,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 137290771,
+  "id": 510485283,
+  "title": "As China Hunts for Scientific Talent, the US Makes It Easier",
+  "source": "NYTimes Business",
+  "impact": "中影响",
+  "country": "美国",
+  "category": "关税/政策",
+  "summary": "Young researchers have long come to the U.S. for academic training, but a combination of Chinese money and U.S. restrictions is shifting the balance.",
+  "url": "https://www.nytimes.com/2026/08/17/business/china-scientific-talent-competition.html",
+  "publishedAt": "2026-08-17",
+  "_real_date": "2026-08-17",
+  "realPubDate": "2026-08-17",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 196751598,
   "title": "上市前夜 | 把中国3C卖到印尼，做到第一也未必是门好生意",
   "source": "36氪",
   "impact": "中影响",
@@ -60,7 +90,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 985542918,
+  "id": 946284481,
   "title": "AI虚拟角色蜂拥而至，但更多人忘不掉陪伴十四年的她",
   "source": "36氪",
   "impact": "中影响",
@@ -75,7 +105,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 153661352,
+  "id": 783046095,
   "title": "科创板上市公司投资脑机接口，微灵医疗获超亿元融资  ｜36氪独家",
   "source": "36氪",
   "impact": "中影响",
@@ -90,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 845811685,
+  "id": 163323536,
   "title": "8点1氪丨Anthropic有望2万亿美元估值上市；旺旺集团面临重大经营危机；Sorry勒索病毒正在国内传播",
   "source": "36氪",
   "impact": "中影响",
@@ -105,13 +135,13 @@
   "ecommerceImpact": true
  },
  {
-  "id": 150784165,
+  "id": 257660112,
   "title": "从众筹到问鼎欧美，VITURE与XR行业的五年",
   "source": "36氪",
   "impact": "中影响",
   "country": "美国",
   "category": "关税/政策",
-  "summary": "\n \n \n  大家都说，XR眼镜是一个奇怪的品类。\n  参数每年都在刷新，销量每年都在增长，但二手平台上，“只用过两次”“戴了半小时头晕”“吃灰半年出了”的转卖帖，好像慢慢变得比任何一个消费电子品类都密集。\n  行业常常将品类留不住用户、留不住用户的时��，归咎于技术还不够成熟。\n  VITURE创始人姜公略给出的是另",
+  "summary": "\n \n \n  大家都说，XR眼镜是一个奇怪的品类。\n  参数每年都在刷新，销量每年都在增长，但二手平台上，“只用过两次”“戴了半小时头晕”“吃灰半年出了”的转卖帖，好像慢慢变得比任何一个消费电子品类都密集。\n  行业常常将品类留不住用户、留不住用户的时间，归咎于技术还不够成熟。\n  VITURE创始人姜公略给出的是另一",
   "url": "https://36kr.com/p/3940540064562563?f=rss",
   "publishedAt": "2026-08-17",
   "_real_date": "2026-08-17",
@@ -120,7 +150,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 877649373,
+  "id": 237110883,
   "title": "中科大孵化，国内唯一通用光量子计算整机企业完成超亿融资丨36氪首发",
   "source": "36氪",
   "impact": "中影响",
@@ -135,8 +165,8 @@
   "ecommerceImpact": true
  },
  {
-  "id": 563822110,
-  "title": "9点1氪丨追觅首台手机售价超20万，带创始人俞浩签名；韩国宣布2030年实现登月；胖东来计划招聘20名刑期5年以上刑满释放人员",
+  "id": 922278476,
+  "title": "9点1氪丨追觅首台手机售价超20万，带创始人俞浩签名；韩国宣布2030年实现登月；胖东来计划招���20名刑期5年以上刑满释放人员",
   "source": "36氪",
   "impact": "中影响",
   "country": "德国",
@@ -150,7 +180,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 96557367,
+  "id": 592093090,
   "title": "「意图经济」爆火背后：年轻人想做旅行里的甩手掌柜",
   "source": "36氪",
   "impact": "中影响",
@@ -165,7 +195,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 70620560,
+  "id": 620942690,
   "title": "氪星晚报｜五粮液出手稳价；谷歌推出Gemini 3.7 Flash模型；7月贷款利率保持低位水平",
   "source": "36氪",
   "impact": "中影响",
@@ -180,7 +210,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 199850635,
+  "id": 240190174,
   "title": "独家 | 腾讯混元徐灿转岗微信WeLM，微信AI进入加速阶段",
   "source": "36氪",
   "impact": "中影响",
@@ -195,44 +225,14 @@
   "ecommerceImpact": true
  },
  {
-  "id": 747227627,
-  "title": "1—7月全国铁路完成固定资产投资4406亿元",
+  "id": 484925344,
+  "title": "中南文化：拟调整重组方案，新增购买江阴热电50%股权",
   "source": "36氪",
   "impact": "中影响",
   "country": "全球",
   "category": "其他",
-  "summary": "今天（17日）从国铁集团获悉，今年1—7月全国铁路完成固定资产投资4406亿元，同比增长1.8%。今年以来，国铁集团聚焦服务支撑国家重大战略和区域经济社会发展，扎实推进强网强链行动，科学有序推进铁路规划建设，上半年投产新线355.2公里。（央视新闻）",
-  "url": "https://36kr.com/newsflashes/3943039753239682?f=rss",
-  "publishedAt": "2026-08-17",
-  "_real_date": "2026-08-17",
-  "realPubDate": "2026-08-17",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 344460436,
-  "title": "深证成指、创业板指双双涨1%",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "36氪获悉，A股三大股指走高，深证成指、创业板指双双涨1%，沪指涨0.61%，科创50指数涨超3%，粮食概念、存储芯片板块涨幅居前。",
-  "url": "https://36kr.com/newsflashes/3943025446075777?f=rss",
-  "publishedAt": "2026-08-17",
-  "_real_date": "2026-08-17",
-  "realPubDate": "2026-08-17",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 145967845,
-  "title": "中信资本收购阿里旗下灵犀互娱已正式生效",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "汇率",
-  "summary": "从接近交易的人士处获悉，灵犀互娱CEO周炳枢于今日发布内部信，确认阿里巴巴集团与中信资本旗下信宸资本已正式达成交易协议。根据协议安排，阿里巴巴将出让所持有的灵犀互娱股份，信宸资本将成为灵犀互娱的新任股东。此前，有报道称，中信资本旗下信宸资本以超15亿美元（折合人民币超101亿元）收购阿里巴巴灵犀互娱。（上证报）",
-  "url": "https://36kr.com/newsflashes/3943024019422594?f=rss",
+  "summary": "36氪获悉，中南文化公告，公司在原收购苏龙热电57.30%股权的基础上，新增购买江阴热电50.00%股权，将江阴热电50.00%股权纳入本次重大资产重组交易标的范围。收购完成后，苏龙热电、江阴热电均成为公司控制的子公司，有利于公司对两家标的实施业务整合、资源统筹等，发挥业务协同效应。公司股票自2026年8月17 日（星",
+  "url": "https://36kr.com/newsflashes/3943086023048320?f=rss",
   "publishedAt": "2026-08-17",
   "_real_date": "2026-08-17",
   "realPubDate": "2026-08-17",
