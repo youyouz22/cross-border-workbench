@@ -1,6 +1,6 @@
 [
  {
-  "id": 780066479,
+  "id": 498809671,
   "title": "US-Canada trade talks 'intense' as new tariff deadline looms",
   "source": "BBC Business",
   "impact": "中影响",
@@ -15,7 +15,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 832125304,
+  "id": 95874904,
   "title": "Disabled people in England to get 24-hour free bus travel",
   "source": "BBC Business",
   "impact": "中影响",
@@ -30,7 +30,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 709870925,
+  "id": 370801960,
   "title": "Tupac murder trial: 'All hell broke loose' night of rapper's shooting, witness says",
   "source": "BBC World",
   "impact": "中影响",
@@ -45,7 +45,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 355633604,
+  "id": 466940579,
   "title": "Russia warns UK over supplying drones to Ukraine",
   "source": "BBC World",
   "impact": "中影响",
@@ -60,7 +60,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 991335456,
+  "id": 311688119,
+  "title": "A French Start-Up, Inbolt, Makes Robots See, and Work, Better",
+  "source": "NYTimes Business",
+  "impact": "中影响",
+  "country": "法国",
+  "category": "政策",
+  "summary": "Inbolt, a French start-up that sells robot vision systems, helped a Stellantis plant in Detroit become a top performer in the company.",
+  "url": "https://www.nytimes.com/2026/08/17/business/robots-stellantis-inbolt.html",
+  "publishedAt": "2026-08-18",
+  "_real_date": "2026-08-18",
+  "realPubDate": "2026-08-18",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 142907682,
   "title": "36氪首发｜给泳池机器人造“眼睛”，前科沃斯员工做芯片获千万元天使融资",
   "source": "36氪",
   "impact": "中影响",
@@ -75,7 +90,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 533085060,
+  "id": 414815286,
   "title": "8点1氪丨李书福辞任董事会主席，吉利汽车管理层大调整；iPhone17或全球涨价，最高涨价近千元；宇树科技发布“超人”",
   "source": "36氪",
   "impact": "中影响",
@@ -90,7 +105,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 30005233,
+  "id": 337953115,
   "title": "硬氪专访 | 荣耀李健：在行业下行期，做一款9999元的云台手机",
   "source": "36氪",
   "impact": "中影响",
@@ -105,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 689478848,
+  "id": 421791344,
   "title": "全球供应链重构关键期，出海企业的本地化实战与挑战｜超级会氪厅",
   "source": "36氪",
   "impact": "中影响",
@@ -120,7 +135,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 566258320,
+  "id": 340889444,
   "title": "氪星晚报 ｜大疆诉美国防部案赢得关键程序性胜利，美市场仍高度依赖大疆无人机；高盛称市场对美联储加息的预测仍过于激进",
   "source": "36氪",
   "impact": "中影响",
@@ -135,7 +150,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 137202722,
+  "id": 917016489,
   "title": "毕业多年，全网却抢着重做一道语文题",
   "source": "36氪",
   "impact": "中影响",
@@ -150,7 +165,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 580978152,
+  "id": 204694923,
   "title": "硬氪首发 | 机器人力传感器企业完成数亿元D轮融资，广汽领投、红杉押注，市占率超70%",
   "source": "36氪",
   "impact": "中影响",
@@ -165,7 +180,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 256559626,
+  "id": 914541679,
   "title": "科氪|国际冠军车手德比斯探访荣耀旗舰店，感受中国科技创新探索",
   "source": "36氪",
   "impact": "中影响",
@@ -180,7 +195,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 504533987,
+  "id": 833754706,
   "title": "36氪首发 | 清北团队做工业功能涂层数字喷印，获五源、小米、蔚来资本等数亿融资",
   "source": "36氪",
   "impact": "中影响",
@@ -195,7 +210,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 698490382,
+  "id": 786711950,
   "title": "上市前夜 | 把中国3C卖到印尼，做到第一也未必是门好生意",
   "source": "36氪",
   "impact": "中影响",
@@ -210,29 +225,14 @@
   "ecommerceImpact": true
  },
  {
-  "id": 754935768,
-  "title": "“安澜德健”完成近亿元A轮融资",
+  "id": 306610117,
+  "title": "阿里云启用韩国第三座数据中心，Agentic AI服务同步上线",
   "source": "36氪",
   "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "36氪获悉，据启明创投消息，日前，“安澜德健”宣布完成近亿元A轮融资，由启明创投独家投资。本轮募集资金将主要用于加速推进公司核心产品OpusOne™的国内注册临床试验进程，并全面支持其海外早期临床试验的申报与开展。",
-  "url": "https://36kr.com/newsflashes/3944456502377604?f=rss",
-  "publishedAt": "2026-08-18",
-  "_real_date": "2026-08-18",
-  "realPubDate": "2026-08-18",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 260268478,
-  "title": "亚太药业等成立生物科技公司",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "36氪获悉，企查查App显示，近日，浙江星萃生物科技有限公司成立，法定代表人为程娜娜，注册资本为2000万元，经营范围包含：细胞技术研发和应用；生物基材料技术研发；生物化工产品技术研发；生物基材料制造等。企查查股权穿透显示，该公司由亚太药业全资子公司浙江雅泰利众控股有限公司、美睿达健康投资（武汉）合伙企业（有限合伙）共",
-  "url": "https://36kr.com/newsflashes/3944455253163143?f=rss",
+  "country": "法国",
+  "category": "政策",
+  "summary": "36氪获悉，8月18日消息，阿里云在韩国的第三座数据中心正式上线，并同步推出Agentic AI相关服务，进一步满足当地市场持续增长的AI及云计算需求。近期，阿里云已先后在法国、日本、马来西亚、墨西哥等市场持续完善AI与云基础设施布局。本轮扩建完成后，阿里云全球基础设施将覆盖30个地域、104个可用区，并计划进一步拓展",
+  "url": "https://36kr.com/newsflashes/3944499339230593?f=rss",
   "publishedAt": "2026-08-18",
   "_real_date": "2026-08-18",
   "realPubDate": "2026-08-18",
