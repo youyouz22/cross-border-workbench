@@ -1,6 +1,6 @@
 [
  {
-  "id": 259198588,
+  "id": 550363809,
   "title": "Trump pauses new tariffs on Canada and says countries close to a deal",
   "source": "BBC Business",
   "impact": "中影响",
@@ -15,7 +15,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 437591126,
+  "id": 853123702,
   "title": "Chinese robotics giant Unitree soars in stock market debut",
   "source": "BBC Business",
   "impact": "中影响",
@@ -30,7 +30,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 89068450,
+  "id": 34950308,
   "title": "Sacked Ukrainian defence minister calls for presidential election",
   "source": "BBC World",
   "impact": "中影响",
@@ -45,7 +45,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 601768544,
+  "id": 168314265,
   "title": "Witness gets combative in Tupac murder trial - 'I don't want to send him to prison'",
   "source": "BBC World",
   "impact": "中影响",
@@ -60,7 +60,52 @@
   "ecommerceImpact": true
  },
  {
-  "id": 998732463,
+  "id": 645517919,
+  "title": "Husband and mother-in-law charged over Indian bride's death",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "Twisha Sharma, a model and actor, had been married for just five months when she was found dead in May.",
+  "url": "https://www.bbc.co.uk/news/articles/cjej8nze1wko?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-08-19",
+  "_real_date": "2026-08-19",
+  "realPubDate": "2026-08-19",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 825183705,
+  "title": "Iranian academic writes of US detention 'hell' over link to 1979 hostage crisis",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "The immigration status of Maryam Tahmasebi was revoked because her husband is the son of a prominent figure in Iran.",
+  "url": "https://www.bbc.co.uk/news/articles/cgjeped6ewxo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-08-19",
+  "_real_date": "2026-08-19",
+  "realPubDate": "2026-08-19",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 828525151,
+  "title": "Five Australian rules footy players suspended amid police investigation",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "The suspensions, for drinking and inviting women to a hotel, come as police investigate an alleged sexual assault.",
+  "url": "https://www.bbc.co.uk/news/articles/cg4d7q2ne7go?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-08-19",
+  "_real_date": "2026-08-19",
+  "realPubDate": "2026-08-19",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 28376028,
   "title": "Harvard agrees to pay millions after morgue manager sold body parts",
   "source": "BBC World",
   "impact": "中影响",
@@ -75,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 26448309,
+  "id": 512365181,
   "title": "Trump to Nominate Heidi Overton, a Top Domestic Policy Aide, for F.D.A. Commissioner",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -90,7 +135,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 729116981,
+  "id": 865539147,
   "title": "Chinese Robot Maker Unitree Soars 500 Percent in Trading Debut",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -105,13 +150,13 @@
   "ecommerceImpact": true
  },
  {
-  "id": 166119239,
-  "title": "Tariffs on Hold as Trump Claims Deal With Canada Is Near",
+  "id": 827244272,
+  "title": "Trump’s Tariffs on Hold as President Claims Deal With Canada Is Near",
   "source": "NYTimes Business",
   "impact": "中影响",
   "country": "美国",
   "category": "关税/政策",
-  "summary": "President Trump announced a three-day delay on imposing 50 percent tariffs in a social media post on Tuesday night, roughly 90 minutes before the midnight deadl",
+  "summary": "Prime Minister Mark Carney of Canada was less definitive about what the intense talks produced, saying ‘important work’ remained.",
   "url": "https://www.nytimes.com/2026/08/18/world/canada/tariffs-trade-trump-carney.html",
   "publishedAt": "2026-08-19",
   "_real_date": "2026-08-19",
@@ -120,7 +165,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 671586884,
+  "id": 604307325,
   "title": "对话宇树早期投资人：未来具身赛道可能只有三家过得好，十家过得去，剩下的活不下去｜硬氪专访",
   "source": "36氪",
   "impact": "中影响",
@@ -135,7 +180,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 449214848,
+  "id": 500548632,
   "title": "8点1氪丨董明珠出任格力技校校长，学费最高1.5万元；人均557万元，寒武纪部分员工“大红包”即将到账；宇树科技今日上市",
   "source": "36氪",
   "impact": "中影响",
@@ -150,7 +195,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 217928068,
+  "id": 499439887,
   "title": "平安好医生：企业健管稳健增长，AI业务兑现业绩",
   "source": "36氪",
   "impact": "中影响",
@@ -165,7 +210,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 707804634,
+  "id": 912493797,
   "title": "氪星晚报 ｜小米集团二季度智能电动汽车及AI等创新业务收入249亿元；百度二季度总营收313亿元，AI业务收入占比连续过半；我国在量子技术国际标准领域取得新进展",
   "source": "36氪",
   "impact": "中影响",
@@ -180,7 +225,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 661907052,
+  "id": 412657172,
   "title": "36氪首发｜给泳池机器人造“眼睛”，前科沃斯员工做芯片获千万元天使融资",
   "source": "36氪",
   "impact": "中影响",
@@ -188,51 +233,6 @@
   "category": "物流",
   "summary": "\n \n \n  文｜张子怡\n  编辑｜袁斯来\n  硬氪获悉，水下感知芯片企业「芯旸微」近日完成千万元天使轮融资，本轮投资方为险峰长青和隐峰资本，资金将主要用于团队建设和人才体系搭建。\n  随着水下机器人从遥控作业走向自主运行，感知成为绕不过去的一道门槛。\n  Fortune Business Insights数据显示，2",
   "url": "https://36kr.com/p/3943789702036611?f=rss",
-  "publishedAt": "2026-08-19",
-  "_real_date": "2026-08-19",
-  "realPubDate": "2026-08-19",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 861984362,
-  "title": "8点1氪丨李书福辞任董事会主席，吉利汽车管理层大调整；iPhone17或全球涨价，最高涨价近千元；宇树科技发布“超人”",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "\n \n \n  今日热点导览\n  DeepSeek API 8月17日正式调价，最高涨幅达1100%&nbsp;\n  大涨12%，长鑫市值约为2.5个茅台\n  豆包支持手机远程操控电脑\n  旺旺食品旗下多家公司已注销\n  人民币对美元汇率升破6.74，创三年半新高\n  TOP3大新闻\n  吉利汽车宣布管理层调整：李书福辞",
-  "url": "https://36kr.com/p/3944273186241673?f=rss",
-  "publishedAt": "2026-08-19",
-  "_real_date": "2026-08-19",
-  "realPubDate": "2026-08-19",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 734693117,
-  "title": "硬氪专访 | 荣耀李健：在行业下行期，做一款9999元的云台手机",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "德国",
-  "category": "政策",
-  "summary": "\n \n \n  作者&nbsp;|&nbsp;邱晓芬\n  编辑&nbsp;|&nbsp;袁斯来\n  Robot Phone或许是荣耀CEO李健上任来压力最大的一款产品 。\n  8月12日的发布会现场，荣耀Robot Phone背部的摄像头缓缓升起，跟着音乐摆动。它还瞄准了眼前的拍摄对象，随着人物不断转来转去，像一颗长在手",
-  "url": "https://36kr.com/p/3943831281663362?f=rss",
-  "publishedAt": "2026-08-19",
-  "_real_date": "2026-08-19",
-  "realPubDate": "2026-08-19",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 274656394,
-  "title": "全球供应链重构关键期，出海企业的本地化实战与挑战｜超级会氪厅",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "物流",
-  "summary": "\n \n \n  对于不少中国出海企业来说，2026年称得上是全球化布局从横向铺开转向纵向深入的一年。\n  过去几年，中国企业出海的逻辑已经发生深刻变化。在早期的“产品出海”阶段，企业关心的是如何把产品通过各种渠道卖出去，解决线下流量获取、线下物流履约和支付结算等问题。\n  但到了2026年，关税持续加码迫使“产能出海”成",
-  "url": "https://36kr.com/p/3938833643961733?f=rss",
   "publishedAt": "2026-08-19",
   "_real_date": "2026-08-19",
   "realPubDate": "2026-08-19",
