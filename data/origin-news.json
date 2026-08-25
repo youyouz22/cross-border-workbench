@@ -1,6 +1,6 @@
 [
  {
-  "id": 907900988,
+  "id": 809246303,
   "title": "Burnham refuses to rule out tax rises in autumn Budget",
   "source": "BBC Business",
   "impact": "中影响",
@@ -15,7 +15,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 560008449,
+  "id": 773035727,
   "title": "How Canada could hit back to hurt the US economy - and Trump",
   "source": "BBC Business",
   "impact": "中影响",
@@ -30,7 +30,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 915174431,
+  "id": 266353517,
+  "title": "Iran says it is ready for what US calls 'greatest financial offensive ever'",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "关税",
+  "summary": "The US calls its latest sanctions on Iran an \"economic D-Day\", but Tehran says it has a plan to counter them.",
+  "url": "https://www.bbc.co.uk/news/articles/c0qxew81y83o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-08-25",
+  "_real_date": "2026-08-25",
+  "realPubDate": "2026-08-25",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 914013169,
   "title": "US-Canada trade war escalates as Trump threatens tariff hike on autos after Carney vows to retaliate",
   "source": "BBC Business",
   "impact": "中影响",
@@ -45,8 +60,8 @@
   "ecommerceImpact": true
  },
  {
-  "id": 416201320,
-  "title": "70,000 social and affordable homes to be built across England as part of £39bn plan",
+  "id": 371667113,
+  "title": "More than 70,000 social and affordable homes to be built across England as part of £39bn plan",
   "source": "BBC Business",
   "impact": "中影响",
   "country": "全球",
@@ -60,7 +75,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 406341820,
+  "id": 641977398,
   "title": "UK PM Burnham vows support for Ukraine despite 'outrageous threats' from Russia",
   "source": "BBC World",
   "impact": "中影响",
@@ -75,7 +90,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 960321353,
+  "id": 23614754,
   "title": "US removes Syria from list of state sponsors of terrorism",
   "source": "BBC World",
   "impact": "中影响",
@@ -90,7 +105,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 755288316,
+  "id": 203806188,
   "title": "French tourist dies in Death Valley after car gets stuck in mud",
   "source": "BBC World",
   "impact": "中影响",
@@ -105,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 393185160,
+  "id": 501866295,
   "title": "Moment tornado tears through southern France",
   "source": "BBC World",
   "impact": "中影响",
@@ -120,7 +135,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 515428541,
+  "id": 428392452,
   "title": "U.S. Tariffs Could Price Canadian Firms Out of U.S. and Threaten Thousands of Jobs",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -135,7 +150,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 868486599,
+  "id": 983201308,
+  "title": "Trump Threatens New 50% Tariffs on Cars, Trucks and Steel as U.S.-Canada Trade War Unfolds",
+  "source": "NYTimes Business",
+  "impact": "中影响",
+  "country": "美国",
+  "category": "关税/政策",
+  "summary": "President Trump vowed to increase tariffs on cars, trucks, auto parts and steel to 50 percent starting Jan. 1, as the countries edged toward a full-blown trade ",
+  "url": "https://www.nytimes.com/2026/08/24/business/economy/trump-canada-tariffs.html",
+  "publishedAt": "2026-08-25",
+  "_real_date": "2026-08-25",
+  "realPubDate": "2026-08-25",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 283176488,
   "title": "36氪首发｜东方非遗香氛品牌「呈白」完成数千万元Pre-A轮融资，上影新视野独家投资",
   "source": "36氪",
   "impact": "中影响",
@@ -150,7 +180,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 126679301,
+  "id": 367453634,
   "title": "8点1氪丨“敌敌畏消杀餐厅”事件已成立联合调查组；小鹏机器人首轮融资超9亿美元；东方甄选薪酬少发4个亿",
   "source": "36氪",
   "impact": "中影响",
@@ -165,7 +195,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 370293932,
+  "id": 522991235,
   "title": "对话昆仑行创始人任庚：车企做具身，未来入场是“战略必然”，现在切入是“战术投机”",
   "source": "36氪",
   "impact": "中影响",
@@ -180,7 +210,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 551444926,
+  "id": 905533682,
   "title": "字节探索自动驾驶， Seed世界模型团队负责｜36氪独家",
   "source": "36氪",
   "impact": "中影响",
@@ -195,7 +225,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 231643797,
+  "id": 517079561,
   "title": "在轨3年、全栈自研，宇航级热控方案供应商「锐莱热控」获A+轮数千万融资｜36氪首发",
   "source": "36氪",
   "impact": "中影响",
@@ -203,36 +233,6 @@
   "category": "物流",
   "summary": "\n \n \n  热管理正从卫星的辅助分系统，成为制约星座规模化、商业化落地的核心变量。\n  36氪获悉，宇航级热控方案供应商锐莱热控科技（北京）有限公司（以下简称“锐莱热控”）已于近期完成A+轮数千万融资。本轮融资由英诺天使基金、方广资本、集萃华财、湘江信成联合投资，老股东金雨茂物持续加持。资金将主要用于宇航主动液冷业务",
   "url": "https://36kr.com/p/3953370022034820?f=rss",
-  "publishedAt": "2026-08-25",
-  "_real_date": "2026-08-25",
-  "realPubDate": "2026-08-25",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 521915735,
-  "title": "这场AI大赛上，年轻人把「人味」拉满了",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "\n \n \n  \n  \n  前保安手搓的AI，让胡彦斌和Tim现场玩嗨了\n  撰文｜深海&nbsp;\n  这或许是“人味儿”拉满的一场AI大赛——8月21日，TRAE AI创造力大赛决赛现场，气氛更像一场热闹的游园会。\n  冠军属于三个相识于深圳科创学院的年轻创业者。他们开发的是一款AI硬件开发工具，一个专门给硬件设备做",
-  "url": "https://36kr.com/p/3953254092062085?f=rss",
-  "publishedAt": "2026-08-25",
-  "_real_date": "2026-08-25",
-  "realPubDate": "2026-08-25",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 329263082,
-  "title": "独家 | 字节AI 生产力整合：TRAE、扣子并入豆包，将推统一办公品牌 \"豆包工作\"",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "\n \n \n  文 | 张雨忻\n  智能涌现独家获悉，字节跳动对旗下的办公AI产品完成了一轮团队整合：TRAE、扣子（Coze）团队将整体并入豆包体系，其中TRAE Work、扣子将与豆包在工作场景的产品能力进行整合；TRAE IDE及CLI 将作为豆包品牌下的编程产品线持续发展。调整后，以上产品和运营团队向豆包产品负责",
-  "url": "https://36kr.com/p/3953230805876099?f=rss",
   "publishedAt": "2026-08-25",
   "_real_date": "2026-08-25",
   "realPubDate": "2026-08-25",
