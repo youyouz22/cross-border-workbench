@@ -1,6 +1,6 @@
 [
  {
-  "id": 25906536,
+  "id": 986592012,
   "title": "Trump administration illegally retaliated against Anthropic, judge rules",
   "source": "BBC Business",
   "impact": "中影响",
@@ -15,7 +15,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 209044915,
+  "id": 574816314,
   "title": "Selena Gomez pushes back against 'frivolous' fraud claims",
   "source": "BBC Business",
   "impact": "中影响",
@@ -30,7 +30,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 652870961,
+  "id": 589797702,
   "title": "Matt Lucas and Hugh Bonneville among actors calling for law on AI voice cloning",
   "source": "BBC Business",
   "impact": "中影响",
@@ -45,13 +45,13 @@
   "ecommerceImpact": true
  },
  {
-  "id": 321315531,
+  "id": 355683214,
   "title": "I used to live in a quiet area - now a data centre overlooks my garden",
   "source": "BBC Business",
   "impact": "中影响",
   "country": "英国",
   "category": "政策",
-  "summary": "With the number of UK data centres set to rise by a fifth, some communities are concerned about the impact.",
+  "summary": "With the number of UK data centres set to rise, some communities are concerned about their impact.",
   "url": "https://www.bbc.co.uk/news/articles/c39e7lpyekno?at_medium=RSS&at_campaign=rss",
   "publishedAt": "2026-08-28",
   "_real_date": "2026-08-28",
@@ -60,7 +60,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 729034079,
+  "id": 30363993,
   "title": "What do you spend too much on?",
   "source": "BBC Business",
   "impact": "中影响",
@@ -75,8 +75,8 @@
   "ecommerceImpact": true
  },
  {
-  "id": 679927253,
-  "title": "'High risk' of lake bursting and causing second flood, warns China",
+  "id": 652139477,
+  "title": "'High risk' of lake breaching and causing second flood, warns China",
   "source": "BBC World",
   "impact": "中影响",
   "country": "",
@@ -90,7 +90,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 874848379,
+  "id": 119841198,
+  "title": "Norway's King Harald dies aged 89",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "",
+  "category": "其他",
+  "summary": "The late king, who reigned for 35 years, broke with tradition by marrying a commoner and celebrated Norway's diversity in a famous speech.",
+  "url": "https://www.bbc.co.uk/news/articles/clykn5p5172o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-08-28",
+  "_real_date": "2026-08-28",
+  "realPubDate": "2026-08-28",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 513016305,
   "title": "Tate brothers blast US jail conditions as they seek bail in UK extradition fight",
   "source": "BBC World",
   "impact": "中影响",
@@ -105,22 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 78087012,
-  "title": "What we know about deadly Nepal-Tibet floods",
-  "source": "BBC World",
-  "impact": "中影响",
-  "country": "",
-  "category": "其他",
-  "summary": "Hundreds have died or are missing in Wednesday's flooding and landslides on the border of Nepal and Tibet.",
-  "url": "https://www.bbc.co.uk/news/articles/cd948kn02e5o?at_medium=RSS&at_campaign=rss",
-  "publishedAt": "2026-08-28",
-  "_real_date": "2026-08-28",
-  "realPubDate": "2026-08-28",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 214197735,
+  "id": 432680817,
   "title": "'The flood took everything': Nepal survivors describe horror of loved ones being swept away",
   "source": "BBC World",
   "impact": "中影响",
@@ -135,7 +135,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 207566061,
+  "id": 508375319,
+  "title": "What we know about deadly Nepal-Tibet floods",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "",
+  "category": "其他",
+  "summary": "Hundreds have died or are missing in Wednesday's flooding and landslides on the border of Nepal and Tibet.",
+  "url": "https://www.bbc.co.uk/news/articles/cd948kn02e5o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-08-28",
+  "_real_date": "2026-08-28",
+  "realPubDate": "2026-08-28",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 895458739,
   "title": "Benjamin Rosen, Who Brought Venture Capital to Tech, Dies at 93",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -150,7 +165,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 982150633,
+  "id": 687146878,
   "title": "Prediction Markets and States Clashed, Setting Off a Furious Political Battle",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -158,21 +173,6 @@
   "category": "关税/政策",
   "summary": "A legal dispute over the future of Kalshi, Polymarket and others has drawn in the Trump administration, the president’s son and nearly every state attorney gene",
   "url": "https://www.nytimes.com/2026/08/27/technology/prediction-markets-states-kalshi-polymarket-lawsuits.html",
-  "publishedAt": "2026-08-28",
-  "_real_date": "2026-08-28",
-  "realPubDate": "2026-08-28",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 431071024,
-  "title": "赵长鹏在香港，回答了15个问题｜现场直击",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "\n \n \n  8月27日清晨5时05分，香港发出红色暴雨警告，所有上午校和全日制学校停课。\n  赵长鹏的航班也被暴风雨耽搁，凌晨3点才抵达香港。大约六个半小时后，他出现在《币安人生》书友会现场。原本只准备开放一半的会场坐满了人，活动方临时打开了全部区域。\n  赵长鹏，大家更熟悉的名字是CZ。他坐在港交所40楼的一间会议",
-  "url": "https://36kr.com/p/3958638529117569?f=rss",
   "publishedAt": "2026-08-28",
   "_real_date": "2026-08-28",
   "realPubDate": "2026-08-28",
