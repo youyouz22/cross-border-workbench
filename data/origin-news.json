@@ -1,12 +1,12 @@
 [
  {
-  "id": 88434382,
+  "id": 210783548,
   "title": "OpenAI bots meddled with multiple US government agency sites",
   "source": "BBC World",
   "impact": "中影响",
   "country": "全球",
   "category": "其他",
-  "summary": "OpenAI said its bots access public data from the US Census and the Securities and Exchange Commission, which looks over US stocks and investors",
+  "summary": "OpenAI said its bots accessed public data from a range of institutions during test exercises. ",
   "url": "https://www.bbc.co.uk/news/articles/cw62jje658dlo?at_medium=RSS&at_campaign=rss",
   "publishedAt": "2026-09-26",
   "_real_date": "2026-09-26",
@@ -15,7 +15,37 @@
   "ecommerceImpact": true
  },
  {
-  "id": 156615536,
+  "id": 775511002,
+  "title": "Iran offers US deal to reopen Strait of Hormuz in seven days",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "Asked about the Iranian proposal, a US official told the BBC \"constructive discussions\" were taking place through mediators.",
+  "url": "https://www.bbc.co.uk/news/articles/cqgmrr9ekr7ko?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-09-26",
+  "_real_date": "2026-09-26",
+  "realPubDate": "2026-09-26",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 49102839,
+  "title": "White House bars CNN from travelling with Trump on Air Force One",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "美国",
+  "category": "关税/政策",
+  "summary": "CNN was scheduled to fly with US President Donald Trump for his trip to Tennessee on Saturday.",
+  "url": "https://www.bbc.co.uk/news/articles/cxq633770y16o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-09-26",
+  "_real_date": "2026-09-26",
+  "realPubDate": "2026-09-26",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 917015196,
   "title": "Black woman found hanging from tree was dead before body was 'staged', police say",
   "source": "BBC World",
   "impact": "中影响",
@@ -30,7 +60,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 395970536,
+  "id": 509563659,
+  "title": "White House Blocks CNN From Air Force One",
+  "source": "NYTimes Business",
+  "impact": "中影响",
+  "country": "美国",
+  "category": "关税/政策",
+  "summary": "CNN won’t be able to join President Trump on a Saturday trip to Tennessee. He had banned CNN and two other news outlets from the White House, but a court order ",
+  "url": "https://www.nytimes.com/2026/09/25/business/media/white-house-cnn-air-force-one-ban.html",
+  "publishedAt": "2026-09-26",
+  "_real_date": "2026-09-26",
+  "realPubDate": "2026-09-26",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 177014111,
   "title": "从模型上手机到让智能体落地，高通的AI时代新故事｜焦点分析",
   "source": "36氪",
   "impact": "中影响",
@@ -45,7 +90,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 666311864,
+  "id": 669285116,
   "title": "模型之外，游戏+AI的下一道门槛在哪里？",
   "source": "36氪",
   "impact": "中影响",
@@ -60,7 +105,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 503577519,
+  "id": 438802742,
   "title": "AI公司杀进硬件，联想AI平板如何找到存在感？｜最前线",
   "source": "36氪",
   "impact": "中影响",
@@ -75,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 742010066,
+  "id": 247122612,
   "title": "从地下8000米到机器人高温关节，清华系特种功率芯片公司完成数亿元C轮融资｜36氪首发",
   "source": "36氪",
   "impact": "中影响",
@@ -90,7 +135,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 650216232,
+  "id": 165984310,
   "title": "AI新材料公司获数千万天使轮融资，已合作固态电池与化工龙头丨36氪首发",
   "source": "36氪",
   "impact": "中影响",
@@ -105,7 +150,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 474585476,
+  "id": 223998116,
   "title": "商业航天企业拿下近20亿融资，大型可回收火箭计划2027年首飞｜硬氪独家",
   "source": "36氪",
   "impact": "中影响",
@@ -120,7 +165,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 283500952,
+  "id": 872132160,
   "title": "8点1氪丨苹果出手限制“摇一摇”广告；王慧文称想组局买下西贝：喜欢这个品牌；Meta测试真人代Muse拨打电话，引发内部隐私争议",
   "source": "36氪",
   "impact": "中影响",
@@ -135,7 +180,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 434082802,
+  "id": 760188737,
   "title": "科氪 | 荣耀方飞：与阿里共建五大垂域模型与解决方案，Magic9落地行业领先AI能力",
   "source": "36氪",
   "impact": "中影响",
@@ -150,7 +195,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 425946550,
+  "id": 921571105,
   "title": "2026 East Forward出海大会嘉宾超级金句丨潮起之时，靠岸相见",
   "source": "36氪",
   "impact": "中影响",
@@ -165,13 +210,13 @@
   "ecommerceImpact": true
  },
  {
-  "id": 385841582,
+  "id": 542122486,
   "title": "流量成本攀升，品牌信任为什么是跨境电商的终极壁垒？丨超级会氪厅活动回顾",
   "source": "36氪",
   "impact": "中影响",
   "country": "美国",
   "category": "关税/政策",
-  "summary": "\n \n \n  \n  2026年，跨境电商正在经历从“流量”到“信任”的深刻转向。\n  过去几年，随着“以流量��销量”的广告投放逻辑逐渐失效，大量亚马逊等跨境电商平台上的卖家陷入收入和利润停滞或下滑的困境。流量驱动的粗放增长走到尽头，倒逼行业重新寻找下一个可持续的增长引擎。\n  与此同时，品牌信任正从“加分项”变为影响",
+  "summary": "\n \n \n  \n  2026年，跨境电商正在经历从“流量”到“信任”的深刻转向。\n  过去几年，随着“以流量换销量”的广告投放逻辑逐渐失效，大量亚马逊等跨境电商平台上的卖家陷入收入和利润停滞或下滑的困境。流量驱动的粗放增长走到尽头，倒逼行业重新寻找下一个可持续的增长引擎。\n  与此同时，品牌信任正从“加分项”变为影响转",
   "url": "https://36kr.com/p/3995657950433158?f=rss",
   "publishedAt": "2026-09-26",
   "_real_date": "2026-09-26",
@@ -180,59 +225,14 @@
   "ecommerceImpact": true
  },
  {
-  "id": 570857170,
-  "title": "Meta在美国新墨西哥州败诉，或面临高达2190亿美元罚款",
+  "id": 764560223,
+  "title": "美国一家AI实验室：AI演化出自己的方言",
   "source": "36氪",
   "impact": "中影响",
   "country": "美国",
   "category": "关税/政策",
-  "summary": "美国新墨西哥州总检察长劳尔·托雷斯表示，在陪审团裁定Meta Platforms Inc.违反州法律后，他将寻求对该公司处以最高达2190亿美元的罚款。陪审团认定，Meta在言论政策和数据隐私政策方面误导公众，从而违反了新墨西哥州法律。（财联社）",
-  "url": "https://36kr.com/newsflashes/3999565389303939?f=rss",
-  "publishedAt": "2026-09-26",
-  "_real_date": "2026-09-26",
-  "realPubDate": "2026-09-26",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 543629195,
-  "title": "火车票预约购票最新调整：最远预约日期由60天逐步调整为30天",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "9月26日起，铁路部门对京沪高铁、京沪铁路试点的火车票预约购票服务的可预约日期范围从开车前第60天至第17天，逐步调整为开车前第30天至第17天。旅客通过铁路12306手机客户端“预约购票”专区填报预约需求，9月26日当天可预约11月24日前车票；9月27日至10月26日为调整过渡期，最远可预约11月24日的车票；10",
-  "url": "https://36kr.com/newsflashes/3999619732000896?f=rss",
-  "publishedAt": "2026-09-26",
-  "_real_date": "2026-09-26",
-  "realPubDate": "2026-09-26",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 884460402,
-  "title": "美国上诉法院维持五角大楼将Anthropic列入黑名单的裁定",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "华盛顿特区联邦上诉法院维持五角大楼将Anthropic列入黑名单的裁定。美国国防部于今年3月将Anthropic认定为供应链风险，Anthropic随即起诉特朗普政府，试图推翻该决定。该认定禁止美军使用Anthropic大模型，同时禁止国防承包商在承接国防部项目时使用该公司模型。（新浪财经）",
-  "url": "https://36kr.com/newsflashes/3999564179067011?f=rss",
-  "publishedAt": "2026-09-26",
-  "_real_date": "2026-09-26",
-  "realPubDate": "2026-09-26",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 800124803,
-  "title": "高速光互联与计算技术北京市重点实验室落地北京经开区",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "36氪获悉，据“北京亦庄”公众号，近日，2026北京微电子国际研讨会暨IC WORLD大会——光电集成前沿技术专题论坛在北京亦庄举办。活动现场，高速光互联与计算技术北京市重点实验室揭牌落地，北京亦庄集成电路领域再添市级重点实验室。此次揭牌的高速光互联与计算技术北京市重点实验室由北方集成电路技术创新中心（北京）有限公司、",
-  "url": "https://36kr.com/newsflashes/3999563137486729?f=rss",
+  "summary": "近日，美国一家AI实验室发现，当多个智能体在虚拟“社会”中协作时，开始用一种超现实的“方言”聊天，关键是人类根本看不懂。面对一个越来越复杂、甚至可能脱离人类掌控的AI世界，AI治理的全球行动迫在眉睫。（CCTV国际时讯）",
+  "url": "https://36kr.com/newsflashes/3999814609473416?f=rss",
   "publishedAt": "2026-09-26",
   "_real_date": "2026-09-26",
   "realPubDate": "2026-09-26",
