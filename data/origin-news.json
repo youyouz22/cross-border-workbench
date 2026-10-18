@@ -1,6 +1,66 @@
 [
  {
-  "id": 837079278,
+  "id": 419117301,
+  "title": "Heating oil customers face tough winter",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "The government plans to regulate heating oil prices after increases.",
+  "url": "https://www.bbc.co.uk/news/articles/cq1j3x66e1rno?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-18",
+  "_real_date": "2026-10-18",
+  "realPubDate": "2026-10-18",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 961807738,
+  "title": "Violent clashes, looting and buildings ablaze in France as over 1,200 arrested after protests",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "法国",
+  "category": "政策",
+  "summary": "Disorder broke out in cities across the country on a day in which more than half a million joined cost of living protests.",
+  "url": "https://www.bbc.co.uk/news/articles/c6d937wedj7jo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-18",
+  "_real_date": "2026-10-18",
+  "realPubDate": "2026-10-18",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 357245448,
+  "title": "A wave of homemade, synthetic drugs sweeps US and deepens crisis",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "BBC News hears from users, dealers, prison and recovery workers as the country battles with a deadly new drug epidemic. ",
+  "url": "https://www.bbc.co.uk/news/articles/cmx2wvyv5j17o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-18",
+  "_real_date": "2026-10-18",
+  "realPubDate": "2026-10-18",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 700797265,
+  "title": "Deaths confirmed in major fire at Canada military base",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "Number of casualties unknown in \"very, very active and delicate\" situation in Alberta, says defence minister.",
+  "url": "https://www.bbc.co.uk/news/articles/cr86z0w4lxdxo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-18",
+  "_real_date": "2026-10-18",
+  "realPubDate": "2026-10-18",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 346518801,
   "title": "Trump waives several Russia sanctions as row with Zelensky intensifies",
   "source": "BBC World",
   "impact": "中影响",
@@ -15,7 +75,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 899318265,
+  "id": 147015058,
   "title": "前华为车BU世界模型基模负责人创业，杭州具身大脑公司获近亿元融资｜硬氪首发",
   "source": "36氪",
   "impact": "中影响",
@@ -30,7 +90,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 402420239,
+  "id": 672846453,
   "title": "禾赛不只想卖激光雷达｜最前线",
   "source": "36氪",
   "impact": "中影响",
@@ -45,7 +105,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 112970756,
+  "id": 477793931,
   "title": "对话费德勒：加入On昂跑，是我回馈网球的一种方式",
   "source": "36氪",
   "impact": "中影响",
@@ -60,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 800827586,
+  "id": 848712850,
   "title": "9点1氪丨特斯拉发布“会飞”的跑车，预订金33.2万元；中国限制或禁止出口AI等领域40项技术；长鑫科技预计前三季度净利超1300亿",
   "source": "36氪",
   "impact": "中影响",
@@ -75,7 +135,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 241819743,
+  "id": 530970900,
   "title": "零跑电池负责人宋忆宁：电池产业已成熟，车企自研迎来好时机｜36氪专访",
   "source": "36氪",
   "impact": "中影响",
@@ -90,7 +150,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 397447298,
+  "id": 560456177,
   "title": "长鑫科技出手，新芯航途XHEART累计融资50亿｜36氪独家",
   "source": "36氪",
   "impact": "中影响",
@@ -105,7 +165,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 246072670,
+  "id": 781894177,
   "title": "小鹏也开始整合，4条产品线变2条｜36氪独家",
   "source": "36氪",
   "impact": "中影响",
@@ -120,7 +180,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 590941797,
+  "id": 784279193,
   "title": "老板向AI许愿，员工让AI滚蛋｜深氪",
   "source": "36氪",
   "impact": "中影响",
@@ -135,7 +195,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 536081039,
+  "id": 411543968,
   "title": "拿下两轮数亿元融资，清华博导刘子鸣要造能自己设计模型的「元模型」",
   "source": "36氪",
   "impact": "中影响",
@@ -150,7 +210,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 784542866,
+  "id": 651176604,
   "title": "最前线｜大疆发布机场4 首次引入25秒自动换电",
   "source": "36氪",
   "impact": "中影响",
@@ -165,74 +225,14 @@
   "ecommerceImpact": true
  },
  {
-  "id": 375145332,
-  "title": "多项世界级，曙光8000十大前沿成果发布",
+  "id": 735441302,
+  "title": "DeepSeek新模型Token消耗降超五成",
   "source": "36氪",
   "impact": "中影响",
   "country": "全球",
   "category": "其他",
-  "summary": "36氪获悉，10月18日，中科曙光在2026 CCF全国高性能计算学术大会（CCF HPC 2026）上发布曙光8000十大前沿应用成果，覆盖天文学、地球科学、生命科学、材料研发和高端装备等多个不同领域，多项科研突破成为该领域的“世界首次”。这批成果中，多项已嵌入实际业务系统与研发流程。作为国内首个明确采用原生超智融合",
-  "url": "https://36kr.com/newsflashes/4030719682007688?f=rss",
-  "publishedAt": "2026-10-18",
-  "_real_date": "2026-10-18",
-  "realPubDate": "2026-10-18",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 158905984,
-  "title": "国金证券：当前AI短剧出海仍处渗透率低位，远期市场空间有望持续扩容",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "汇率",
-  "summary": "36氪获悉，国金证券研报称，海外短剧的核心商业模式以用户付费IAP内购为主（前几集免费试看，后续剧集付费解锁），广告变现更多作为补充手段。根据DataEye统计，2025年海外微短剧整体市场规模约40亿美元，其中App双端内购收入22.79亿美元，同比增长129%；2026年海外整体市场规模有望突破50亿美元。2026",
-  "url": "https://36kr.com/newsflashes/4030688414929536?f=rss",
-  "publishedAt": "2026-10-18",
-  "_real_date": "2026-10-18",
-  "realPubDate": "2026-10-18",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 124266361,
-  "title": "对冲基金正在加速撤离AI交易",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "汇率",
-  "summary": "持续近两年的AI多头交易，正在遭遇一场猛烈逆转。高盛Prime经纪业务数据显示，10月8日至14日，对冲基金连续五个交易日净卖出全球AI股票，自2025年初以来的累计净买入在短短一周内被悉数抹去。与此同时，截至最新，全球市值最高的20只AI和半导体股票合计蒸发超过1万亿美元市值。 这场抛售已从AI板块蔓延至全球市场。韩",
-  "url": "https://36kr.com/newsflashes/4030687709860230?f=rss",
-  "publishedAt": "2026-10-18",
-  "_real_date": "2026-10-18",
-  "realPubDate": "2026-10-18",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 735198075,
-  "title": "节后首批百家机构调研股曝光，源杰科技有284家机构调研",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "节后机构调研个股有100多只，源杰科技调研机构数最多。据证券时报·数据宝统计，源杰科技有284家机构调研，其中包括37家证券公司、77家基金公司、114家私募等。艾力斯和广合科技也获得百家机构调研。（证券时报）",
-  "url": "https://36kr.com/newsflashes/4030685494677888?f=rss",
-  "publishedAt": "2026-10-18",
-  "_real_date": "2026-10-18",
-  "realPubDate": "2026-10-18",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 444141856,
-  "title": "iPhone Duo预售次日市场价格明显回落，部分版本加价空间缩水过半",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "平台",
-  "summary": "预售开启后的第二天，iPhone Duo首批货源在电商平台的市场价格已明显回落。得物App显示，截至10月17日19时，iPhone Duo多个版本市场成交均价较此前明显下降，部分版本的加价空间已缩水近半。以白色256GB版本为例，市场成交均价由21170元回落至18666元，上涨空间由此前的5171元缩小至2667元",
-  "url": "https://36kr.com/newsflashes/4030684873446023?f=rss",
+  "summary": "DeepSeek正式推出大模型新版本V4.1 Flash-1017。在国产人工智能大模型普遍处于迭代关键期的当下，该版本率先完成升级，整体性能实现显著跃升。 此前已有公开数据显示其技术指标，此次DeepSeek更首次自主发布帕累托前沿曲线，直观呈现模型在效率与成本维度的综合表现。V4.1 Flash-1017在此曲线中",
+  "url": "https://36kr.com/newsflashes/4030935240085894?f=rss",
   "publishedAt": "2026-10-18",
   "_real_date": "2026-10-18",
   "realPubDate": "2026-10-18",

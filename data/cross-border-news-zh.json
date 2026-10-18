@@ -1,6 +1,66 @@
 [
  {
-  "id": 837079278,
+  "id": 419117301,
+  "title": "Heating oil customers face tough winter",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "",
+  "category": "其他",
+  "summary": "The government plans to regulate heating oil prices after increases.",
+  "url": "https://www.bbc.co.uk/news/articles/cq1j3x66e1rno?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-18",
+  "_real_date": "2026-10-18",
+  "realPubDate": "2026-10-18",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 961807738,
+  "title": "Violent clashes, looting and buildings ablaze in France as over 1,200 arrested after protests",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "法国",
+  "category": "政策",
+  "summary": "Disorder broke out in cities across the country on a day in which more than half a million joined cost of living protests.",
+  "url": "https://www.bbc.co.uk/news/articles/c6d937wedj7jo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-18",
+  "_real_date": "2026-10-18",
+  "realPubDate": "2026-10-18",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 357245448,
+  "title": "A wave of homemade, synthetic drugs sweeps US and deepens crisis",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "",
+  "category": "其他",
+  "summary": "BBC News hears from users, dealers, prison and recovery workers as the country battles with a deadly new drug epidemic. ",
+  "url": "https://www.bbc.co.uk/news/articles/cmx2wvyv5j17o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-18",
+  "_real_date": "2026-10-18",
+  "realPubDate": "2026-10-18",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 700797265,
+  "title": "Deaths confirmed in major fire at Canada military base",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "",
+  "category": "其他",
+  "summary": "Number of casualties unknown in \"very, very active and delicate\" situation in Alberta, says defence minister.",
+  "url": "https://www.bbc.co.uk/news/articles/cr86z0w4lxdxo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-18",
+  "_real_date": "2026-10-18",
+  "realPubDate": "2026-10-18",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 346518801,
   "title": "Trump waives several Russia sanctions as row with Zelensky intensifies",
   "source": "BBC World",
   "impact": "中影响",
@@ -15,7 +75,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 899318265,
+  "id": 147015058,
   "title": "前华为车BU世界模型基模负责人创业，杭州具身大脑公司获近亿元融资｜硬氪首发",
   "source": "36氪",
   "impact": "中影响",
@@ -30,7 +90,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 402420239,
+  "id": 672846453,
   "title": "禾赛不只想卖激光雷达｜最前线",
   "source": "36氪",
   "impact": "中影响",
@@ -45,7 +105,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 112970756,
+  "id": 477793931,
   "title": "对话费德勒：加入On昂跑，是我回馈网球的一种方式",
   "source": "36氪",
   "impact": "中影响",
@@ -60,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 800827586,
+  "id": 848712850,
   "title": "9点1氪丨特斯拉发布“会飞”的跑车，预订金33.2万元；中国限制或禁止出口AI等领域40项技术；长鑫科技预计前三季度净利超1300亿",
   "source": "36氪",
   "impact": "中影响",
@@ -75,7 +135,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 241819743,
+  "id": 530970900,
   "title": "零跑电池负责人宋忆宁：电池产业已成熟，车企自研迎来好时机｜36氪专访",
   "source": "36氪",
   "impact": "中影响",
@@ -90,7 +150,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 397447298,
+  "id": 560456177,
   "title": "长鑫科技出手，新芯航途XHEART累计融资50亿｜36氪独家",
   "source": "36氪",
   "impact": "中影响",
@@ -105,7 +165,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 246072670,
+  "id": 781894177,
   "title": "小鹏也开始整合，4条产品线变2条｜36氪独家",
   "source": "36氪",
   "impact": "中影响",
@@ -113,66 +173,6 @@
   "category": "其他",
   "summary": "\n \n \n  36氪从多位产业人处了解到，小鹏汽车在不久前整合了产品线。原本，小鹏汽车共有F、D、I、G四条产品线，今后小鹏汽车将只有G、D两条产品线，I、F产品线已被整合入G产品线。\n  此前，G产品线主要负责小鹏GX、G9L等大型SUV，F产品线主要生产小鹏P系列的轿车等，D产品线旗下是MONA系列车型，I产品线负",
   "url": "https://36kr.com/p/4028538678858377?f=rss",
-  "publishedAt": "2026-10-18",
-  "_real_date": "2026-10-18",
-  "realPubDate": "2026-10-18",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 590941797,
-  "title": "老板向AI许愿，员工让AI滚蛋｜深氪",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "",
-  "category": "平台",
-  "summary": "\n \n \n  文丨赵芮&nbsp;\n  编辑丨张雨忻&nbsp;\n  老板的“许愿池”&nbsp;\n  “你知道马斯克怎么管理员工吗？”听到这句拷问，胡芯兰感觉不妙。&nbsp;\n  对面的这位老板，来自一家重工业企业，员工规模过万。在社交媒体上，老板看到过马斯克用Agent代替真人员工工作的新闻，不禁燃起同样的念头。",
-  "url": "https://36kr.com/p/4028378674205313?f=rss",
-  "publishedAt": "2026-10-18",
-  "_real_date": "2026-10-18",
-  "realPubDate": "2026-10-18",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 536081039,
-  "title": "拿下两轮数亿元融资，清华博导刘子鸣要造能自己设计模型的「元模型」",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "",
-  "category": "其他",
-  "summary": "\n \n \n  文｜王欣逸\n  编辑｜张雨忻\n  “设计模型的工作，一定要人来做吗？”&nbsp;\n  今年年初，在斯坦福做博后、即将入职清华做博导的刘子鸣提出了这样的问题，随后，他便在自己身上进行了将近两个月的“人体实验”——训练自己大脑的直觉。&nbsp;\n  这段时间，他每天会随机拿一个数据集训练模型。在跑实验之前",
-  "url": "https://36kr.com/p/4028228125577864?f=rss",
-  "publishedAt": "2026-10-18",
-  "_real_date": "2026-10-18",
-  "realPubDate": "2026-10-18",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 784542866,
-  "title": "最前线｜大疆发布机场4 首次引入25秒自动换电",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "",
-  "category": "其他",
-  "summary": "\n \n \n  文｜张子怡\n  编辑｜袁斯来\n  36氪获悉，10月14日，大疆发布大疆机场4。这是大疆首款采用自动换电方案的无人值守平台，搭配Matrice 5TD无人机和O4地面站使用。其国内套装售价为167,999元，软件订阅、非标准场景部署及其他选购服务需另行付费，目前已开放预订。\n  无人机机场是一类固定部署的",
-  "url": "https://36kr.com/p/4028154318738053?f=rss",
-  "publishedAt": "2026-10-18",
-  "_real_date": "2026-10-18",
-  "realPubDate": "2026-10-18",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 375145332,
-  "title": "多项世界级，曙光8000十大前沿成果发布",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "",
-  "category": "其他",
-  "summary": "36氪获悉，10月18日，中科曙光在2026 CCF全国高性能计算学术大会（CCF HPC 2026）上发布曙光8000十大前沿应用成果，覆盖天文学、地球科学、生命科学、材料研发和高端装备等多个不同领域，多项科研突破成为该领域的“世界首次”。这批成果中，多项已嵌入实际业务系统与研发流程。作为国内首个明确采用原生超智融合",
-  "url": "https://36kr.com/newsflashes/4030719682007688?f=rss",
   "publishedAt": "2026-10-18",
   "_real_date": "2026-10-18",
   "realPubDate": "2026-10-18",
