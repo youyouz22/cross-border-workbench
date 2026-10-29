@@ -1,6 +1,6 @@
 [
  {
-  "id": 244611747,
+  "id": 197916947,
   "title": "I earn £30,000. I'm angry there was no fuel duty cut in the Budget",
   "source": "BBC Business",
   "impact": "中影响",
@@ -15,7 +15,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 947030871,
+  "id": 875827519,
   "title": "'I live with a ghost': Japan's haunted homes attract bargain hunters",
   "source": "BBC Business",
   "impact": "中影响",
@@ -30,7 +30,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 127901958,
+  "id": 570487052,
   "title": "Microsoft profits soar days after announcing thousands of layoffs",
   "source": "BBC Business",
   "impact": "中影响",
@@ -45,7 +45,67 @@
   "ecommerceImpact": true
  },
  {
-  "id": 36969462,
+  "id": 507434912,
+  "title": "Hello Kitty maker cuts ties with Japanese spy drama after China backlash",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "日本",
+  "category": "政策",
+  "summary": "Sanrio has apologised after its merchandise line with Japanese TV series Vivant drew criticism.",
+  "url": "https://www.bbc.co.uk/news/articles/cry4x177jlnyo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-29",
+  "_real_date": "2026-10-29",
+  "realPubDate": "2026-10-29",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 836906252,
+  "title": "'We need help for small businesses, not punishment'",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "People in Bilston react to the new Budget set out by Chancellor John Healey.",
+  "url": "https://www.bbc.co.uk/news/articles/c6kglwxplv1zo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-29",
+  "_real_date": "2026-10-29",
+  "realPubDate": "2026-10-29",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 533234957,
+  "title": "Haulier blames fuel prices for diesel theft",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "Martin Pinches said someone had stolen 400 litres of diesel from two of his lorries",
+  "url": "https://www.bbc.co.uk/news/articles/ck9qzdwjp03lo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-29",
+  "_real_date": "2026-10-29",
+  "realPubDate": "2026-10-29",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 197532416,
+  "title": "Chancellor says government has 'moral duty' to help young people out of work",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "Chancellor John Healey says any cuts to welfare will be done \"in a Labour way\".",
+  "url": "https://www.bbc.co.uk/news/videos/c3j47008yl7vo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-29",
+  "_real_date": "2026-10-29",
+  "realPubDate": "2026-10-29",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 474041474,
   "title": "Flávio Bolsonaro denies fleeing Brazil after landing in Miami",
   "source": "BBC World",
   "impact": "中影响",
@@ -60,7 +120,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 886536723,
+  "id": 53729,
+  "title": "What we know so far about deadly Spain train crash",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "西班牙",
+  "category": "政策",
+  "summary": "More than 500 passengers were on board the trains when the crash occurred in the province of Toledo, south of Madrid.",
+  "url": "https://www.bbc.co.uk/news/articles/cm8xz7pkd0jjo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-29",
+  "_real_date": "2026-10-29",
+  "realPubDate": "2026-10-29",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 369662870,
   "title": "Weil Gotshal, Once a Legal Powerhouse, Plans to Dissolve",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -75,7 +150,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 395446692,
+  "id": 347907024,
+  "title": "U.S. Restricts Trade With Chinese Genomics Company",
+  "source": "NYTimes Business",
+  "impact": "中影响",
+  "country": "美国",
+  "category": "关税/政策",
+  "summary": "The move will block shipments from BGI, a major Chinese firm that U.S. officials allege is associated with forced labor and the abuse of minority groups.",
+  "url": "https://www.nytimes.com/2026/10/28/business/us-china-biotech-trade-ban.html",
+  "publishedAt": "2026-10-29",
+  "_real_date": "2026-10-29",
+  "realPubDate": "2026-10-29",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 229592715,
   "title": "“对不起，我们不投具身智能了”",
   "source": "36氪",
   "impact": "中影响",
@@ -90,7 +180,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 247248278,
+  "id": 943571648,
   "title": "8点1氪丨姆巴佩中国代言收入近2200万欧元；长鑫科技已被纳入上证指数；宇树科技：前三季度净利润3.87亿元，同比增长270.54%",
   "source": "36氪",
   "impact": "中影响",
@@ -105,7 +195,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 507012141,
+  "id": 539289596,
   "title": "在25万人的纽约漫展，一家中国公司排起了长队",
   "source": "36氪",
   "impact": "中影响",
@@ -120,7 +210,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 978281646,
+  "id": 796168630,
   "title": "36氪首发丨服务长征、蓝箭、C919，这家特种运输车企业完成数千万元融资",
   "source": "36氪",
   "impact": "中影响",
@@ -135,7 +225,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 313248537,
+  "id": 493164091,
   "title": "「微至航空」完成近亿元A轮融资，“云熊”累计飞行超12000公里，已获特许飞行证｜36氪首发",
   "source": "36氪",
   "impact": "中影响",
@@ -143,96 +233,6 @@
   "category": "物流",
   "summary": "\n \n \n  文&nbsp;|&nbsp;阿至\n  “ 空中五菱 ” 正加速其在低空经济场景的落地。\n  36氪获悉，经济型通用无人运输机研发制造商「微至航空」已完成近亿元A轮融资，由自贡市通航产业发展股权投资基金领投，航发基金持续跟投。本轮资金将主要用于新技术、新机型的研发试制，以及加速成熟机型适航取证进程和场景落地",
   "url": "https://36kr.com/p/4044989810692999?f=rss",
-  "publishedAt": "2026-10-29",
-  "_real_date": "2026-10-29",
-  "realPubDate": "2026-10-29",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 441127770,
-  "title": "从濒临破产到成为独角兽，xTool还在等待「大结果」",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "\n \n \n  文丨张子怡\n  编辑丨袁斯来\n  作为一家在硬件圈名声仅次于拓竹的公司，xTool有些过于低调。\n  普通人或许并不熟悉它的产品，也很难想象，它靠激光雕刻机这类细分产品，一年做到20亿营收。\n  今年年初或许是xTool最辉煌的时刻。它在港交所递表，成为少数走到上市阶段的硬件创业公司。当拓竹暂时没有上市进",
-  "url": "https://36kr.com/p/4044945806726023?f=rss",
-  "publishedAt": "2026-10-29",
-  "_real_date": "2026-10-29",
-  "realPubDate": "2026-10-29",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 255925368,
-  "title": "接入AI半年后，一家自闭症康复机构辞了兼职督导",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "\n \n \n  文 | 刘凌果\n  编辑 | 海若镜\n  教一个四岁半的孩子认识什么是苹果，要花多长时间？对自闭症儿童而言，这是个未知数。\n  欢欢坐在小板凳上，康复师将印有苹果图样的小卡，一张一张举到她的眼前：红苹果、蛇果、切开的苹果、咬了一口的苹果、苹果简笔画，她要辨认并回答，以上都是苹果吗？答对了会被康复师记作“+",
-  "url": "https://36kr.com/p/4044028040844417?f=rss",
-  "publishedAt": "2026-10-29",
-  "_real_date": "2026-10-29",
-  "realPubDate": "2026-10-29",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 9183842,
-  "title": "对话星连资本张鸣晨：在清华挖宝，看教授的虎气、猴气与熊气",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "\n \n \n  文 | 海若镜\n  &nbsp;\n  又一支清华系基金募到了新钱，这一次是张鸣晨和他创立的星连资本。\n  年轻的星连资本，2021年出道时投了智谱天使＋轮，此后一路加仓，一期基金40%的钱押在智谱。勇猛加仓的故事，还发生在基流、生数科技、面壁智能身上。\n  对基流，他们连投了五六轮，投成了外部第一大股东。",
-  "url": "https://36kr.com/p/3997098817310595?f=rss",
-  "publishedAt": "2026-10-29",
-  "_real_date": "2026-10-29",
-  "realPubDate": "2026-10-29",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 974322674,
-  "title": "「脑虎科技」B轮融资7亿，“三全”脑机接口系统进入注册临床｜36氪首发",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "物流",
-  "summary": "\n \n \n  文｜胡香赟\n  编辑｜海若镜\n  36氪获悉，脑虎科技已完成7亿人民币B轮融。本轮融资由国投聚力、深创投、勤智资本联合领投，中芯聚源、黄浦投资、基石资本、IDG 资本、曦晨资本、钧犀资本、华福证券、众为资本、江西金控等机构跟投，盛大、中平资本等老股东加码。募集资金将用于“全植入、全无线、全功能”（“三全”",
-  "url": "https://36kr.com/p/4043628160685189?f=rss",
-  "publishedAt": "2026-10-29",
-  "_real_date": "2026-10-29",
-  "realPubDate": "2026-10-29",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 813940381,
-  "title": "硬氪首发｜中科卓尔完成数亿元B+轮融资，进入多家头部掩模版厂商供应链",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "物流",
-  "summary": "\n \n \n  作者｜杨媛\n  编辑｜彭孝秋\n  硬氪获悉，近日，成都中科卓尔智能科技集团有限公司（以下简称“中科卓尔”）完成数亿元B+轮融资。本轮投资方包括中银国际投资、济南产发集成电路、建投华科、江阴新国联及川流投资等。&nbsp;\n  \n  本轮融资将主要用于高端石英空白掩模版核心工艺升级及量产产线建设，围绕超精密",
-  "url": "https://36kr.com/p/4043853334483844?f=rss",
-  "publishedAt": "2026-10-29",
-  "_real_date": "2026-10-29",
-  "realPubDate": "2026-10-29",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 322707374,
-  "title": "上海：集成数据、算力、软件、模型等数智服务，为中小企业提供免费试用或优惠折扣",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "物流",
-  "summary": "36氪获悉，上海市人民政府办公厅印发《上海市推动中小企业高质量发展行动方案》。其中提出，驱动数智化跃升。建设数字公共服务体系，集成数据、算力、软件、模型等数智服务，为中小企业提供免费试用或优惠折扣。加强市级智能算力统筹调度，优化算力券、模型券（Token券）、语料券政策，完善算力、模型服务商统筹申报机制，扩大对中小企业",
-  "url": "https://36kr.com/newsflashes/4046391069774977?f=rss",
   "publishedAt": "2026-10-29",
   "_real_date": "2026-10-29",
   "realPubDate": "2026-10-29",
