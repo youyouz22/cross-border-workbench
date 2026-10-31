@@ -1,6 +1,6 @@
 [
  {
-  "id": 376341344,
+  "id": 73203098,
   "title": "US approves sale of 500 Patriot missiles to Ukraine",
   "source": "BBC World",
   "impact": "中影响",
@@ -15,7 +15,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 645195030,
+  "id": 695582178,
   "title": "Why North Korea's 'elite' hackers are the prime suspect in major Binance hack",
   "source": "BBC World",
   "impact": "中影响",
@@ -30,7 +30,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 790770386,
+  "id": 676001334,
   "title": "Police deployed during stand-off over control of top Poland court",
   "source": "BBC World",
   "impact": "中影响",
@@ -45,7 +45,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 61626241,
+  "id": 677047236,
+  "title": "Spain train disaster clouds Sánchez chances of re-election",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "西班牙",
+  "category": "政策",
+  "summary": "The Spanish PM is hit by a succession of crises just weeks before a snap general election.",
+  "url": "https://www.bbc.co.uk/news/articles/cmeweppr990qo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-31",
+  "_real_date": "2026-10-31",
+  "realPubDate": "2026-10-31",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 408674850,
   "title": "Global nature talks reach deal but money remains an issue",
   "source": "BBC World",
   "impact": "中影响",
@@ -60,22 +75,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 804692068,
-  "title": "Alaska Senate candidate denies knowing about alleged plot to put two Dan Sullivans on ballot",
-  "source": "BBC World",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "The incumbent Republican running for re-election and allies have accused the Democrats of trying to confuse voters by recruiting a second Dan Sullivan to also s",
-  "url": "https://www.bbc.co.uk/news/articles/cmwyq2gg1yzzo?at_medium=RSS&at_campaign=rss",
-  "publishedAt": "2026-10-31",
-  "_real_date": "2026-10-31",
-  "realPubDate": "2026-10-31",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 382530574,
+  "id": 741531977,
   "title": "Trump's tariffs could shutter this Canadian town - its residents are fighting to save it",
   "source": "BBC World",
   "impact": "中影响",
@@ -90,7 +90,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 338826224,
+  "id": 249432100,
+  "title": "Alaska Senate candidate denies knowing about alleged plot to put two Dan Sullivans on ballot",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "The incumbent Republican running for re-election and allies have accused the Democrats of trying to confuse voters by recruiting a second Dan Sullivan to also s",
+  "url": "https://www.bbc.co.uk/news/articles/cmwyq2gg1yzzo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-31",
+  "_real_date": "2026-10-31",
+  "realPubDate": "2026-10-31",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 847136759,
   "title": "Responsible or panicked? Meet the people around the world already preparing for crisis",
   "source": "BBC World",
   "impact": "中影响",
@@ -105,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 469284291,
+  "id": 115082586,
   "title": "The Indian chef who brought curry to America - then vanished",
   "source": "BBC World",
   "impact": "中影响",
@@ -120,7 +135,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 203391312,
+  "id": 247081977,
   "title": "'The necktie is dead': How US midterm candidates are dressing for votes",
   "source": "BBC World",
   "impact": "中影响",
@@ -135,7 +150,52 @@
   "ecommerceImpact": true
  },
  {
-  "id": 440745449,
+  "id": 606941706,
+  "title": "Suited and booted: How Joseph Kabila went from president to rebel leader",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "What does Joseph Kabila launching a new rebel movement mean for DR Congo?",
+  "url": "https://www.bbc.co.uk/news/articles/cr3wv311dwnlo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-10-31",
+  "_real_date": "2026-10-31",
+  "realPubDate": "2026-10-31",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 202403432,
+  "title": "Wanted: New Central Bank Chief. Expertise and Political Acumen Required.",
+  "source": "NYTimes Business",
+  "impact": "中影响",
+  "country": "欧盟",
+  "category": "政策",
+  "summary": "The looming departure of the European Central Bank’s president, Christine Lagarde, has set in motion a high-stakes search for her successor.",
+  "url": "https://www.nytimes.com/2026/10/31/business/european-central-bank-lagarde-succession.html",
+  "publishedAt": "2026-10-31",
+  "_real_date": "2026-10-31",
+  "realPubDate": "2026-10-31",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 890499369,
+  "title": "How One Country Became the Unlikely Crossroads of the Global A.I. Boom",
+  "source": "NYTimes Business",
+  "impact": "中影响",
+  "country": "美国",
+  "category": "关税/政策",
+  "summary": "In Malaysia, U.S. and Chinese tech giants are pouring billions into vast data centers, straining local resources and testing the limits of Washington’s restrict",
+  "url": "https://www.nytimes.com/2026/10/30/business/malaysia-data-center-china.html",
+  "publishedAt": "2026-10-31",
+  "_real_date": "2026-10-31",
+  "realPubDate": "2026-10-31",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 425494144,
   "title": "Big Tech’s Data Center Blitz Is Burning Through Cash and Scaring Wall St.",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -150,7 +210,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 629908704,
+  "id": 38687784,
   "title": "9点1氪丨币安遭黑客攻击，致其30亿美元资产被冻结；“张雪机车”商标回归张雪；美股收盘纳指重挫700点，英伟达市值蒸发1.4万亿元",
   "source": "36氪",
   "impact": "中影响",
@@ -165,7 +225,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 11599840,
+  "id": 891932438,
   "title": "72道工序、灵巧手进厂打螺丝：临界点数采手套发布，要补上触觉数据缺口｜最前线",
   "source": "36氪",
   "impact": "中影响",
@@ -173,66 +233,6 @@
   "category": "物流",
   "summary": "\n \n \n  作者｜黄楠\n  编辑｜袁斯来\n  2026年10月29日，智元创新日·灵巧操作分论坛上，临界点（AGILINK）对外展示了灵巧手走向工业真实工况的关键进展。\n  在绍兴卧龙产线的POC验证工位，OmniHand灵巧手完成了对同系列灵巧手的出厂整机性能测试，连续跑完72道工序，从物料上料、螺丝锁固到自检、下",
   "url": "https://36kr.com/p/4048092462070017?f=rss",
-  "publishedAt": "2026-10-31",
-  "_real_date": "2026-10-31",
-  "realPubDate": "2026-10-31",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 553279946,
-  "title": "第一批用上WorkBuddy的乙方，已经提前下班了",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "\n \n \n  撰文｜深海\n  封面来源｜《装腔启示录》截图\n  乙方，大概是职场里最“时间贫困”的一群人。\n  客户的需求就是个盲盒，在打开对话框之前，你永远不知道这次是“简单优化一下”，还是“我们换个方向试试”。广告公司的大楼灯总是亮到深夜，只因甲方的意见历经层层审批，在最后关头才能抵达乙方的信箱。\n  乙方的时间总",
-  "url": "https://36kr.com/p/4048085285763584?f=rss",
-  "publishedAt": "2026-10-31",
-  "_real_date": "2026-10-31",
-  "realPubDate": "2026-10-31",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 462944978,
-  "title": "AI初创企业的下半场：钱往哪里去？",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "物流",
-  "summary": "\n \n \n  作者｜王晗玉\n  编辑｜张帆\n  2026年的风险投资市场，正在上演一场前所未有的“AI大分流”。据Crunchbase数据，今年上半年全球初创企业融资额约5100亿美元，已超过去年全年；仅第一季度，约80%的风险投资便流向了AI公司。OpenAI单轮融资1220亿美元、估值冲上8520亿美元，Anthr",
-  "url": "https://36kr.com/p/4048078906800642?f=rss",
-  "publishedAt": "2026-10-31",
-  "_real_date": "2026-10-31",
-  "realPubDate": "2026-10-31",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 479017382,
-  "title": "新石器4亿美元融资背后，物流小车行业走到哪一步了｜最前线",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "物流",
-  "summary": "\n \n \n  10月20日，新石器宣布完成E轮近4亿美元融资，由博裕投资与某国家级基金联合领投，阿里巴巴AEF NextGen香港基金、广汽资本、纪源资本、淡马锡旗下Vertex Growth等参投。\n  这是今年以来国内自动驾驶领域最大单笔融资之一，新石器CEO余恩源在一场媒体沟通会中对外透露，原计划融2亿美元，最终",
-  "url": "https://36kr.com/p/4048024522553603?f=rss",
-  "publishedAt": "2026-10-31",
-  "_real_date": "2026-10-31",
-  "realPubDate": "2026-10-31",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 432575104,
-  "title": "36氪首发丨前华为VP创业做AI原生电力资产运营，获宁德时代旗下基金数千万美元A轮融资",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "\n \n \n  作者&nbsp;|&nbsp;乔钰杰\n  编辑&nbsp;|&nbsp;袁斯来\n  \n   本文约3600字，建议阅读9分钟\n  \n  硬氪获悉，总部位于瑞典的AI原生电力资产运营商Green Voltis近日宣布完成数千万美元A轮融资，由宁德时代支持设立的美元基金Lochpine Capital 独家投",
-  "url": "https://36kr.com/p/4047734928259592?f=rss",
   "publishedAt": "2026-10-31",
   "_real_date": "2026-10-31",
   "realPubDate": "2026-10-31",
