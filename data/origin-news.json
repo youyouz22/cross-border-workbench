@@ -1,6 +1,6 @@
 [
  {
-  "id": 555296475,
+  "id": 284628551,
   "title": "UK and EU agree draft deal to scrap Brexit red tape over food exports",
   "source": "BBC Business",
   "impact": "中影响",
@@ -15,7 +15,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 948526788,
+  "id": 559924106,
   "title": "North Korea denies being behind record $6.3bn Binance hack",
   "source": "BBC Business",
   "impact": "中影响",
@@ -30,7 +30,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 932574217,
+  "id": 419102283,
   "title": "Apple unsure when more foldable iPhones will be available after selling out",
   "source": "BBC Business",
   "impact": "中影响",
@@ -45,7 +45,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 693281515,
+  "id": 399260474,
+  "title": "Christmas 2026 stamps unveiled by Royal Mail",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "The annual Christmas collection of five stamps feature scenes from the Nativity.",
+  "url": "https://www.bbc.co.uk/news/articles/cw62yeq7958ro?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-03",
+  "_real_date": "2026-11-03",
+  "realPubDate": "2026-11-03",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 576369364,
   "title": "From scooters to shampoo - the people saving hundreds from dumpster diving",
   "source": "BBC Business",
   "impact": "中影响",
@@ -60,7 +75,37 @@
   "ecommerceImpact": true
  },
  {
-  "id": 576323952,
+  "id": 705275906,
+  "title": "Public venues offer tea and warm welcome in winter",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "The annual scheme sees community venues and libraries offer hot drinks and the chance to socialise.",
+  "url": "https://www.bbc.co.uk/news/articles/cq23d505m555o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-03",
+  "_real_date": "2026-11-03",
+  "realPubDate": "2026-11-03",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 490491747,
+  "title": "Americans head to the polls for elections that could define Trump's closing chapter",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "美国",
+  "category": "关税/政策",
+  "summary": "The midterms will shape Congress for the last years of his presidency, writes Sarah Smith, but they are also a test of what politics may look like without him.",
+  "url": "https://www.bbc.co.uk/news/articles/cq2d6k4r5n9ro?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-03",
+  "_real_date": "2026-11-03",
+  "realPubDate": "2026-11-03",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 971266458,
   "title": "US strikes Iran ahead of midterm elections",
   "source": "BBC World",
   "impact": "中影响",
@@ -75,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 196690255,
+  "id": 237246365,
   "title": "Supreme Court rejects Trump's request to stop California counting disputed votes",
   "source": "BBC World",
   "impact": "中影响",
@@ -90,8 +135,8 @@
   "ecommerceImpact": true
  },
  {
-  "id": 346513819,
-  "title": "Russian bombing kills 26 people at Ukraine aid centre, Kyiv says",
+  "id": 249890643,
+  "title": "Russian bombing kills 29 people at Ukraine aid centre, Kyiv says",
   "source": "BBC World",
   "impact": "中影响",
   "country": "全球",
@@ -105,7 +150,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 870689751,
+  "id": 629200112,
   "title": "Thousands of European troops to rehearse Ukraine deployment in event of peace",
   "source": "BBC World",
   "impact": "中影响",
@@ -120,7 +165,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 92319332,
+  "id": 777750939,
   "title": "Plane may have broken apart ahead of deadly Florida jet crash, say investigators",
   "source": "BBC World",
   "impact": "中影响",
@@ -135,14 +180,14 @@
   "ecommerceImpact": true
  },
  {
-  "id": 754903444,
-  "title": "Man and boy arrested after allegedly attacking One Nation volunteer with bat",
+  "id": 69341809,
+  "title": "Asian Cup postponed in wake of attacks on Saudi Arabia",
   "source": "BBC World",
   "impact": "中影响",
   "country": "全球",
   "category": "其他",
-  "summary": "The incident comes amid growing calls for the temperature of political debate in Australia to be turned down.",
-  "url": "https://www.bbc.co.uk/news/articles/cwly3jd27m9xo?at_medium=RSS&at_campaign=rss",
+  "summary": "The 2027 Asian Cup in Saudi Arabia is postponed because of a series of deadly attacks on the host country.",
+  "url": "https://www.bbc.co.uk/sport/football/articles/c6y0e79yjg44o?at_medium=RSS&at_campaign=rss",
   "publishedAt": "2026-11-03",
   "_real_date": "2026-11-03",
   "realPubDate": "2026-11-03",
@@ -150,14 +195,14 @@
   "ecommerceImpact": true
  },
  {
-  "id": 469211047,
-  "title": "Trump to remove Rwanda and South Africa from US trade deal",
+  "id": 830241415,
+  "title": "Australia's social media ban 'ill thought out', High Court told in legal challenge",
   "source": "BBC World",
   "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "The move comes barely a week after Rwanda's defence ministry was hit with sanctions by the US Treasury.",
-  "url": "https://www.bbc.co.uk/news/articles/c9j346xg0mkvo?at_medium=RSS&at_campaign=rss",
+  "country": "全球",
+  "category": "其他",
+  "summary": "Lawyers for Reddit and a digital rights group argued the world-leading policy robbed children of their right to free communication.",
+  "url": "https://www.bbc.co.uk/news/articles/ck79py02p1jlo?at_medium=RSS&at_campaign=rss",
   "publishedAt": "2026-11-03",
   "_real_date": "2026-11-03",
   "realPubDate": "2026-11-03",
@@ -165,7 +210,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 816117509,
+  "id": 964230731,
   "title": "Bollywood film star Ranbir Kapoor on AI, movies and fatherhood",
   "source": "BBC World",
   "impact": "中影响",
@@ -180,59 +225,14 @@
   "ecommerceImpact": true
  },
  {
-  "id": 744309352,
-  "title": "William Nordhaus Pioneered Putting a Price on Pollution",
-  "source": "NYTimes Business",
+  "id": 722871629,
+  "title": "Why a US-Russia showdown left Morocco celebrating",
+  "source": "BBC World",
   "impact": "中影响",
   "country": "全球",
   "category": "其他",
-  "summary": "Economist William Nordhaus said putting a price on pollution was the best way to reduce climate change. Then came the fossil fuel lobby and the anti-tax movemen",
-  "url": "https://www.nytimes.com/2026/11/02/climate/william-nordhaus-carbon-tax-american-business.html",
-  "publishedAt": "2026-11-03",
-  "_real_date": "2026-11-03",
-  "realPubDate": "2026-11-03",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 68125393,
-  "title": "The Nation’s Oldest Road Racetrack Starts a Big, Costly Face-Lift",
-  "source": "NYTimes Business",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "New owners at Willow Springs in California have major plans for the once spartan track, hoping to lure expensive supercars and their wealthy drivers.",
-  "url": "https://www.nytimes.com/2026/11/02/business/willow-springs-racetrack-country-club.html",
-  "publishedAt": "2026-11-03",
-  "_real_date": "2026-11-03",
-  "realPubDate": "2026-11-03",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 831015078,
-  "title": "文商旅×具身智能：下一种消费体验，如何发生？丨WISE2026",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "\n \n \n  \n  具身智能让人期待的，是能够在\n  真实环境中感知、行动，完成具体任务。\n  筹备今年WISE的“具身智能&amp;文商旅”分会场时，我们先听了很多需求方的想法。需求方关心的事都很实在：有没有成熟对适配方案，到了真实场景下怎么用，成本能否承担，与现有业务和供应商体系是否合适？\n  另一边，具身智能企业",
-  "url": "https://36kr.com/p/4053466880775048?f=rss",
-  "publishedAt": "2026-11-03",
-  "_real_date": "2026-11-03",
-  "realPubDate": "2026-11-03",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 807381584,
-  "title": "48小时，点与点之间，发生了一些连接｜2026苏客松回顾",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "\n \n \n  &nbsp;\n  \n  2026苏客松\n  10月30日到11月1日，来自50所城市、60多个学校的200位创造者，带着各自的想法来到苏州。\n  &nbsp;\n  48小时后，200多位选手完成了组队、开发和展示，现场诞生了64组项目。\n  \n  2026苏客松\n  从开始筹备到活动落地，我们想做的其实不",
-  "url": "https://36kr.com/p/4053448525370500?f=rss",
+  "summary": "An impasse between the US and Russia at the UN means its peacekeeping mission in Western Sahara has ended after 35 years.",
+  "url": "https://www.bbc.co.uk/news/articles/cqp8genleg2ro?at_medium=RSS&at_campaign=rss",
   "publishedAt": "2026-11-03",
   "_real_date": "2026-11-03",
   "realPubDate": "2026-11-03",
