@@ -1,6 +1,21 @@
 [
  {
-  "id": 597291115,
+  "id": 571566158,
+  "title": "Traders 'priced out' of £12,000 Christmas market pitches",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "关税",
+  "summary": "Stall holders said they'd met the council leader to express their concerns at high costs since a new operator took over. ",
+  "url": "https://www.bbc.co.uk/news/articles/ckn8wew92xw1o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-08",
+  "_real_date": "2026-11-08",
+  "realPubDate": "2026-11-08",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 904919751,
   "title": "What we know so far after Krakow gun attack",
   "source": "BBC World",
   "impact": "中影响",
@@ -15,7 +30,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 978083240,
+  "id": 12381450,
+  "title": "Houthis say at least 33 killed in Saudi air strike",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "Saudi Arabia, which leads a coalition fighting the Houthis in Yemen, has not commented.",
+  "url": "https://www.bbc.co.uk/news/articles/c65yn1v99ypmo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-08",
+  "_real_date": "2026-11-08",
+  "realPubDate": "2026-11-08",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 360666609,
   "title": "运动市场，打到骨折",
   "source": "36氪",
   "impact": "中影响",
@@ -30,7 +60,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 41480091,
+  "id": 128724683,
   "title": "成都具身智能公司获千万级天使轮融资，基于开源鸿蒙开发机器人大脑｜硬氪首发",
   "source": "36氪",
   "impact": "中影响",
@@ -45,7 +75,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 187539877,
+  "id": 147788846,
   "title": "9点1氪丨豆包工作个人版取消5小时额度限制；人类低温纪录被打破；美科技股反弹，SpaceX市值一夜暴涨9653亿",
   "source": "36氪",
   "impact": "中影响",
@@ -60,7 +90,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 365163810,
+  "id": 759950962,
   "title": "科氪 | 荣耀李健：以用户为中心，共建入口、共筑信任， 开启智能经济时代AI终端生态新范式",
   "source": "36氪",
   "impact": "中影响",
@@ -75,7 +105,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 914518248,
+  "id": 851189061,
   "title": "美的全屋智能锚定A2A：家电互联正从「接口对接」走向「Agent对话」｜最前线",
   "source": "36氪",
   "impact": "中影响",
@@ -90,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 864280554,
+  "id": 996671762,
   "title": "名为“黑漫波”，他们创造了符合国内玩家体质的“篮球娘” | 玩点好的",
   "source": "36氪",
   "impact": "中影响",
@@ -105,7 +135,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 364352984,
+  "id": 989103478,
   "title": "米哈游退出，交大系基金投资接手「零唯一思」｜36氪首发",
   "source": "36氪",
   "impact": "中影响",
@@ -120,7 +150,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 941047583,
+  "id": 625052716,
   "title": "36氪首发丨重载物理AI公司成立一年内融资近4亿，核心成员来自华为、理想，已运营车辆超百台",
   "source": "36氪",
   "impact": "中影响",
@@ -135,7 +165,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 119219809,
+  "id": 503935751,
   "title": "36氪首发丨富锂锰电池企业完成数千万元融资，已在无人机领域批量出货并实现盈利",
   "source": "36氪",
   "impact": "中影响",
@@ -150,7 +180,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 566037594,
+  "id": 547562170,
   "title": "36氪首发丨轴向磁通电机企业获超亿元融资，产能将达15万台，已合作多家头部车企",
   "source": "36氪",
   "impact": "中影响",
@@ -165,74 +195,44 @@
   "ecommerceImpact": true
  },
  {
-  "id": 696941331,
-  "title": "Cyera正以200亿美元估值募资8亿美元",
+  "id": 686002275,
+  "title": "中国移动推进算网智协同",
+  "source": "36氪",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "“2026移动网络大会MobileLink 2026”在广州举办，中国移动董事长陈忠岳发表主旨讲话《网络强基智能共创》，指出新的智能经济需要新的基础设施。中国移动一体推进通信网、算力网和智能网建设，发布MoMA模型服务平台等成果，汇聚300多款主流大模型，大幅压降Token综合使用成本。",
+  "url": "https://36kr.com/newsflashes/4060790368785286?f=rss",
+  "publishedAt": "2026-11-08",
+  "_real_date": "2026-11-08",
+  "realPubDate": "2026-11-08",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 741680601,
+  "title": "国家统计局内设机构调整：新增国情国力普查司、服务业和消费统计司等",
+  "source": "36氪",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "关税",
+  "summary": "中国机构编制网近日公布了《国家统计局职能配置、内设机构和人员编制规定》（以下简称“三定方案”）。三定方案明确，国家统计局是国务院直属机构，为副部级。记者注意到，相较此前，国家统计局内设机构有所调整。其中，国情国力普查司、生态环境和能源统计司、投资统计司、服务业和消费统计司、人口和民生统计司均为新设，此前的能源统计司、固",
+  "url": "https://36kr.com/newsflashes/4060787347985543?f=rss",
+  "publishedAt": "2026-11-08",
+  "_real_date": "2026-11-08",
+  "realPubDate": "2026-11-08",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 726803818,
+  "title": "字节跳动考虑扩大巴西数据中心项目",
   "source": "36氪",
   "impact": "中影响",
   "country": "全球",
   "category": "汇率",
-  "summary": "Cyera正以200亿美元估值募资8亿美元，成为全球估值最高的私有网络安全公司之一。这家数据安全初创企业过去一年的年度经常性收入飙升至数亿美元。（新浪财经）",
-  "url": "https://36kr.com/newsflashes/4060439143732353?f=rss",
-  "publishedAt": "2026-11-08",
-  "_real_date": "2026-11-08",
-  "realPubDate": "2026-11-08",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 817946766,
-  "title": "澳大利亚房屋销售上升，初现楼市复苏迹象",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "澳大利亚房屋销量及拍卖清盘率走高，为今年因利率上行而陷入低迷的楼市带来复苏希望。房产研究机构Cotality数据显示，上周澳洲首府城市举办的拍卖会数量环比上升1.2%，至1734场，预计未来一周将突破2000场。清盘率在上周跌至六年低点后，回升4.3个百分点至51.5%。Cotality 称，墨尔本单城清盘率接近10个",
-  "url": "https://36kr.com/newsflashes/4060423820579712?f=rss",
-  "publishedAt": "2026-11-08",
-  "_real_date": "2026-11-08",
-  "realPubDate": "2026-11-08",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 497348088,
-  "title": "围绕三大核心主线，一周逾550家上市公司迎来投资者调研",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "上周（11月1日至6日）机构调研热度居高不下，逾550家上市公司迎来投资者调研，AI（人工智能）产业链景气度、内需复苏节奏、重点行业价格变化是调研三大核心主线。中际旭创、景旺电子等多家科技公司明确表示AI算力领域需求仍然旺盛。从股价表现看，超八成机构调研股实现正收益，贝特利实现三连涨停，累计涨幅约80%；华虹宏力、金冠",
-  "url": "https://36kr.com/newsflashes/4060419255882625?f=rss",
-  "publishedAt": "2026-11-08",
-  "_real_date": "2026-11-08",
-  "realPubDate": "2026-11-08",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 240872939,
-  "title": "首批18只主动ETF全部提前结募",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "截至11月7日，首批18只主动ETF已有17只发布成立公告，但18只产品整体的募集天数、配售比例等数据已率先披露。最新数据显示，18只主动ETF全部提前结束募集，3只产品一日售罄；17只产品启动比例配售的总认购金额近440亿元，较340亿元募集规模超出近百亿元（超额认购金额）。具体来看，已成立的17只产品有效认购户数超",
-  "url": "https://36kr.com/newsflashes/4060367598359432?f=rss",
-  "publishedAt": "2026-11-08",
-  "_real_date": "2026-11-08",
-  "realPubDate": "2026-11-08",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 421590696,
-  "title": "欧洲多国爆发抗议，要求暂停数据中心建设",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "针对数据中心建设的抗议浪潮正在欧洲多地蔓延。当地时间周六，多个国家的民众走上街头，表达对数据中心快速扩张可能带来的能源消耗、环境破坏及社会影响的担忧。据悉，来自欧洲15个国家的100多个民间组织和权益团体参与了此次联合行动，抗议能源消耗巨大的数据中心快速扩张，呼吁在建立更加明确的监管制度之前，暂停所有新的大型数据中心项",
-  "url": "https://36kr.com/newsflashes/4060368303281281?f=rss",
+  "summary": "彭博社援引知情人士消息称，字节跳动正在讨论扩大巴西东北部塞阿拉州的数据中心布局，并为Pecém港园区二期寻找开发商，潜在建设规模可能超过正在施工的一期。现有一期由Patria Investments旗下Omnia开发，投资约100亿美元，IT容量约200兆瓦、总用电需求约300兆瓦，规划建设20个数据机房，预计2027",
+  "url": "https://36kr.com/newsflashes/4060767945806729?f=rss",
   "publishedAt": "2026-11-08",
   "_real_date": "2026-11-08",
   "realPubDate": "2026-11-08",
