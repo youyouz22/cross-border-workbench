@@ -1,12 +1,27 @@
 [
  {
-  "id": 219832023,
-  "title": "Ousted Nvidia CEO Jensen Huang summoned to testify before Congress",
+  "id": 962531501,
+  "title": "What we know about the global Microsoft outage",
   "source": "BBC Business",
   "impact": "中影响",
   "country": "全球",
   "category": "其他",
-  "summary": "US lawmakers want to question him over whether one of his alleged relationships was with a Chinese spy.",
+  "summary": "Microsoft has said the outage was not caused by a cyber-security incident, but efforts to fix the issues have so far been largely unsuccessful.",
+  "url": "https://www.bbc.co.uk/news/articles/cwvg238zrnm5o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-13",
+  "_real_date": "2026-11-13",
+  "realPubDate": "2026-11-13",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 726809484,
+  "title": "Ex-Nvidia CEO Jensen Huang summoned to testify before Congress about affair with alleged Chinese spy",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "Huang abruptly quit on Thursday as head of one of the world's most valuable companies after revelations of alleged extramarital affairs.",
   "url": "https://www.bbc.co.uk/news/articles/cmq5vd1wdgz6o?at_medium=RSS&at_campaign=rss",
   "publishedAt": "2026-11-13",
   "_real_date": "2026-11-13",
@@ -15,7 +30,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 800110444,
+  "id": 300691685,
   "title": "The rise of 'housefishing' - when does using AI go from enhancing to misleading?",
   "source": "BBC Business",
   "impact": "中影响",
@@ -30,7 +45,52 @@
   "ecommerceImpact": true
  },
  {
-  "id": 854115508,
+  "id": 622528361,
+  "title": "Burnham says 'win-win' deal can be agreed between UK and EU",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "欧盟",
+  "category": "政策",
+  "summary": "The prime minister says the deal could be \"more like the Brexit people thought they were voting for\" in 2016.",
+  "url": "https://www.bbc.co.uk/news/articles/cm2l5n07l87vo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-13",
+  "_real_date": "2026-11-13",
+  "realPubDate": "2026-11-13",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 854072665,
+  "title": "Politicians back focus on cost of living",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "The Government of Jersey's key priorities are passed despite concerns over a lack of \"real action\".",
+  "url": "https://www.bbc.co.uk/news/articles/cqj9mjl8jy4no?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-13",
+  "_real_date": "2026-11-13",
+  "realPubDate": "2026-11-13",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 60967781,
+  "title": "Cider makers fear future for orchards as costs grow",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "英国",
+  "category": "政策",
+  "summary": "Producers claimed without more support, they could be forced to stop using British-grown apples.",
+  "url": "https://www.bbc.co.uk/news/articles/c5zjxjzx2dpwo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-13",
+  "_real_date": "2026-11-13",
+  "realPubDate": "2026-11-13",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 309916323,
   "title": "'My window faces a brick wall': What's your rent in NYC?",
   "source": "BBC Business",
   "impact": "中影响",
@@ -45,7 +105,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 432726374,
+  "id": 505229240,
   "title": "Zelensky welcomes US bringing Europe into Russia-Ukraine peace talks",
   "source": "BBC World",
   "impact": "中影响",
@@ -60,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 643625381,
+  "id": 827970246,
   "title": "North Korean hackers used fake video calls in $400m crypto hack, says FBI",
   "source": "BBC World",
   "impact": "中影响",
@@ -75,7 +135,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 849080062,
+  "id": 98579938,
   "title": "Australian footballers will not be charged after hotel incident, police say",
   "source": "BBC World",
   "impact": "中影响",
@@ -90,7 +150,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 929478561,
+  "id": 728279039,
   "title": "Neither war nor peace in Tigray - is Ethiopia's latest conflict really over?",
   "source": "BBC World",
   "impact": "中影响",
@@ -105,7 +165,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 77474893,
+  "id": 39983006,
   "title": "Huang and Lutnick Summoned to Testify Before Congress",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -120,7 +180,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 741156255,
+  "id": 638354818,
   "title": "Howard Lutnick Took Softer Line on Nvidia as Calls for Tougher Controls Grew",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -135,13 +195,13 @@
   "ecommerceImpact": true
  },
  {
-  "id": 604103276,
+  "id": 656417371,
   "title": "Outlook, Teams and More Microsoft Programs Disrupted by Outage",
   "source": "NYTimes Business",
   "impact": "中影响",
   "country": "全球",
   "category": "其他",
-  "summary": "The outage began early Thursday afternoon, causing problems for offices, agencies and individuals around the globe.",
+  "summary": "The outage, which affects software used by hundreds of millions of users, has caused problems for people, companies and agencies around the world.",
   "url": "https://www.nytimes.com/2026/11/12/business/microsoft-outlook-down-outage-email.html",
   "publishedAt": "2026-11-13",
   "_real_date": "2026-11-13",
@@ -150,7 +210,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 292243966,
+  "id": 758157657,
   "title": "Jensen Huang Joins a Growing Club: C.E.O.s Brought Down by Affairs",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -165,74 +225,14 @@
   "ecommerceImpact": true
  },
  {
-  "id": 353809501,
-  "title": "炸了！英伟达最大的雷，是没接班人",
+  "id": 237853963,
+  "title": "万亿消费，奔向山海",
   "source": "36氪",
   "impact": "中影响",
   "country": "美国",
   "category": "关税/政策",
-  "summary": "\n \n \n  \n  &nbsp;\n  CFO 接任临时 CEO。\n  &nbsp;\n  文&nbsp;|&nbsp;刘思洁\n  封面来源&nbsp;|&nbsp;网络\n  &nbsp;\n  当地时间2026年11月12日，英伟达官方宣布，联合创始人黄仁勋辞去公司总裁、首席执行官及董事会成员职务，即刻生效。\n  英伟达同",
-  "url": "https://36kr.com/p/4067628486267780?f=rss",
-  "publishedAt": "2026-11-13",
-  "_real_date": "2026-11-13",
-  "realPubDate": "2026-11-13",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 949551433,
-  "title": "超跑面料供应商Alcantara：智驾时代，内饰比拼触感｜最前线",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "意大利",
-  "category": "政策",
-  "summary": "\n \n \n  10月28日，Alcantara在北京意大利文化处办了一场关于色彩、材质与表面工艺的沙龙。表面是材料展示，背后是一条清晰信号：汽车内饰的竞争，正从屏幕、芯片、算力，回撤到内饰设计的品质和触感。\n  过去几十年，Alcantara的标签是超跑。法拉利、兰博基尼、保时捷座舱里的翻毛触感，代表运动与稀缺。但中国",
-  "url": "https://36kr.com/p/4067598702384258?f=rss",
-  "publishedAt": "2026-11-13",
-  "_real_date": "2026-11-13",
-  "realPubDate": "2026-11-13",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 209577804,
-  "title": "36氪首发丨北航博士做AI4S，获亿元融资，要造自驱动实验室",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "\n \n \n  \n  图源/企业\n  \n   本文约3000字，建议阅读8分钟\n  \n  作者丨欧雪\n  编辑丨袁斯来\n  硬氪获悉，面向科学研发的Physical AI公司——青葵智造近日宣布完成亿元A轮融资，由创东方投资、飞荣达股份及金辉大数据共同参与。资金将重点用于核心技术研发、重点行业拓展以及云实验室建设，加速自",
-  "url": "https://36kr.com/p/4067548192576389?f=rss",
-  "publishedAt": "2026-11-13",
-  "_real_date": "2026-11-13",
-  "realPubDate": "2026-11-13",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 565540665,
-  "title": "8点1氪丨英伟达宣布CEO黄仁勋辞职，特朗普：建议库克接任；腾讯“裁员50%”？知情人士回应；宣扬错误婚恋观，德芙代运营方被罚80万",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "\n \n \n  今日热点导览\n  张一鸣再发声谈字节AI\n  商务部：中美正就降税、贸易、投资等问题保持密切沟通\n  美股三大指数集体收跌，英伟达跌超4%\n  SpaceX与特斯拉合并谈判取得进展，最早12月宣布交易\n  联合航空禁止Muse、Instinct等AI智能体预订航班\n  TOP3大新闻\n  英伟达宣布CEO",
-  "url": "https://36kr.com/p/4067443683120000?f=rss",
-  "publishedAt": "2026-11-13",
-  "_real_date": "2026-11-13",
-  "realPubDate": "2026-11-13",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 587462546,
-  "title": "硬氪首发丨前迪士尼亚太成员下场“造”交互智能基座，获数百万种子轮融资",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "\n \n \n  作者&nbsp;|&nbsp;邱晓芬\n  编辑&nbsp;|&nbsp;袁斯来\n  硬氪获悉，面向AI Native终端的交互智能SYNAPUFF近期完成数百万元种子轮融资，资方为FIRST RULE VENTURES、浦东创投。\n  SYNAPUFF联合创始人兼CEO李诗淼向硬氪表示，他们希望开发面向A",
-  "url": "https://36kr.com/p/4066337448907656?f=rss",
+  "summary": "\n \n \n  沿着广东G228滨海公路从汕尾驶向深圳，晨洲蚝乡的生蚝刚出水，盐田山海间的落日正铺满车窗。撒贝宁在节目里感慨：“一脚油门踩下去，整个世界都是你的。”\n  这声感叹，来自神州租车联合央视频打造的中国首档自驾文化探索节目《出发吧！神州山海》。随着六期节目走过戈壁、雨林与江南古村，一种正在成型的中国自驾文化也随",
+  "url": "https://36kr.com/p/4067852789372033?f=rss",
   "publishedAt": "2026-11-13",
   "_real_date": "2026-11-13",
   "realPubDate": "2026-11-13",

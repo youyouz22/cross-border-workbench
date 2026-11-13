@@ -1,12 +1,27 @@
 [
  {
-  "id": 219832023,
-  "title": "Ousted Nvidia CEO Jensen Huang summoned to testify before Congress",
+  "id": 962531501,
+  "title": "What we know about the global Microsoft outage",
   "source": "BBC Business",
   "impact": "中影响",
   "country": "",
   "category": "其他",
-  "summary": "US lawmakers want to question him over whether one of his alleged relationships was with a Chinese spy.",
+  "summary": "Microsoft has said the outage was not caused by a cyber-security incident, but efforts to fix the issues have so far been largely unsuccessful.",
+  "url": "https://www.bbc.co.uk/news/articles/cwvg238zrnm5o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-13",
+  "_real_date": "2026-11-13",
+  "realPubDate": "2026-11-13",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 726809484,
+  "title": "Ex-Nvidia CEO Jensen Huang summoned to testify before Congress about affair with alleged Chinese spy",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "",
+  "category": "其他",
+  "summary": "Huang abruptly quit on Thursday as head of one of the world's most valuable companies after revelations of alleged extramarital affairs.",
   "url": "https://www.bbc.co.uk/news/articles/cmq5vd1wdgz6o?at_medium=RSS&at_campaign=rss",
   "publishedAt": "2026-11-13",
   "_real_date": "2026-11-13",
@@ -15,7 +30,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 800110444,
+  "id": 300691685,
   "title": "The rise of 'housefishing' - when does using AI go from enhancing to misleading?",
   "source": "BBC Business",
   "impact": "中影响",
@@ -30,7 +45,52 @@
   "ecommerceImpact": true
  },
  {
-  "id": 854115508,
+  "id": 622528361,
+  "title": "Burnham says 'win-win' deal can be agreed between UK and EU",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "欧盟",
+  "category": "政策",
+  "summary": "The prime minister says the deal could be \"more like the Brexit people thought they were voting for\" in 2016.",
+  "url": "https://www.bbc.co.uk/news/articles/cm2l5n07l87vo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-13",
+  "_real_date": "2026-11-13",
+  "realPubDate": "2026-11-13",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 854072665,
+  "title": "Politicians back focus on cost of living",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "",
+  "category": "其他",
+  "summary": "The Government of Jersey's key priorities are passed despite concerns over a lack of \"real action\".",
+  "url": "https://www.bbc.co.uk/news/articles/cqj9mjl8jy4no?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-13",
+  "_real_date": "2026-11-13",
+  "realPubDate": "2026-11-13",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 60967781,
+  "title": "Cider makers fear future for orchards as costs grow",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "英国",
+  "category": "政策",
+  "summary": "Producers claimed without more support, they could be forced to stop using British-grown apples.",
+  "url": "https://www.bbc.co.uk/news/articles/c5zjxjzx2dpwo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-13",
+  "_real_date": "2026-11-13",
+  "realPubDate": "2026-11-13",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 309916323,
   "title": "'My window faces a brick wall': What's your rent in NYC?",
   "source": "BBC Business",
   "impact": "中影响",
@@ -45,7 +105,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 432726374,
+  "id": 505229240,
   "title": "Zelensky welcomes US bringing Europe into Russia-Ukraine peace talks",
   "source": "BBC World",
   "impact": "中影响",
@@ -60,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 643625381,
+  "id": 827970246,
   "title": "North Korean hackers used fake video calls in $400m crypto hack, says FBI",
   "source": "BBC World",
   "impact": "中影响",
@@ -75,7 +135,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 849080062,
+  "id": 98579938,
   "title": "Australian footballers will not be charged after hotel incident, police say",
   "source": "BBC World",
   "impact": "中影响",
@@ -90,7 +150,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 929478561,
+  "id": 728279039,
   "title": "Neither war nor peace in Tigray - is Ethiopia's latest conflict really over?",
   "source": "BBC World",
   "impact": "中影响",
@@ -105,7 +165,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 77474893,
+  "id": 39983006,
   "title": "Huang and Lutnick Summoned to Testify Before Congress",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -113,66 +173,6 @@
   "category": "其他",
   "summary": "Senator Tim Scott said he had requested that the Nvidia co-founder and the commerce secretary appear before the Senate Banking Committee.",
   "url": "https://www.nytimes.com/2026/11/12/business/jensen-huang-howard-lutnick-testify-capitol-hill.html",
-  "publishedAt": "2026-11-13",
-  "_real_date": "2026-11-13",
-  "realPubDate": "2026-11-13",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 741156255,
-  "title": "Howard Lutnick Took Softer Line on Nvidia as Calls for Tougher Controls Grew",
-  "source": "NYTimes Business",
-  "impact": "中影响",
-  "country": "",
-  "category": "其他",
-  "summary": "Critics say Howard Lutnick, the commerce secretary, and his department have shielded Nvidia as concerns have grown over A.I. chip sales to firms like Megaspeed.",
-  "url": "https://www.nytimes.com/2026/11/12/us/politics/lutnick-nvidia-commerce-china-chips.html",
-  "publishedAt": "2026-11-13",
-  "_real_date": "2026-11-13",
-  "realPubDate": "2026-11-13",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 604103276,
-  "title": "Outlook, Teams and More Microsoft Programs Disrupted by Outage",
-  "source": "NYTimes Business",
-  "impact": "中影响",
-  "country": "",
-  "category": "其他",
-  "summary": "The outage began early Thursday afternoon, causing problems for offices, agencies and individuals around the globe.",
-  "url": "https://www.nytimes.com/2026/11/12/business/microsoft-outlook-down-outage-email.html",
-  "publishedAt": "2026-11-13",
-  "_real_date": "2026-11-13",
-  "realPubDate": "2026-11-13",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 292243966,
-  "title": "Jensen Huang Joins a Growing Club: C.E.O.s Brought Down by Affairs",
-  "source": "NYTimes Business",
-  "impact": "中影响",
-  "country": "",
-  "category": "其他",
-  "summary": "The Nvidia founder and chief executive, who resigned on Thursday, is among a group of top bosses whose personal relationships and sexual encounters got them in ",
-  "url": "https://www.nytimes.com/2026/11/12/business/nvidia-jensen-huang-ceo-affairs.html",
-  "publishedAt": "2026-11-13",
-  "_real_date": "2026-11-13",
-  "realPubDate": "2026-11-13",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 353809501,
-  "title": "炸了！英伟达最大的雷，是没接班人",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "\n \n \n  \n  &nbsp;\n  CFO 接任临时 CEO。\n  &nbsp;\n  文&nbsp;|&nbsp;刘思洁\n  封面来源&nbsp;|&nbsp;网络\n  &nbsp;\n  当地时间2026年11月12日，英伟达官方宣布，联合创始人黄仁勋辞去公司总裁、首席执行官及董事会成员职务，即刻生效。\n  英伟达同",
-  "url": "https://36kr.com/p/4067628486267780?f=rss",
   "publishedAt": "2026-11-13",
   "_real_date": "2026-11-13",
   "realPubDate": "2026-11-13",
