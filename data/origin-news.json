@@ -1,6 +1,81 @@
 [
  {
-  "id": 275298266,
+  "id": 217757287,
+  "title": "Microsoft says services fully restored after day-long global outage",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "Efforts to address the underlying problem with Outlook, Teams and Copilot are complete, the tech firm says.",
+  "url": "https://www.bbc.co.uk/news/articles/c6rrg51rkz09o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-14",
+  "_real_date": "2026-11-14",
+  "realPubDate": "2026-11-14",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 584687121,
+  "title": "What do Christmas market traders say about rising prices?",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "关税",
+  "summary": "From £8 bratwursts to £11 Yorkshire pudding wraps, why is the cost of the markets rising year on year?",
+  "url": "https://www.bbc.co.uk/news/articles/c95y152k8erpo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-14",
+  "_real_date": "2026-11-14",
+  "realPubDate": "2026-11-14",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 654657704,
+  "title": "Food bank sees donations drop by 10% each year",
+  "source": "BBC Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "Staff fear the government stockpiling advice will have an impact on donations as Christmas looms.",
+  "url": "https://www.bbc.co.uk/news/articles/c6702j7e48eno?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-14",
+  "_real_date": "2026-11-14",
+  "realPubDate": "2026-11-14",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 215549746,
+  "title": "What we know about the longest ground stop since 9/11",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "US officials say the disruption was caused by old equipment overloading and not a cyber-attack.",
+  "url": "https://www.bbc.co.uk/news/articles/cqx2wyvyr3zzo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-14",
+  "_real_date": "2026-11-14",
+  "realPubDate": "2026-11-14",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 568701503,
+  "title": "Trump, Putin and Xi plan historic joint meeting in China next week, White House says",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "美国",
+  "category": "关税/政策",
+  "summary": "Trump will discuss the \"reduction of nuclear weapons\" during the unprecedented talks, a spokeswoman says.",
+  "url": "https://www.bbc.co.uk/news/articles/ckz74jzpy18do?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-14",
+  "_real_date": "2026-11-14",
+  "realPubDate": "2026-11-14",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 165369447,
   "title": "Setback for SpaceX Starship rocket's double-catch test",
   "source": "BBC World",
   "impact": "中影响",
@@ -15,7 +90,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 871635566,
+  "id": 566949902,
   "title": "'We'll get home one day' - US travellers impacted by nationwide ground stop",
   "source": "BBC World",
   "impact": "中影响",
@@ -30,7 +105,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 3400110,
+  "id": 154815309,
   "title": "Jojo the gorilla has spent his life alone. Can he finally find a companion?",
   "source": "BBC World",
   "impact": "中影响",
@@ -45,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 645857422,
+  "id": 704101272,
   "title": "Arrested generals and a threatened VP: President's son fuels Ugandan succession fever",
   "source": "BBC World",
   "impact": "中影响",
@@ -60,7 +135,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 266280433,
+  "id": 81057151,
+  "title": "A ‘Generational Clash’ Is Fueling Europe’s Protests",
+  "source": "NYTimes Business",
+  "impact": "中影响",
+  "country": "欧盟",
+  "category": "政策",
+  "summary": "As retirees live longer, governments need to spend more on pensions. That makes it harder to fund other services, spurring protests like those planned this week",
+  "url": "https://www.nytimes.com/2026/11/14/world/europe/student-protests-pensions-generations.html",
+  "publishedAt": "2026-11-14",
+  "_real_date": "2026-11-14",
+  "realPubDate": "2026-11-14",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 862611239,
   "title": "Trump Administration Delays Enforcement of Medicaid Work Requirement",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -75,7 +165,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 607893681,
+  "id": 485099854,
   "title": "Deed Theft Is Rising, Along With Property Values",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -90,7 +180,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 85948972,
+  "id": 346119258,
   "title": "Despite Nvidia’s Drop, Stocks Push Ahead",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -105,7 +195,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 534375743,
+  "id": 874852112,
   "title": "9点1氪丨马斯克在X平台公开表态，将参与要求黄仁勋重返英伟达的请愿活动",
   "source": "36氪",
   "impact": "中影响",
@@ -120,7 +210,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 201326544,
+  "id": 713418147,
   "title": "科氪 | 家庭影院一步到位，一文读懂什么是激光电视",
   "source": "36氪",
   "impact": "中影响",
@@ -135,7 +225,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 702055741,
+  "id": 268457889,
   "title": "近百家企业带着真实场景，直接在WISE现场聊合作",
   "source": "36氪",
   "impact": "中影响",
@@ -143,96 +233,6 @@
   "category": "物流",
   "summary": "\n \n \n  \n  对接的桌子已摆好，先来看合作方向\n  WISE2026「产业对接」报名持续进行中。这次，我们将报名企业，以及他们想合作的方向、能够提供的产品、技术和服务整理公布。看看其中有没有你能帮上忙的事，也有没有能帮助你的伙伴。\n  如果有，欢迎报名。\n  本轮「产业对接」面向各行各业的企业和团队开放。无论是采",
   "url": "https://36kr.com/p/4068039737987969?f=rss",
-  "publishedAt": "2026-11-14",
-  "_real_date": "2026-11-14",
-  "realPubDate": "2026-11-14",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 744057426,
-  "title": "万亿消费，奔向山海",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "\n \n \n  沿着广东G228滨海公路从汕尾驶向深圳，晨洲蚝乡的生蚝刚出水，盐田山海间的落日正铺满车窗。撒贝宁在节目里感慨：“一脚油门踩下去，整个世界都是你的。”\n  这声感叹，来自神州租车联合央视频打造的中国首档自驾文化探索节目《出发吧！神州山海》。随着六期节目走过戈壁、雨林与江南古村，一种正在成型的中国自驾文化也随",
-  "url": "https://36kr.com/p/4067852789372033?f=rss",
-  "publishedAt": "2026-11-14",
-  "_real_date": "2026-11-14",
-  "realPubDate": "2026-11-14",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 930401438,
-  "title": "炸了！英伟达最大的雷，是没接班人",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "\n \n \n  \n  &nbsp;\n  CFO 接任临时 CEO。\n  &nbsp;\n  文&nbsp;|&nbsp;刘思洁\n  封面来源&nbsp;|&nbsp;网络\n  &nbsp;\n  当地时间2026年11月12日，英伟达官方宣布，联合创始人黄仁勋辞去公司总裁、首席执行官及董事会成员职务，即刻生效。\n  英伟达同",
-  "url": "https://36kr.com/p/4067628486267780?f=rss",
-  "publishedAt": "2026-11-14",
-  "_real_date": "2026-11-14",
-  "realPubDate": "2026-11-14",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 656045740,
-  "title": "超跑面料供应商Alcantara：智驾时代，内饰比拼触感｜最前线",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "意大利",
-  "category": "政策",
-  "summary": "\n \n \n  10月28日，Alcantara在北京意大利文化处办了一场关于色彩、材质与表面工艺的沙龙。表面是材料展示，背后是一条清晰信号：汽车内饰的竞争，正从屏幕、芯片、算力，回撤到内饰设计的品质和触感。\n  过去几十年，Alcantara的标签是超跑。法拉利、兰博基尼、保时捷座舱里的翻毛触感，代表运动与稀缺。但中国",
-  "url": "https://36kr.com/p/4067598702384258?f=rss",
-  "publishedAt": "2026-11-14",
-  "_real_date": "2026-11-14",
-  "realPubDate": "2026-11-14",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 596340252,
-  "title": "36氪首发丨北航博士做AI4S，获亿元融资，要造自驱动实验室",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "\n \n \n  \n  图源/企业\n  \n   本文约3000字，建议阅读8分钟\n  \n  作者丨欧雪\n  编辑丨袁斯来\n  硬氪获悉，面向科学研发的Physical AI公司——青葵智造近日宣布完成亿元A轮融资，由创东方投资、飞荣达股份及金辉大数据共同参与。资金将重点用于核心技术研发、重点行业拓展以及云实验室建设，加速自",
-  "url": "https://36kr.com/p/4067548192576389?f=rss",
-  "publishedAt": "2026-11-14",
-  "_real_date": "2026-11-14",
-  "realPubDate": "2026-11-14",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 646044032,
-  "title": "8点1氪丨英伟达宣布CEO黄仁勋辞职，特朗普：建议库克接任；腾讯“裁员50%”？知情人士回应；宣扬错误婚恋观，德芙代运营方被罚80万",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "\n \n \n  今日热点导览\n  张一鸣再发声谈字节AI\n  商务部：中美正就降税、贸易、投资等问题保持密切沟通\n  美股三大指数集体收跌，英伟达跌超4%\n  SpaceX与特斯拉合并谈判取得进展，最早12月宣布交易\n  联合航空禁止Muse、Instinct等AI智能体预订航班\n  TOP3大新闻\n  英伟达宣布CEO",
-  "url": "https://36kr.com/p/4067443683120000?f=rss",
-  "publishedAt": "2026-11-14",
-  "_real_date": "2026-11-14",
-  "realPubDate": "2026-11-14",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 179347528,
-  "title": "硬氪首发丨前迪士尼亚太成员下场“造”交互智能基座，获数百万种子轮融资",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "全球",
-  "category": "其他",
-  "summary": "\n \n \n  作者&nbsp;|&nbsp;邱晓芬\n  编辑&nbsp;|&nbsp;袁斯来\n  硬氪获悉，面向AI Native终端的交互智能SYNAPUFF近期完成数百万元种子轮融资，资方为FIRST RULE VENTURES、浦东创投。\n  SYNAPUFF联合创始人兼CEO李诗淼向硬氪表示，他们希望开发面向A",
-  "url": "https://36kr.com/p/4066337448907656?f=rss",
   "publishedAt": "2026-11-14",
   "_real_date": "2026-11-14",
   "realPubDate": "2026-11-14",
