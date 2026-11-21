@@ -1,6 +1,51 @@
 [
  {
-  "id": 901776227,
+  "id": 327649978,
+  "title": "Zelensky says Putin is a 'killer' after Trump calls Russian leader a friend",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "美国",
+  "category": "关税/政策",
+  "summary": "Earlier this week, Trump greeted Putin ahead of a meeting in China and said the pair have a \"great relationship\".",
+  "url": "https://www.bbc.co.uk/news/articles/cxnv4zvmdy0jo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-21",
+  "_real_date": "2026-11-21",
+  "realPubDate": "2026-11-21",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 798930036,
+  "title": "Deal with EU not dependent on tuition fees agreement, Miliband says",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "欧盟",
+  "category": "政策",
+  "summary": "Brussels sources had previously suggested the bloc might not apply the wider deal until fees were lowered for EU students in Britain.",
+  "url": "https://www.bbc.co.uk/news/articles/cm9w9p4geke8o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-21",
+  "_real_date": "2026-11-21",
+  "realPubDate": "2026-11-21",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 125964454,
+  "title": "Fight over fossil fuels leaves COP31 climate talks in deadlock",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "Countries from nearly 200 countries are in a deadlock to try and get a new global climate agreement.",
+  "url": "https://www.bbc.co.uk/news/articles/c6ly5w40eg07o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-21",
+  "_real_date": "2026-11-21",
+  "realPubDate": "2026-11-21",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 890208264,
   "title": "Man convicted of starting Palisades fire in Los Angeles",
   "source": "BBC World",
   "impact": "中影响",
@@ -15,22 +60,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 198721366,
-  "title": "'He's a killer': Zelensky reacts to Trump calling Putin a friend",
-  "source": "BBC World",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "Trump's comments came as Russia launched \"biggest attacks this year\" against Ukraine.",
-  "url": "https://www.bbc.co.uk/news/articles/cxnv4zvmdy0jo?at_medium=RSS&at_campaign=rss",
-  "publishedAt": "2026-11-21",
-  "_real_date": "2026-11-21",
-  "realPubDate": "2026-11-21",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 927582114,
+  "id": 106037575,
   "title": "Mamdani announces plan to close New York's Rikers Island jail by 2032",
   "source": "BBC World",
   "impact": "中影响",
@@ -45,7 +75,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 930789408,
+  "id": 336978696,
   "title": "They were fined $811m for conning detained migrants, but the scams didn't stop",
   "source": "BBC World",
   "impact": "中影响",
@@ -60,7 +90,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 29284532,
+  "id": 711391240,
   "title": "ANC fights to keep control of South Africa's key cities after election setback",
   "source": "BBC World",
   "impact": "中影响",
@@ -75,7 +105,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 603154355,
+  "id": 410728749,
   "title": "Judge Approves $7 Billion Settlement Over Claims That Roundup Caused Cancer",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -90,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 706737394,
+  "id": 253838155,
   "title": "Nvidia Said to Face S.E.C. Probe Into Its Accounting Practices",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -105,7 +135,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 482273929,
+  "id": 325300424,
+  "title": "Alice Huang, Accused of Spying on Nvidia’s CEO, Is Linked to Firms With Ties to China’s Military",
+  "source": "NYTimes Business",
+  "impact": "中影响",
+  "country": "全球",
+  "category": "其他",
+  "summary": "Companies linked to Alice Huang, the woman at the heart of the Nvidia scandal, are part of a network of Chinese tech firms and defense contractors that need adv",
+  "url": "https://www.nytimes.com/2026/11/20/us/politics/nvidia-alice-huang-chips-china.html",
+  "publishedAt": "2026-11-21",
+  "_real_date": "2026-11-21",
+  "realPubDate": "2026-11-21",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 911960110,
   "title": "最前线｜半导体业务成主线，TCL中环增持中环领先股权至98.52%",
   "source": "36氪",
   "impact": "中影响",
@@ -120,7 +165,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 963518370,
+  "id": 66697873,
   "title": "9点1氪丨黄仁勋或将创办新公司；水贝金价一度跌破800元/克；纳指100进入技术性熊市",
   "source": "36氪",
   "impact": "中影响",
@@ -135,7 +180,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 619778095,
+  "id": 342970514,
   "title": "一届学生60万？外国玩家：想来中国上学了 | 玩点好的",
   "source": "36氪",
   "impact": "中影响",
@@ -150,7 +195,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 926552475,
+  "id": 152149243,
   "title": "Anthropic上市首日涨17%，市值一度冲至2万亿刀，AI热潮还能持续多久？",
   "source": "36氪",
   "impact": "中影响",
@@ -165,7 +210,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 681174985,
+  "id": 972454083,
   "title": "11月26日，WISE2026商业之王大会·具身智能&文商旅分会场落地北京亦庄。首批嘉宾阵容，今日正式揭晓！欢迎扫码报名，我们现场见。",
   "source": "36氪",
   "impact": "中影响",
@@ -180,7 +225,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 760986125,
+  "id": 140006458,
   "title": "36氪首发丨中科院博士做二维半导体制造全流程产线设备，完成数千万天使轮融资",
   "source": "36氪",
   "impact": "中影响",
@@ -188,51 +233,6 @@
   "category": "其他",
   "summary": "\n \n \n  作者&nbsp;|&nbsp;乔钰杰\n  编辑&nbsp;|&nbsp;袁斯来\n  \n   本文约2400字，建议阅读6分钟\n  \n  硬氪获悉，国内覆盖二维半导体集成电路制造「生长—转移—检测」全流程的专用产线设备商「基元科技」近日完成数千万元天使轮融资，由朝晖芯华基金领投（朝晖资本与中芯国际创始人张汝",
   "url": "https://36kr.com/p/4077431786968198?f=rss",
-  "publishedAt": "2026-11-21",
-  "_real_date": "2026-11-21",
-  "realPubDate": "2026-11-21",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 549040169,
-  "title": "耐克终于给出了增长计划，但需要一点时间｜投资日现场直击",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "\n \n \n  拿回那些份额\n  一段让人目眩的快剪视频之后，身着黑色耐克飞行夹克贺雁峰（Elliott Hill）走上台，看上去精神不错。\n  “刚才那段影片是一扇窗，”他说，“让我们看到世界顶尖运动员真实的心态：迎难而上，永不停歇，质疑只会让他们更加努力。”\n  11月17日，当地时间的周二早上八点30分，耐克比弗顿",
-  "url": "https://36kr.com/p/4076185723769984?f=rss",
-  "publishedAt": "2026-11-21",
-  "_real_date": "2026-11-21",
-  "realPubDate": "2026-11-21",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 694278418,
-  "title": "36氪首发丨多地国资押注，这家中性原子量子计算企业获数亿元B轮投资",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "英国",
-  "category": "政策",
-  "summary": "\n \n \n  \n  图源/企业\n  \n   本文约3600字，建议阅读9分钟\n  \n  作者丨欧雪\n  编辑丨袁斯来\n  硬氪获悉，中性原子量子计算公司——杭州原子矩阵计算有限公司（MatriQ，下称“原子矩阵”）近日宣布完成数亿元人民币B轮融资。\n  本轮融资由杭州产投集团、杭州高新金投、成都科创投、鸿瑞达投资、博世",
-  "url": "https://36kr.com/p/4077393088386184?f=rss",
-  "publishedAt": "2026-11-21",
-  "_real_date": "2026-11-21",
-  "realPubDate": "2026-11-21",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 36585863,
-  "title": "8点1氪丨Anthropic上市首日暴涨17%；宗馥莉原“心腹”起诉娃哈哈；OpenAI进军手机领域",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "\n \n \n  今日热点导览\n  \n   Kimi API服务出现可用性下降，官方调查中\n   谷歌推出Gemini 4 Neon模型\n   马斯克点赞深圳，称是中国的超级粉丝\n   欧莱雅将收购阿玛尼15%股权\n   Meta因面临法律挑战暂停新股发行计划\n  \n  TOP 3大新闻\n  Anthropic上市首日暴涨",
-  "url": "https://36kr.com/p/4077339293242504?f=rss",
   "publishedAt": "2026-11-21",
   "_real_date": "2026-11-21",
   "realPubDate": "2026-11-21",

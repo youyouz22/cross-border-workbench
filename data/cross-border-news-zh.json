@@ -1,6 +1,51 @@
 [
  {
-  "id": 901776227,
+  "id": 327649978,
+  "title": "Zelensky says Putin is a 'killer' after Trump calls Russian leader a friend",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "美国",
+  "category": "关税/政策",
+  "summary": "Earlier this week, Trump greeted Putin ahead of a meeting in China and said the pair have a \"great relationship\".",
+  "url": "https://www.bbc.co.uk/news/articles/cxnv4zvmdy0jo?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-21",
+  "_real_date": "2026-11-21",
+  "realPubDate": "2026-11-21",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 798930036,
+  "title": "Deal with EU not dependent on tuition fees agreement, Miliband says",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "欧盟",
+  "category": "政策",
+  "summary": "Brussels sources had previously suggested the bloc might not apply the wider deal until fees were lowered for EU students in Britain.",
+  "url": "https://www.bbc.co.uk/news/articles/cm9w9p4geke8o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-21",
+  "_real_date": "2026-11-21",
+  "realPubDate": "2026-11-21",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 125964454,
+  "title": "Fight over fossil fuels leaves COP31 climate talks in deadlock",
+  "source": "BBC World",
+  "impact": "中影响",
+  "country": "",
+  "category": "其他",
+  "summary": "Countries from nearly 200 countries are in a deadlock to try and get a new global climate agreement.",
+  "url": "https://www.bbc.co.uk/news/articles/c6ly5w40eg07o?at_medium=RSS&at_campaign=rss",
+  "publishedAt": "2026-11-21",
+  "_real_date": "2026-11-21",
+  "realPubDate": "2026-11-21",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 890208264,
   "title": "Man convicted of starting Palisades fire in Los Angeles",
   "source": "BBC World",
   "impact": "中影响",
@@ -15,22 +60,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 198721366,
-  "title": "'He's a killer': Zelensky reacts to Trump calling Putin a friend",
-  "source": "BBC World",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "Trump's comments came as Russia launched \"biggest attacks this year\" against Ukraine.",
-  "url": "https://www.bbc.co.uk/news/articles/cxnv4zvmdy0jo?at_medium=RSS&at_campaign=rss",
-  "publishedAt": "2026-11-21",
-  "_real_date": "2026-11-21",
-  "realPubDate": "2026-11-21",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 927582114,
+  "id": 106037575,
   "title": "Mamdani announces plan to close New York's Rikers Island jail by 2032",
   "source": "BBC World",
   "impact": "中影响",
@@ -45,7 +75,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 930789408,
+  "id": 336978696,
   "title": "They were fined $811m for conning detained migrants, but the scams didn't stop",
   "source": "BBC World",
   "impact": "中影响",
@@ -60,7 +90,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 29284532,
+  "id": 711391240,
   "title": "ANC fights to keep control of South Africa's key cities after election setback",
   "source": "BBC World",
   "impact": "中影响",
@@ -75,7 +105,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 603154355,
+  "id": 410728749,
   "title": "Judge Approves $7 Billion Settlement Over Claims That Roundup Caused Cancer",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -90,7 +120,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 706737394,
+  "id": 253838155,
   "title": "Nvidia Said to Face S.E.C. Probe Into Its Accounting Practices",
   "source": "NYTimes Business",
   "impact": "中影响",
@@ -105,7 +135,22 @@
   "ecommerceImpact": true
  },
  {
-  "id": 482273929,
+  "id": 325300424,
+  "title": "Alice Huang, Accused of Spying on Nvidia’s CEO, Is Linked to Firms With Ties to China’s Military",
+  "source": "NYTimes Business",
+  "impact": "中影响",
+  "country": "",
+  "category": "其他",
+  "summary": "Companies linked to Alice Huang, the woman at the heart of the Nvidia scandal, are part of a network of Chinese tech firms and defense contractors that need adv",
+  "url": "https://www.nytimes.com/2026/11/20/us/politics/nvidia-alice-huang-chips-china.html",
+  "publishedAt": "2026-11-21",
+  "_real_date": "2026-11-21",
+  "realPubDate": "2026-11-21",
+  "trendingTopics": [],
+  "ecommerceImpact": true
+ },
+ {
+  "id": 911960110,
   "title": "最前线｜半导体业务成主线，TCL中环增持中环领先股权至98.52%",
   "source": "36氪",
   "impact": "中影响",
@@ -120,7 +165,7 @@
   "ecommerceImpact": true
  },
  {
-  "id": 963518370,
+  "id": 66697873,
   "title": "9点1氪丨黄仁勋或将创办新公司；水贝金价一度跌破800元/克；纳指100进入技术性熊市",
   "source": "36氪",
   "impact": "中影响",
@@ -128,51 +173,6 @@
   "category": "关税/政策",
   "summary": "\n \n \n  今日热点导览\n  上证50ETF尾盘爆量拉升，成交突破215亿创成交额历史天量\n  英伟达市值被谷歌超越\n  12306重磅升级通知服务\n  马斯克试图与MAGA阵营切割\n  段永平：好公司未必要上市，字节6000亿美元估值下我会有兴趣\n  A股三大指数集体收跌，全市场超5200股飘绿\n  TOP3大新闻",
   "url": "https://36kr.com/p/4078827757310856?f=rss",
-  "publishedAt": "2026-11-21",
-  "_real_date": "2026-11-21",
-  "realPubDate": "2026-11-21",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 619778095,
-  "title": "一届学生60万？外国玩家：想来中国上学了 | 玩点好的",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "",
-  "category": "其他",
-  "summary": "\n \n \n  文丨句号\n  编辑丨果脯\n  “如果我是老师，我肯定不会对学生这么坏。”\n  可能是在被罚站时，也可能是被老师喊来家长后，这样的想法总是会瞬间被唤醒。《我带过的最差一届》（以下简称《最差一届》），一款非对称式派对游戏，给了玩家们一次师生身份转换的机会。\n  \n  《我带过的最差一届》官方宣传图\n  由B站",
-  "url": "https://36kr.com/p/4077807099057031?f=rss",
-  "publishedAt": "2026-11-21",
-  "_real_date": "2026-11-21",
-  "realPubDate": "2026-11-21",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 926552475,
-  "title": "Anthropic上市首日涨17%，市值一度冲至2万亿刀，AI热潮还能持续多久？",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "美国",
-  "category": "关税/政策",
-  "summary": "\n \n \n  \n  &nbsp;\n  Anthropic与科技巨头们唇齿相依\n  &nbsp;\n  \n  &nbsp;\n  文&nbsp;|&nbsp;刘思洁\n  封面来源 |&nbsp;Unsplash\n  &nbsp;\n  11月19日，Anthropic（Nasdaq：ANT）正式登陆纳斯达克，股票发行价最终定在",
-  "url": "https://36kr.com/p/4077873869099904?f=rss",
-  "publishedAt": "2026-11-21",
-  "_real_date": "2026-11-21",
-  "realPubDate": "2026-11-21",
-  "trendingTopics": [],
-  "ecommerceImpact": true
- },
- {
-  "id": 681174985,
-  "title": "11月26日，WISE2026商业之王大会·具身智能&文商旅分会场落地北京亦庄。首批嘉宾阵容，今日正式揭晓！欢迎扫码报名，我们现场见。",
-  "source": "36氪",
-  "impact": "中影响",
-  "country": "欧盟",
-  "category": "政策",
-  "summary": "\n \n \n  \n  11月26日，36氪将联合欧氪律、氪睿研究院，在北京举办WISE2026商业之王大会·具身智能分会场，以“文商旅的‘赛博场景’：具身智能激活新消费赛道”为主题，聚焦文商旅等线下消费场景，汇集头部商管集团、具身智能企业、投资机构与专业服务机构，共同探讨技术应用与商业创新的落地机会。\n  作为36氪最重",
-  "url": "https://36kr.com/p/4077464212542596?f=rss",
   "publishedAt": "2026-11-21",
   "_real_date": "2026-11-21",
   "realPubDate": "2026-11-21",
